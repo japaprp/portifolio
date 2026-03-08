@@ -7,6 +7,24 @@
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://japaprp.github.io/portifolio/servicos/landing-page.html</loc>
+    <lastmod>2026-03-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://japaprp.github.io/portifolio/servicos/site-institucional.html</loc>
+    <lastmod>2026-03-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://japaprp.github.io/portifolio/servicos/sistema-web.html</loc>
+    <lastmod>2026-03-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://japaprp.github.io/portifolio/demos/rh/</loc>
     <lastmod>2026-03-08</lastmod>
     <changefreq>monthly</changefreq>
