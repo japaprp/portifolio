@@ -127,15 +127,16 @@
     }
 
     .brand {
-      display: inline-flex;
-      align-items: center;
-      text-decoration: none;
+      font-family: "Bricolage Grotesque", sans-serif;
+      font-size: 1.1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--navy);
+      font-weight: 800;
     }
 
-    .brand-logo {
-      width: 172px;
-      height: auto;
-      display: block;
+    .brand span {
+      color: var(--sun);
     }
 
     .menu-toggle {
@@ -1115,10 +1116,6 @@
     }
 
     @media (max-width: 740px) {
-      .brand-logo {
-        width: 142px;
-      }
-
       .menu-toggle {
         display: inline-flex;
       }
@@ -1174,9 +1171,7 @@
 
   <header class="nav">
     <div class="container nav-wrap">
-      <a class="brand" href="#inicio" aria-label="Yago Dev - Início">
-        <img class="brand-logo" src="assets/branding/slogan-yago-dev.svg" alt="Yago Dev" loading="eager" decoding="async">
-      </a>
+      <a class="brand" href="#inicio">Yago <span>Dev</span></a>
       <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="menu">Menu</button>
       <ul class="nav-links" id="menu">
         <li><a href="#inicio">Início</a></li>

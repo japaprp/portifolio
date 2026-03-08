@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 96" role="img" aria-labelledby="title desc">
-  <title id="title">Yago Dev</title>
-  <desc id="desc">Slogan visual Yago Dev</desc>
-  <rect width="360" height="96" fill="#e8e5dc"/>
-  <text x="28" y="55" font-family="Segoe UI, Arial, sans-serif" font-size="44" font-weight="800" fill="#193c67" letter-spacing="1">YAGO</text>
-  <text x="156" y="55" font-family="Segoe UI, Arial, sans-serif" font-size="44" font-weight="800" fill="#e39145" letter-spacing="1">DEV</text>
-  <line x1="26" y1="70" x2="334" y2="70" stroke="#1e4c83" stroke-width="4"/>
-</svg>
