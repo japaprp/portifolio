@@ -4,16 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Demo Controlada | Lanchonete Multi-PDV</title>
-  <meta name="description" content="Demo controlada da plataforma de lanchonete multi-PDV de Yago Fellipe Amorim.">
+  <meta name="description" content="Demonstração comercial do cardápio e operação da lanchonete multi-PDV de Yago Fellipe Amorim.">
   <style>
     :root {
-      --bg: #f4f0e8;
-      --ink: #1f2b2d;
-      --muted: #5c676d;
-      --line: #d8d1c3;
-      --card: #fffcf7;
-      --accent: #f29a2e;
-      --accent-2: #1e8b5e;
+      --bg: #091426;
+      --bg-soft: #0e1d34;
+      --surface: #0f1f3a;
+      --surface-2: #102447;
+      --line: #22385f;
+      --ink: #edf4ff;
+      --muted: #9fb5d5;
+      --brand: #f6c33f;
+      --brand-2: #21c07a;
+      --accent: #2b84ff;
       --radius: 16px;
     }
 
@@ -23,43 +26,43 @@
       font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
       color: var(--ink);
       background:
-        radial-gradient(circle at 8% 8%, rgba(242,154,46,0.24), transparent 34%),
-        radial-gradient(circle at 92% 4%, rgba(30,139,94,0.2), transparent 33%),
+        radial-gradient(circle at 8% 6%, rgba(246,195,63,0.16), transparent 30%),
+        radial-gradient(circle at 92% 4%, rgba(43,132,255,0.18), transparent 32%),
         var(--bg);
       min-height: 100vh;
-      padding: 1.2rem;
+      padding: 1rem;
       line-height: 1.45;
     }
 
     .wrap {
-      max-width: 1140px;
+      max-width: 1160px;
       margin: 0 auto;
-      border: 1px solid #d3ccbe;
-      border-radius: 22px;
-      overflow: hidden;
-      background: #fff9ef;
-      box-shadow: 0 18px 44px rgba(50, 38, 18, 0.2);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      overflow: clip;
+      background: linear-gradient(180deg, #0a1730 0%, #0b1933 100%);
+      box-shadow: 0 22px 44px rgba(0, 0, 0, 0.36);
     }
 
     .top {
+      position: sticky;
+      top: 0;
+      z-index: 20;
       display: flex;
       justify-content: space-between;
       align-items: center;
       gap: 0.8rem;
-      padding: 1rem 1.2rem;
-      background: #fff4de;
-      border-bottom: 1px solid #e6dcc8;
+      padding: 0.9rem 1rem;
+      border-bottom: 1px solid var(--line);
+      background: rgba(7, 15, 30, 0.92);
+      backdrop-filter: blur(8px);
     }
 
     .chip {
-      font-size: 0.74rem;
+      font-size: 0.72rem;
       text-transform: uppercase;
-      letter-spacing: 0.03em;
-      border: 1px solid #cebfa5;
-      border-radius: 999px;
-      padding: 0.25rem 0.6rem;
-      background: #ffeed0;
-      color: #6c4d1f;
+      letter-spacing: 0.12em;
+      color: var(--brand);
       font-weight: 700;
     }
 
@@ -72,59 +75,138 @@
 
     .top a {
       text-decoration: none;
-      border: 1px solid #c9b89d;
-      color: #5c4425;
+      border: 1px solid #2d436a;
+      color: #e8f0ff;
       border-radius: 10px;
-      padding: 0.45rem 0.7rem;
+      padding: 0.42rem 0.7rem;
       font-weight: 600;
-      background: #fff8ea;
+      background: #0f2240;
+      font-size: 0.9rem;
+    }
+
+    .top a.active {
+      border-color: #2f69c3;
+      background: #17335d;
+      color: #ffffff;
     }
 
     .top a.primary {
-      border-color: #2a7e59;
-      color: #f5fff9;
-      background: #1f8a60;
+      border-color: #177a53;
+      background: #1e9f6b;
+      color: #f4fff9;
     }
 
-
     .hero {
-      padding: 1.1rem;
-      background: linear-gradient(135deg, #2c3d34, #1f2d26);
-      color: #f9f7f2;
+      padding: 1.05rem;
+      border-bottom: 1px solid var(--line);
+      background: linear-gradient(135deg, #091d3a 0%, #0b1a2f 100%);
     }
 
     .hero h1 {
-      font-size: 1.65rem;
-      margin-bottom: 0.35rem;
+      font-size: clamp(1.35rem, 2.5vw, 2rem);
+      margin-bottom: 0.32rem;
     }
 
     .hero p {
-      color: #d8e3dc;
-      max-width: 64ch;
+      color: #c2d2ec;
+      max-width: 70ch;
+      margin-bottom: 0.8rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+    }
+
+    .hero-actions a {
+      text-decoration: none;
+      border-radius: 10px;
+      padding: 0.5rem 0.8rem;
+      border: 1px solid #2f476f;
+      background: #102645;
+      color: #ecf4ff;
+      font-weight: 600;
+      font-size: 0.92rem;
+    }
+
+    .hero-actions a.cta {
+      border-color: #178c5d;
+      background: linear-gradient(180deg, #1ead74 0%, #189964 100%);
+      color: #f6fff9;
+    }
+
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+      gap: 0.75rem;
+      padding: 0.9rem 1rem;
+      border-bottom: 1px solid var(--line);
+      background: #0b1c38;
+    }
+
+    .kpi-card {
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 0.7rem;
+      background: #0d2142;
+    }
+
+    .kpi-label {
+      color: var(--muted);
+      font-size: 0.76rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.2rem;
+      font-weight: 700;
+    }
+
+    .kpi-value {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: #f8fbff;
     }
 
     .menu {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.55rem;
-      padding: 0.9rem 1rem;
-      border-bottom: 1px solid #e4dac7;
-      background: #fffaf2;
+      gap: 0.52rem;
+      padding: 0.85rem 1rem;
+      border-bottom: 1px solid var(--line);
+      background: #0c1f3d;
     }
 
     .menu span {
-      border: 1px solid #dbcdb4;
+      border: 1px solid #2c4470;
       border-radius: 999px;
-      padding: 0.38rem 0.75rem;
-      background: #fff5e4;
-      font-size: 0.82rem;
+      padding: 0.35rem 0.7rem;
+      background: #10284b;
+      font-size: 0.8rem;
       font-weight: 700;
-      color: #5b4a2d;
+      color: #dce8fc;
+    }
+
+    .section {
+      padding: 0.95rem 1rem;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .section h2 {
+      font-size: 1.1rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .solve-list {
+      display: grid;
+      gap: 0.4rem;
+      color: #d1dff6;
+      font-size: 0.92rem;
+      padding-left: 1.1rem;
     }
 
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(235px, 1fr));
       gap: 0.85rem;
       padding: 1rem;
     }
@@ -132,16 +214,16 @@
     .card {
       border: 1px solid var(--line);
       border-radius: var(--radius);
-      background: var(--card);
+      background: linear-gradient(180deg, #102445 0%, #0f2140 100%);
       overflow: hidden;
       display: grid;
       grid-template-rows: auto 1fr;
-      box-shadow: 0 8px 18px rgba(65, 52, 28, 0.09);
+      box-shadow: 0 10px 22px rgba(0, 0, 0, 0.24);
     }
 
     .photo {
       aspect-ratio: 16 / 10;
-      background: #ece2d2;
+      background: #0a172f;
       overflow: hidden;
     }
 
@@ -153,39 +235,39 @@
     }
 
     .body {
-      padding: 0.75rem;
+      padding: 0.78rem;
       display: grid;
-      gap: 0.35rem;
+      gap: 0.36rem;
     }
 
-    .body h2 {
+    .body h3 {
       font-size: 1.02rem;
-      color: #223028;
+      color: #f2f7ff;
     }
 
     .price {
-      font-size: 1.28rem;
+      font-size: 1.22rem;
       font-weight: 800;
-      color: #1e8b5e;
+      color: var(--brand-2);
     }
 
     .meta {
-      color: var(--muted);
-      font-size: 0.86rem;
+      color: #bdd0ec;
+      font-size: 0.88rem;
     }
 
     .qty {
       display: inline-flex;
       align-items: center;
       gap: 0.45rem;
-      margin-top: 0.25rem;
+      margin-top: 0.2rem;
     }
 
-    .btn {
-      border: 1px solid #ccbca0;
+    .btn-sim {
+      border: 1px solid #365383;
       border-radius: 9px;
-      background: #fff7e8;
-      color: #5d4724;
+      background: #142a4e;
+      color: #dce8fc;
       width: 30px;
       height: 30px;
       font-weight: 700;
@@ -195,44 +277,78 @@
     }
 
     .qty span {
-      border: 1px solid #d8ccb5;
+      border: 1px solid #35507d;
       border-radius: 9px;
       padding: 0.22rem 0.55rem;
       font-weight: 700;
-      color: #3d4a45;
-      min-width: 70px;
+      color: #dbe8fc;
+      min-width: 84px;
       text-align: center;
-      background: #fff;
+      background: #112648;
+      font-size: 0.86rem;
+    }
+
+    .card-cta {
+      margin-top: 0.38rem;
+      display: inline-flex;
+      text-decoration: none;
+      border: 1px solid #177a53;
+      border-radius: 9px;
+      padding: 0.42rem 0.62rem;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #f6fff9;
+      background: #1b9764;
+      width: fit-content;
     }
 
     .alert {
       margin: 0 1rem 1rem;
-      border: 1px solid #dfd3bc;
+      border: 1px solid #2b4673;
       border-radius: 10px;
-      background: #fff3dd;
-      color: #654f28;
+      background: #0f2546;
+      color: #c8d7f0;
       padding: 0.58rem 0.7rem;
       font-size: 0.82rem;
+    }
+
+    @media (max-width: 760px) {
+      body { padding: 0.7rem; }
+      .top { align-items: flex-start; flex-direction: column; }
+      .top-actions { width: 100%; }
+      .top a { width: 100%; text-align: center; }
     }
   </style>
 </head>
 <body>
   <div class="wrap">
     <header class="top">
-      <span class="chip">Demo Publica Controlada</span>
+      <span class="chip">Hamburgueria SaaS</span>
       <div class="top-actions">
-        <a class="primary" href="./painel-operacao.html">Abrir painel de operacao</a>
-        <a href="../../index.html">Voltar ao portfolio</a>
+        <a class="active" href="./index.html">Cardápio Demo</a>
+        <a href="./painel-operacao.html">Painel Operacional</a>
+        <a href="../../index.html">Voltar ao portfólio</a>
       </div>
     </header>
 
     <section class="hero">
-      <h1>Lanchonete Multi-PDV</h1>
-      <p>Cardapio digital com vitrine comercial, controles de quantidade e estrutura pronta para mais de um ponto de venda.</p>
+      <h1>Cardápio + Operação Multi-PDV para vender mais com controle</h1>
+      <p>Demonstração comercial com vitrine digital, organização de pedidos e estrutura pronta para escalar atendimento sem perder padrão.</p>
+      <div class="hero-actions">
+        <a href="./painel-operacao.html">Ver painel operacional</a>
+        <a class="cta" href="https://wa.me/5516991145034?text=Ol%C3%A1%2C%20Yago!%20Quero%20um%20sistema%20de%20lanchonete%20com%20card%C3%A1pio%20e%20opera%C3%A7%C3%A3o%20multi-PDV." target="_blank" rel="noopener noreferrer">Quero um sistema assim</a>
+      </div>
     </section>
 
-    <section class="menu" aria-label="Navegacao do cardapio">
-      <span>Hamburgueres</span>
+    <section class="kpi-grid" aria-label="Indicadores de operação">
+      <article class="kpi-card"><p class="kpi-label">Pedidos em fila</p><p class="kpi-value">18</p></article>
+      <article class="kpi-card"><p class="kpi-label">Tempo médio</p><p class="kpi-value">16 min</p></article>
+      <article class="kpi-card"><p class="kpi-label">PDVs ativos</p><p class="kpi-value">3</p></article>
+      <article class="kpi-card"><p class="kpi-label">Ticket médio</p><p class="kpi-value">R$ 29,90</p></article>
+    </section>
+
+    <section class="menu" aria-label="Navegação do cardápio">
+      <span>Hambúrgueres</span>
       <span>Combos</span>
       <span>Bebidas</span>
       <span>Sobremesas</span>
@@ -240,29 +356,40 @@
       <span>Pagamento</span>
     </section>
 
+    <section class="section" aria-label="Problemas resolvidos">
+      <h2>O que este sistema resolve</h2>
+      <ul class="solve-list">
+        <li>Organiza fila e preparo por etapa para reduzir gargalos de atendimento.</li>
+        <li>Padroniza operação entre múltiplos PDVs sem retrabalho manual.</li>
+        <li>Melhora experiência do cliente com cardápio claro e pedido mais rápido.</li>
+      </ul>
+    </section>
+
     <section class="grid">
       <article class="card">
-        <div class="photo"><img src="../../assets/projetos/hamburgueria-cardapio.png" alt="Preview do cardapio da lanchonete"></div>
+        <div class="photo"><img src="../../assets/projetos/hamburgueria-cardapio.png" alt="Preview do cardápio digital da lanchonete"></div>
         <div class="body">
-          <h2>Combo da Casa</h2>
+          <h3>Combo da Casa</h3>
           <p class="price">R$ 34,90</p>
-          <p class="meta">Hamburguer artesanal, fritas crocantes e refrigerante.</p>
-          <div class="qty"><span class="btn">-</span><span>1 unidade</span><span class="btn">+</span></div>
+          <p class="meta">Hambúrguer artesanal, fritas crocantes e refrigerante.</p>
+          <div class="qty"><span class="btn-sim">-</span><span>1 unidade</span><span class="btn-sim">+</span></div>
+          <a class="card-cta" href="https://wa.me/5516991145034?text=Ol%C3%A1%2C%20Yago!%20Gostei%20da%20demo%20de%20card%C3%A1pio%20e%20quero%20uma%20proposta." target="_blank" rel="noopener noreferrer">Quero uma proposta</a>
         </div>
       </article>
 
       <article class="card">
-        <div class="photo"><img src="../../assets/projetos/hamburgueria-dashboard-operacional.png" alt="Preview da operacao da lanchonete"></div>
+        <div class="photo"><img src="../../assets/projetos/hamburgueria-dashboard-operacional.png" alt="Preview do painel de operação da lanchonete"></div>
         <div class="body">
-          <h2>Painel de Operacao</h2>
-          <p class="price">Tempo medio: 16 min</p>
-          <p class="meta">Fila separada por PDV, status de preparo e organizacao de pedidos.</p>
-          <div class="qty"><span class="btn">-</span><span>PDV 02</span><span class="btn">+</span></div>
+          <h3>Painel de Operação</h3>
+          <p class="price">Visão diária da operação</p>
+          <p class="meta">Acompanhamento de status, canais, estoque e produtividade por PDV.</p>
+          <div class="qty"><span class="btn-sim">-</span><span>PDV 02</span><span class="btn-sim">+</span></div>
+          <a class="card-cta" href="./painel-operacao.html">Abrir painel completo</a>
         </div>
       </article>
     </section>
 
-    <p class="alert">Esta pagina e uma demonstracao visual controlada para apresentacao comercial. Nao processa pagamentos reais nem pedidos em producao.</p>
+    <p class="alert">Esta página é uma demonstração visual controlada para apresentação comercial. Não processa pagamentos reais nem pedidos em produção.</p>
   </div>
 </body>
 </html>
