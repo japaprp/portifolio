@@ -687,6 +687,43 @@
       color: #6b7587;
     }
 
+
+    .nda-card {
+      background: linear-gradient(145deg, #f3f6fa 0%, #e6ebf2 56%, #d9e0e8 100%);
+      border: 0.8px solid #c4ccd6;
+      border-radius: var(--radius);
+      padding: 1rem;
+      box-shadow: 0 9px 18px rgba(23, 56, 90, 0.12);
+      display: grid;
+      gap: 0.65rem;
+    }
+
+    .nda-note {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .nda-list {
+      list-style: none;
+      display: grid;
+      gap: 0.38rem;
+      font-size: 0.9rem;
+      color: #36445d;
+    }
+
+    .nda-list li::before {
+      content: "•";
+      color: var(--sun);
+      margin-right: 0.45rem;
+    }
+
+    .nda-tagline {
+      font-size: 0.82rem;
+      color: #5c6880;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
     .service-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
@@ -1183,6 +1220,7 @@
         <li><a href="#inicio">Início</a></li>
         <li><a href="#projetos">Projetos</a></li>
         <li><a href="#cases">Cases</a></li>
+        <li><a href="#nda">NDA</a></li>
         <li><a href="#capacidade">Capacidade</a></li>
         <li><a href="#servicos">Serviços</a></li>
         <li><a href="#processo">Processo</a></li>
@@ -1386,6 +1424,26 @@
             </div>
           </article>
         </div>
+      </div>
+    </section>
+    
+    <section id="nda">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <span class="chip">Projetos sob NDA</span>
+          <h2>Confidencialidade com postura profissional</h2>
+          <p>Parte das entregas comerciais possui acordo de confidencialidade (NDA). Nesses casos, preservo dados, regras internas e propriedade intelectual do cliente.</p>
+        </div>
+
+        <article class="nda-card" data-reveal>
+          <p class="nda-tagline">Como apresento esses trabalhos</p>
+          <ul class="nda-list">
+            <li>Demonstração controlada do fluxo e da experiência da solução.</li>
+            <li>Resumo executivo de escopo, desafio e resultado esperado.</li>
+            <li>Detalhes técnicos e arquitetura compartilhados sob solicitação.</li>
+          </ul>
+          <p class="nda-note">Esse padrão reforça segurança, confiança e compromisso com a operação de cada cliente.</p>
+        </article>
       </div>
     </section>
     <section id="capacidade">
