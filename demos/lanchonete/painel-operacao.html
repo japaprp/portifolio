@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Painel de Operacao | Lanchonete Multi-PDV</title>
+  <meta name="description" content="Painel de operacao da demo de lanchonete multi-PDV de Yago Fellipe Amorim.">
+  <style>
+    :root {
+      --bg: #eef2f8;
+      --ink: #1c2636;
+      --muted: #5a667a;
+      --line: #cfd8e5;
+      --card: #ffffff;
+      --dark: #172033;
+      --dark-2: #22324d;
+      --accent: #2f7df8;
+      --ok: #1f9d68;
+      --warn: #e6a238;
+      --radius: 16px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 12% 10%, rgba(47,125,248,0.18), transparent 32%),
+        radial-gradient(circle at 90% 4%, rgba(31,157,104,0.16), transparent 34%),
+        var(--bg);
+      min-height: 100vh;
+      padding: 1.2rem;
+      line-height: 1.45;
+    }
+
+    .wrap {
+      max-width: 1180px;
+      margin: 0 auto;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      overflow: hidden;
+      background: #f7fafe;
+      box-shadow: 0 18px 42px rgba(23, 32, 51, 0.14);
+    }
+
+    .top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.8rem;
+      padding: 0.95rem 1.15rem;
+      background: #ffffff;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .chip {
+      font-size: 0.74rem;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      border: 1px solid #b8c8e0;
+      border-radius: 999px;
+      padding: 0.25rem 0.6rem;
+      background: #ecf4ff;
+      color: #30527f;
+      font-weight: 700;
+    }
+
+    .top-actions {
+      display: inline-flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+    }
+
+    .top a {
+      text-decoration: none;
+      border: 1px solid #bfccdf;
+      color: #274365;
+      border-radius: 10px;
+      padding: 0.45rem 0.7rem;
+      font-weight: 600;
+      background: #f6f9ff;
+    }
+
+    .top a.primary {
+      border-color: #2569d3;
+      color: #f5f9ff;
+      background: #2f7df8;
+    }
+
+    .hero {
+      padding: 1.1rem;
+      background: linear-gradient(135deg, var(--dark) 0%, var(--dark-2) 100%);
+      color: #f3f6fb;
+    }
+
+    .hero h1 {
+      font-size: 1.62rem;
+      margin-bottom: 0.35rem;
+    }
+
+    .hero p {
+      color: #d3ddee;
+      max-width: 72ch;
+    }
+
+    .status-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 0.8rem;
+      padding: 1rem;
+      background: #f7fbff;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .status-card {
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 0.75rem;
+      background: var(--card);
+    }
+
+    .status-label {
+      color: var(--muted);
+      font-size: 0.82rem;
+      margin-bottom: 0.25rem;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      font-weight: 700;
+    }
+
+    .status-value {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: #1f314d;
+    }
+
+    .status-value.ok { color: var(--ok); }
+    .status-value.warn { color: var(--warn); }
+
+    .preview {
+      padding: 1rem;
+      display: grid;
+      gap: 0.8rem;
+    }
+
+    .preview figure {
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: #fff;
+      overflow: hidden;
+      box-shadow: 0 10px 24px rgba(22, 38, 63, 0.1);
+    }
+
+    .preview img {
+      width: 100%;
+      display: block;
+      height: auto;
+      object-fit: cover;
+    }
+
+    .preview figcaption {
+      padding: 0.65rem 0.8rem;
+      color: var(--muted);
+      font-size: 0.88rem;
+      border-top: 1px solid #e8eef7;
+      background: #fbfdff;
+    }
+
+    .alert {
+      margin: 0 1rem 1rem;
+      border: 1px solid #cfdbec;
+      border-radius: 10px;
+      background: #edf4ff;
+      color: #325172;
+      padding: 0.58rem 0.7rem;
+      font-size: 0.82rem;
+    }
+
+    @media (max-width: 720px) {
+      body { padding: 0.8rem; }
+      .top { align-items: flex-start; flex-direction: column; }
+      .top-actions { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="top">
+      <span class="chip">Painel de Operacao</span>
+      <div class="top-actions">
+        <a class="primary" href="./index.html">Abrir demo do cardapio</a>
+        <a href="../../index.html">Voltar ao portfolio</a>
+      </div>
+    </header>
+
+    <section class="hero">
+      <h1>Operacao da lanchonete em modo multi-PDV</h1>
+      <p>Tela de operacao com foco em fila de pedidos, acompanhamento por estacao e padronizacao do atendimento em mais de um ponto de venda.</p>
+    </section>
+
+    <section class="status-grid" aria-label="Resumo operacional">
+      <article class="status-card">
+        <p class="status-label">Pedidos em fila</p>
+        <p class="status-value">18</p>
+      </article>
+      <article class="status-card">
+        <p class="status-label">Tempo medio</p>
+        <p class="status-value warn">16 min</p>
+      </article>
+      <article class="status-card">
+        <p class="status-label">PDVs ativos</p>
+        <p class="status-value">3</p>
+      </article>
+      <article class="status-card">
+        <p class="status-label">Status de preparo</p>
+        <p class="status-value ok">Estavel</p>
+      </article>
+    </section>
+
+    <section class="preview">
+      <figure>
+        <img src="../../assets/projetos/hamburgueria.png" alt="Preview do painel operacional da lanchonete">
+        <figcaption>Painel principal de operacao com visao por etapa, monitoramento de pedidos e suporte a mais de um PDV.</figcaption>
+      </figure>
+    </section>
+
+    <p class="alert">Pagina de demonstracao visual para apresentacao comercial. Nao processa pedidos reais.</p>
+  </div>
+</body>
+</html>
