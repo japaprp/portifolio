@@ -8,19 +8,17 @@
   <style>
     :root {
       --bg: #091426;
-      --bg-soft: #0e1d34;
-      --surface: #0f1f3a;
-      --surface-2: #102447;
       --line: #22385f;
       --ink: #edf4ff;
       --muted: #9fb5d5;
       --brand: #f6c33f;
       --brand-2: #21c07a;
-      --accent: #2b84ff;
       --radius: 16px;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
 
     body {
       font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -88,12 +86,6 @@
       border-color: #2f69c3;
       background: #17335d;
       color: #ffffff;
-    }
-
-    .top a.primary {
-      border-color: #177a53;
-      background: #1e9f6b;
-      color: #f4fff9;
     }
 
     .hero {
@@ -170,12 +162,12 @@
     .status-value.ok { color: var(--brand-2); }
     .status-value.warn { color: #ffc45a; }
 
-    .status-board {
+    .section {
       padding: 0.9rem 1rem;
       border-bottom: 1px solid var(--line);
     }
 
-    .status-board h2 {
+    .section h2 {
       font-size: 1.1rem;
       margin-bottom: 0.55rem;
     }
@@ -190,6 +182,35 @@
       justify-content: space-between;
       gap: 0.8rem;
       margin-bottom: 0.45rem;
+    }
+
+    .module-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 0.7rem;
+    }
+
+    .module-card {
+      border: 1px solid #2c4671;
+      border-radius: 12px;
+      background: #0f2648;
+      padding: 0.66rem;
+    }
+
+    .module-card h3 {
+      font-size: 0.95rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .module-kpi {
+      font-size: 1.1rem;
+      font-weight: 800;
+      margin-bottom: 0.2rem;
+    }
+
+    .module-note {
+      color: #bfd1ee;
+      font-size: 0.85rem;
     }
 
     .preview {
@@ -221,6 +242,24 @@
       background: #10284c;
     }
 
+    .preview-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+      padding-top: 0.2rem;
+    }
+
+    .preview-actions a {
+      text-decoration: none;
+      border: 1px solid #2f69c3;
+      border-radius: 10px;
+      padding: 0.46rem 0.72rem;
+      background: #17335d;
+      color: #f1f6ff;
+      font-weight: 600;
+      font-size: 0.88rem;
+    }
+
     .alert {
       margin: 0 1rem 1rem;
       border: 1px solid #2b4673;
@@ -247,6 +286,8 @@
       <div class="top-actions">
         <a href="./index.html">Cardápio Demo</a>
         <a class="active" href="./painel-operacao.html">Painel Operacional</a>
+        <a href="#pdvs">PDVs</a>
+        <a href="#caixa">Caixa</a>
         <a href="../../index.html">Voltar ao portfólio</a>
       </div>
     </header>
@@ -256,6 +297,8 @@
       <p>Análise de vendas, caixa, estoque, canais e pedidos pendentes em uma visão única para acelerar a operação da lanchonete.</p>
       <div class="hero-actions">
         <a href="./index.html">Ver cardápio demo</a>
+        <a href="#pdvs">Visualizar PDVs</a>
+        <a href="#caixa">Visualizar Caixa</a>
         <a class="cta" href="https://wa.me/5516991145034?text=Ol%C3%A1%2C%20Yago!%20Quero%20o%20painel%20operacional%20da%20lanchonete%20no%20meu%20neg%C3%B3cio." target="_blank" rel="noopener noreferrer">Quero esse painel</a>
       </div>
     </section>
@@ -267,11 +310,53 @@
       <article class="status-card"><p class="status-label">Pendentes</p><p class="status-value warn">3</p></article>
     </section>
 
-    <section class="status-board" aria-label="Status de pedidos e operação">
+    <section class="section" aria-label="Status de pedidos e operação">
       <h2>Status de pedidos</h2>
       <div class="status-line"><span>Confirmado</span><strong>3 pedidos</strong></div>
       <div class="status-line"><span>Caixas abertos</span><strong>7</strong></div>
       <div class="status-line"><span>Itens abaixo do mínimo</span><strong class="status-value ok" style="font-size:1rem;">0</strong></div>
+    </section>
+
+    <section id="pdvs" class="section" aria-label="Visualização dos PDVs">
+      <h2>PDVs</h2>
+      <div class="module-grid">
+        <article class="module-card">
+          <h3>PDV 01 - Balcão</h3>
+          <p class="module-kpi">7 pedidos</p>
+          <p class="module-note">Tempo médio de preparo: 14 min.</p>
+        </article>
+        <article class="module-card">
+          <h3>PDV 02 - Delivery</h3>
+          <p class="module-kpi">6 pedidos</p>
+          <p class="module-note">Fila estável e sem atraso crítico.</p>
+        </article>
+        <article class="module-card">
+          <h3>PDV 03 - Retirada</h3>
+          <p class="module-kpi">5 pedidos</p>
+          <p class="module-note">Pico controlado no horário de almoço.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="caixa" class="section" aria-label="Visualização do caixa">
+      <h2>Caixa</h2>
+      <div class="module-grid">
+        <article class="module-card">
+          <h3>Movimento do dia</h3>
+          <p class="module-kpi">R$ 89,70</p>
+          <p class="module-note">Vendas consolidadas no período selecionado.</p>
+        </article>
+        <article class="module-card">
+          <h3>Caixas em operação</h3>
+          <p class="module-kpi">7 abertos</p>
+          <p class="module-note">Nenhum fechamento pendente.</p>
+        </article>
+        <article class="module-card">
+          <h3>Canal com maior volume</h3>
+          <p class="module-kpi">Balcão</p>
+          <p class="module-note">Canal responsável por maior ticket no período.</p>
+        </article>
+      </div>
     </section>
 
     <section class="preview">
@@ -279,6 +364,11 @@
         <img src="../../assets/projetos/hamburgueria-dashboard-operacional.png" alt="Preview do painel operacional da lanchonete">
         <figcaption>Painel com visão de performance diária, comparativo de período e controle operacional para múltiplos PDVs.</figcaption>
       </figure>
+      <div class="preview-actions">
+        <a href="../../assets/projetos/hamburgueria-dashboard-operacional.png" target="_blank" rel="noopener noreferrer">Ver dashboard em tela cheia</a>
+        <a href="#pdvs">Voltar para PDVs</a>
+        <a href="#caixa">Ir para Caixa</a>
+      </div>
     </section>
 
     <p class="alert">Página de demonstração visual controlada para apresentação comercial. Não processa pedidos nem pagamentos reais.</p>
