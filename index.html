@@ -912,6 +912,69 @@
       font-weight: 600;
     }
 
+    .metrics-card {
+      margin-top: 1rem;
+      background: linear-gradient(145deg, #f4f8fc 0%, #e9eff7 55%, #dde6f1 100%);
+      border: 0.8px solid #c4ccd6;
+      border-radius: var(--radius);
+      padding: 1.2rem;
+      box-shadow: 0 12px 24px rgba(23, 56, 90, 0.12);
+    }
+
+    .metrics-head h3 {
+      font-family: "Bricolage Grotesque", sans-serif;
+      font-size: 1.2rem;
+      color: #1f2e46;
+      margin-bottom: 0.28rem;
+    }
+
+    .metrics-head p {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 0.65rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .metric-box {
+      border: 0.8px solid #c4ccd6;
+      border-radius: 12px;
+      padding: 0.62rem;
+      background: #f9fbff;
+    }
+
+    .metric-box span {
+      display: block;
+      color: #56657b;
+      font-size: 0.78rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .metric-box strong {
+      font-family: "Bricolage Grotesque", sans-serif;
+      font-size: 1.22rem;
+      color: #23334b;
+      line-height: 1;
+    }
+
+    .metrics-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.65rem;
+    }
+
+    .metrics-status {
+      font-size: 0.82rem;
+      color: #3e5675;
+      font-weight: 600;
+    }
+
     footer {
       padding: 2.1rem 0;
       text-align: center;
@@ -1486,6 +1549,37 @@
             </div>
           </form>
         </article>
+
+        <article class="metrics-card" id="metrics-card" data-reveal>
+          <div class="metrics-head">
+            <h3>Painel de métricas</h3>
+            <p>Visão consolidada de interesse comercial no portfólio (WhatsApp, e-mail, demos e briefings).</p>
+          </div>
+
+          <div class="metrics-grid" aria-label="Indicadores de interesse">
+            <div class="metric-box">
+              <span>Cliques no WhatsApp</span>
+              <strong id="metric-whatsapp">-</strong>
+            </div>
+            <div class="metric-box">
+              <span>Cliques por e-mail</span>
+              <strong id="metric-email">-</strong>
+            </div>
+            <div class="metric-box">
+              <span>Acessos às demos</span>
+              <strong id="metric-demo">-</strong>
+            </div>
+            <div class="metric-box">
+              <span>Briefings enviados</span>
+              <strong id="metric-briefing">-</strong>
+            </div>
+          </div>
+
+          <div class="metrics-actions">
+            <button type="button" id="metrics-refresh" class="btn btn-secondary">Atualizar métricas</button>
+            <p id="metrics-status" class="metrics-status" aria-live="polite">Carregando métricas...</p>
+          </div>
+        </article>
       </div>
     </section>
   </main>
@@ -1505,6 +1599,9 @@
       const profileImage = document.getElementById("profile-image");
       const briefingForm = document.getElementById("briefing-form");
       const briefingFeedback = document.getElementById("briefing-feedback");
+      const metricsCard = document.getElementById("metrics-card");
+      const metricsRefreshButton = document.getElementById("metrics-refresh");
+      const metricsStatus = document.getElementById("metrics-status");
       const metricsStorageKey = "portfolio_click_metrics_v1";
       const metricsNamespace = "japaprp-portifolio";
 
@@ -1546,6 +1643,73 @@
         return "";
       }
 
+      function setMetricValue(elementId, value) {
+        const element = document.getElementById(elementId);
+        if (element) {
+          element.textContent = String(value);
+        }
+      }
+
+      async function getRemoteMetric(eventName) {
+        try {
+          const url = "https://api.countapi.xyz/get/" + metricsNamespace + "/" + encodeURIComponent(eventName);
+          const response = await fetch(url, { method: "GET", cache: "no-store" });
+          if (!response.ok) {
+            return null;
+          }
+          const data = await response.json();
+          return Number(data.value || 0);
+        } catch (error) {
+          return null;
+        }
+      }
+
+      async function renderMetricsPanel() {
+        if (!metricsCard) {
+          return;
+        }
+
+        const localMetrics = readMetrics();
+        if (metricsStatus) {
+          metricsStatus.textContent = "Atualizando métricas...";
+        }
+
+        const metricKeys = [
+          "click_whatsapp",
+          "click_whatsapp_proposta",
+          "click_email",
+          "click_email_briefing",
+          "click_demo",
+          "briefing_form_submit"
+        ];
+
+        const remoteValues = await Promise.all(metricKeys.map(getRemoteMetric));
+
+        function resolveMetric(index, key) {
+          const remoteValue = remoteValues[index];
+          if (remoteValue === null || Number.isNaN(remoteValue)) {
+            return Number(localMetrics[key] || 0);
+          }
+          return Number(remoteValue);
+        }
+
+        const whatsappTotal = resolveMetric(0, "click_whatsapp") + resolveMetric(1, "click_whatsapp_proposta");
+        const emailTotal = resolveMetric(2, "click_email") + resolveMetric(3, "click_email_briefing");
+        const demoTotal = resolveMetric(4, "click_demo");
+        const briefingTotal = resolveMetric(5, "briefing_form_submit");
+
+        setMetricValue("metric-whatsapp", whatsappTotal);
+        setMetricValue("metric-email", emailTotal);
+        setMetricValue("metric-demo", demoTotal);
+        setMetricValue("metric-briefing", briefingTotal);
+
+        if (metricsStatus) {
+          const hasRemoteData = remoteValues.some(function (value) { return value !== null; });
+          const sourceText = hasRemoteData ? "Fonte global" : "Fonte local";
+          metricsStatus.textContent = sourceText + " | atualizado em " + new Date().toLocaleString("pt-BR");
+        }
+      }
+
       if (year) {
         year.textContent = String(new Date().getFullYear());
       }
@@ -1579,6 +1743,15 @@
           trackClick(eventName);
         });
       });
+
+      if (metricsRefreshButton) {
+        metricsRefreshButton.addEventListener("click", function () {
+          trackClick("metrics_refresh");
+          renderMetricsPanel();
+        });
+      }
+
+      renderMetricsPanel();
 
       if (briefingForm) {
         briefingForm.addEventListener("submit", function (event) {
@@ -1646,6 +1819,8 @@
   </script>
 </body>
 </html>
+
+
 
 
 
