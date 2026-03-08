@@ -643,6 +643,31 @@
       margin-bottom: 0.25rem;
     }
 
+
+    .case-title-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .case-title-row .case-title {
+      margin-bottom: 0;
+    }
+
+    .case-nda-badge {
+      border: 0.8px solid #c9bba2;
+      background: linear-gradient(145deg, #f4ead6, #eadabf);
+      color: #5b4828;
+      border-radius: 999px;
+      padding: 0.18rem 0.48rem;
+      font-size: 0.68rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      font-weight: 700;
+      white-space: nowrap;
+    }
     .case-desc {
       font-size: 0.9rem;
       color: var(--muted);
@@ -1392,7 +1417,10 @@
             <a class="case-thumb" href="#projetos" aria-label="Preview do Sistema de RH">
               <img src="assets/projetos/rh-painel.png" alt="Preview do painel do Sistema de RH" loading="lazy" decoding="async">
             </a>
-            <p class="case-title">Sistema de RH</p>
+            <div class="case-title-row">
+              <p class="case-title">Sistema de RH</p>
+              <span class="case-nda-badge" aria-label="Projeto sob confidencialidade">NDA</span>
+            </div>
             <p class="case-desc">Painel com menu lateral, indicadores operacionais e módulos de gestão de pessoas.</p>
                       <div class="case-actions">
               <a class="case-btn case-btn-primary" href="https://japaprp.github.io/portifolio/demos/rh/" target="_blank" rel="noopener noreferrer">Ver demo controlada</a>
@@ -1416,7 +1444,10 @@
             <a class="case-thumb" href="#projetos" aria-label="Preview da plataforma de lanchonete com PDVs">
               <img src="assets/projetos/hamburgueria-cardapio.png" alt="Preview do cardápio digital da lanchonete com PDVs" loading="lazy" decoding="async">
             </a>
-            <p class="case-title">Lanchonete com PDVs</p>
+            <div class="case-title-row">
+              <p class="case-title">Lanchonete com PDVs</p>
+              <span class="case-nda-badge" aria-label="Projeto sob confidencialidade">NDA</span>
+            </div>
             <p class="case-desc">Cardápio digital com categorias, vitrine de produtos e fluxo pronto para pedidos multi-PDV.</p>
                       <div class="case-actions">
               <a class="case-btn case-btn-primary" href="https://japaprp.github.io/portifolio/demos/lanchonete/" target="_blank" rel="noopener noreferrer">Demo do cardápio</a>
