@@ -1550,7 +1550,7 @@
           </form>
         </article>
 
-        <article class="metrics-card" id="metrics-card" data-reveal>
+        <article class="metrics-card" id="metrics-card" data-reveal hidden>
           <div class="metrics-head">
             <h3>Painel de métricas</h3>
             <p>Visão consolidada de interesse comercial no portfólio (WhatsApp, e-mail, demos e briefings).</p>
@@ -1604,6 +1604,7 @@
       const metricsStatus = document.getElementById("metrics-status");
       const metricsStorageKey = "portfolio_click_metrics_v1";
       const metricsNamespace = "japaprp-portifolio";
+      const internalMetricsMode = new URLSearchParams(window.location.search).get("painel") === "1";
 
       function readMetrics() {
         try {
@@ -1744,14 +1745,24 @@
         });
       });
 
-      if (metricsRefreshButton) {
+      if (metricsCard) {
+        if (internalMetricsMode) {
+          metricsCard.removeAttribute("hidden");
+        } else {
+          metricsCard.setAttribute("hidden", "hidden");
+        }
+      }
+
+      if (metricsRefreshButton && internalMetricsMode) {
         metricsRefreshButton.addEventListener("click", function () {
           trackClick("metrics_refresh");
           renderMetricsPanel();
         });
       }
 
-      renderMetricsPanel();
+      if (internalMetricsMode) {
+        renderMetricsPanel();
+      }
 
       if (briefingForm) {
         briefingForm.addEventListener("submit", function (event) {
@@ -1819,6 +1830,7 @@
   </script>
 </body>
 </html>
+
 
 
 
