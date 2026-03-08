@@ -1,0 +1,1362 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Portfólio de Yago Fellipe Amorim: projetos criados, sonhos em construção e serviços para sites modernos.">
+  <title>Portfólio | Yago Fellipe Amorim</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f6f2e8;
+      --ink: #1d2330;
+      --muted: #4f5a6f;
+      --card: #fffef9;
+      --line: #d9d4c9;
+      --sun: #ef8f3d;
+      --teal: #1e6a79;
+      --navy: #17385a;
+      --radius: 20px;
+      --shadow: 0 18px 45px rgba(29, 35, 48, 0.13);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "IBM Plex Sans", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 14% 12%, rgba(239, 143, 61, 0.18), transparent 42%),
+        radial-gradient(circle at 90% 18%, rgba(30, 106, 121, 0.22), transparent 40%),
+        linear-gradient(180deg, #f9f4ea 0%, #f5efe3 60%, #f1eadb 100%);
+      line-height: 1.5;
+    }
+
+    .orb {
+      position: fixed;
+      z-index: -1;
+      border-radius: 999px;
+      filter: blur(55px);
+      opacity: 0.45;
+      pointer-events: none;
+      animation: drift 14s ease-in-out infinite alternate;
+    }
+
+    .orb-sun {
+      width: 300px;
+      height: 300px;
+      top: -80px;
+      right: -90px;
+      background: #ffd3a5;
+    }
+
+    .orb-sea {
+      width: 270px;
+      height: 270px;
+      bottom: -80px;
+      left: -70px;
+      background: #b4dbe3;
+      animation-duration: 18s;
+    }
+
+    @keyframes drift {
+      from {
+        transform: translateY(-8px) translateX(-8px);
+      }
+      to {
+        transform: translateY(10px) translateX(10px);
+      }
+    }
+
+    .container {
+      width: min(1120px, calc(100% - 2rem));
+      margin: 0 auto;
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(10px);
+      background: rgba(246, 242, 232, 0.83);
+      border-bottom: 1px solid rgba(23, 56, 90, 0.14);
+    }
+
+    .nav-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.9rem 0;
+      gap: 1rem;
+    }
+
+    .brand {
+      font-family: "Bricolage Grotesque", sans-serif;
+      font-size: 1.1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--navy);
+      font-weight: 800;
+    }
+
+    .brand span {
+      color: var(--sun);
+    }
+
+    .menu-toggle {
+      display: none;
+      border: 1px solid var(--line);
+      background: transparent;
+      border-radius: 10px;
+      padding: 0.45rem 0.7rem;
+      color: var(--navy);
+      cursor: pointer;
+      font-size: 0.95rem;
+      font-weight: 600;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 1.2rem;
+      align-items: center;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--ink);
+      font-weight: 500;
+      transition: color 0.25s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--teal);
+    }
+
+    .hero {
+      padding: 6.5rem 0 3rem;
+      min-height: 86vh;
+      display: grid;
+      align-items: center;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      border: 1px solid rgba(23, 56, 90, 0.25);
+      background: rgba(255, 254, 249, 0.65);
+      padding: 0.35rem 0.75rem;
+      border-radius: 999px;
+      font-size: 0.83rem;
+      color: var(--muted);
+      margin-bottom: 1rem;
+    }
+
+    .eyebrow-mono {
+      border: 0.8px solid #bcc4ce;
+      background: linear-gradient(145deg, #f6f7f9 0%, #e7ecf2 52%, #d8dee6 100%);
+      color: #3c4758;
+      text-shadow: 0 1px 0 rgba(255, 255, 255, 0.62);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.72);
+      letter-spacing: 0.02em;
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: "Bricolage Grotesque", sans-serif;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 6vw, 4rem);
+      margin-bottom: 1rem;
+      color: #132640;
+    }
+
+    .hero p {
+      max-width: 58ch;
+      color: var(--muted);
+      font-size: 1.05rem;
+      margin-bottom: 1.4rem;
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 1.4rem;
+    }
+
+    .btn {
+      text-decoration: none;
+      border-radius: 13px;
+      padding: 0.8rem 1.2rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: 600;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: linear-gradient(120deg, var(--sun), #f2b05f);
+      color: #1d2330;
+      box-shadow: 0 10px 24px rgba(239, 143, 61, 0.28);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 16px 28px rgba(239, 143, 61, 0.35);
+    }
+
+    .btn-secondary {
+      border: 1px solid rgba(23, 56, 90, 0.3);
+      color: var(--navy);
+      background: rgba(255, 255, 255, 0.5);
+    }
+
+    .btn-secondary:hover {
+      transform: translateY(-2px);
+      background: rgba(255, 255, 255, 0.88);
+    }
+
+    .microcopy {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .hero-card {
+      background: linear-gradient(145deg, #fffef9, #fff8ea);
+      border: 1px solid rgba(23, 56, 90, 0.12);
+      border-radius: var(--radius);
+      padding: 1.2rem;
+      box-shadow: var(--shadow);
+    }
+
+    .profile-wrap {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 0.9rem;
+      align-items: center;
+      margin-bottom: 0.75rem;
+    }
+
+    .profile-image {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 3px solid rgba(23, 56, 90, 0.2);
+      position: relative;
+      background: radial-gradient(circle at 30% 25%, #f8c99a, #e89a4f);
+      flex-shrink: 0;
+    }
+
+    .profile-photo {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .photo-fallback {
+      display: none;
+      width: 100%;
+      height: 100%;
+      align-items: center;
+      justify-content: center;
+      color: #132640;
+      font-family: "Bricolage Grotesque", sans-serif;
+      font-size: 1.9rem;
+      font-weight: 800;
+    }
+
+    .profile-image.missing .profile-photo {
+      display: none;
+    }
+
+    .profile-image.missing .photo-fallback {
+      display: flex;
+    }
+
+    .hero-card h3 {
+      margin-bottom: 0.6rem;
+      font-size: 1.3rem;
+    }
+
+    .hero-list {
+      list-style: none;
+      display: grid;
+      gap: 0.65rem;
+      margin-top: 0.7rem;
+    }
+
+    .hero-list li {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      color: var(--ink);
+      font-weight: 500;
+      border: 1px dashed rgba(23, 56, 90, 0.2);
+      padding: 0.55rem 0.7rem;
+      border-radius: 12px;
+      background: #fffdf7;
+    }
+
+    .hero-list strong {
+      color: var(--navy);
+      font-family: "Bricolage Grotesque", sans-serif;
+      min-width: 3ch;
+      font-size: 1.05rem;
+    }
+
+    section {
+      padding: 4.8rem 0;
+    }
+
+    .section-head {
+      margin-bottom: 1.8rem;
+    }
+
+    .section-head p {
+      margin-top: 0.6rem;
+      color: var(--muted);
+      max-width: 64ch;
+    }
+
+    h2 {
+      font-size: clamp(1.65rem, 4vw, 2.7rem);
+      color: #132640;
+    }
+
+    .chip {
+      display: inline-block;
+      font-family: "Bricolage Grotesque", sans-serif;
+      text-transform: uppercase;
+      font-size: 0.76rem;
+      letter-spacing: 0.04em;
+      color: #3c4758;
+      margin-bottom: 0.55rem;
+      border: 0.8px solid #bcc4ce;
+      border-radius: 999px;
+      padding: 0.28rem 0.72rem;
+      background: linear-gradient(145deg, #f6f7f9 0%, #e7ecf2 52%, #d8dee6 100%);
+      text-shadow: 0 1px 0 rgba(255, 255, 255, 0.6);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.72);
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+    }
+
+    .card {
+      background: linear-gradient(145deg, #f6f7f9 0%, #e9edf2 52%, #dde3ea 100%);
+      border: 0.8px solid #bcc4ce;
+      border-radius: var(--radius);
+      padding: 1.2rem;
+      box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.78),
+        0 8px 18px rgba(30, 40, 54, 0.12);
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.02) 48%, rgba(90, 104, 124, 0.04));
+      pointer-events: none;
+      opacity: 0.45;
+    }
+
+    .card:hover {
+      transform: translateY(-2px);
+      border-color: #aab4c0;
+      box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.82),
+        0 12px 22px rgba(30, 40, 54, 0.16);
+    }
+
+    .card h3 {
+      font-size: 1.25rem;
+    }
+
+    .badge {
+      width: fit-content;
+      font-size: 0.75rem;
+      padding: 0.26rem 0.58rem;
+      border-radius: 999px;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      border: 0.8px solid #c1c9d3;
+      background: linear-gradient(145deg, #f4f6f9 0%, #e5eaf1 55%, #d7dee8 100%);
+      color: #394558;
+      text-shadow: 0 1px 0 rgba(255, 255, 255, 0.62);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.72);
+    }
+
+    .badge-live,
+    .badge-next {
+      background: linear-gradient(145deg, #f4f6f9 0%, #e5eaf1 55%, #d7dee8 100%);
+      color: #394558;
+      border-color: #c1c9d3;
+    }
+
+    .card ul {
+      list-style: none;
+      display: grid;
+      gap: 0.45rem;
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .card ul li::before {
+      content: "•";
+      color: var(--sun);
+      margin-right: 0.45rem;
+    }
+
+    .card ul li strong {
+      color: var(--navy);
+      font-weight: 700;
+    }
+
+    .roadmap {
+      background:
+        linear-gradient(160deg, rgba(30, 106, 121, 0.08), rgba(239, 143, 61, 0.1)),
+        var(--card);
+      border: 1px solid rgba(23, 56, 90, 0.14);
+      border-radius: var(--radius);
+      padding: 1.3rem;
+      margin-top: 1rem;
+    }
+
+    .roadmap p {
+      color: var(--muted);
+      margin-top: 0.55rem;
+    }
+
+    .stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      margin-top: 0.4rem;
+    }
+
+    .stack span {
+      border: 0.8px solid #c4ccd6;
+      border-radius: 999px;
+      padding: 0.25rem 0.6rem;
+      font-size: 0.78rem;
+      color: #334054;
+      background: linear-gradient(140deg, #f1f4f8, #e4e9f0);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.72);
+    }
+
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.45rem;
+      margin-top: 0.2rem;
+    }
+
+    .kpi {
+      border: 0.8px solid #c4ccd6;
+      border-radius: 12px;
+      padding: 0.5rem;
+      background: linear-gradient(145deg, #f1f4f8, #e1e7ef);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.75);
+    }
+
+    .kpi span {
+      display: block;
+      font-size: 0.62rem;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.12rem;
+      line-height: 1.25;
+      white-space: normal;
+    }
+
+    .kpi strong {
+      font-family: "Bricolage Grotesque", sans-serif;
+      color: var(--navy);
+      font-size: 0.9rem;
+      line-height: 1.25;
+      white-space: normal;
+    }
+
+    .card,
+    .kpi,
+    .capability-card {
+      min-width: 0;
+    }
+
+    .card ul li,
+    .kpi span,
+    .kpi strong,
+    .capability-unit,
+    .capability-note {
+      overflow-wrap: anywhere;
+      word-break: break-word;
+    }
+
+    .capability-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+    }
+
+    .capability-card {
+      background: linear-gradient(145deg, #f3f6fa 0%, #e5eaf1 56%, #d7dee8 100%);
+      border: 0.8px solid #c4ccd6;
+      border-radius: var(--radius);
+      padding: 1.15rem;
+      box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.78),
+        0 10px 20px rgba(23, 56, 90, 0.14);
+    }
+
+    .capability-label {
+      font-size: 0.74rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.45rem;
+    }
+
+    .capability-number {
+      font-family: "Bricolage Grotesque", sans-serif;
+      font-size: 2rem;
+      color: var(--navy);
+      line-height: 1;
+      margin-bottom: 0.3rem;
+    }
+
+    .capability-unit {
+      font-size: 0.9rem;
+      color: var(--ink);
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .capability-note {
+      font-size: 0.88rem;
+      color: var(--muted);
+    }
+
+    .case-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+    }
+
+    .case-card {
+      background: linear-gradient(145deg, #f3f6fa 0%, #e6ebf2 56%, #d9e0e8 100%);
+      border: 0.8px solid #c4ccd6;
+      border-radius: var(--radius);
+      padding: 0.9rem;
+      box-shadow: 0 9px 18px rgba(23, 56, 90, 0.12);
+    }
+
+    .case-thumb {
+      display: block;
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      overflow: hidden;
+      border-radius: 14px;
+      border: 0.8px solid #c4ccd6;
+      background: #e6ebf2;
+      margin-bottom: 0.7rem;
+    }
+
+    .case-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .case-title {
+      font-family: "Bricolage Grotesque", sans-serif;
+      color: #1f2e46;
+      font-size: 1.02rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .case-desc {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .case-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      margin-top: 0.72rem;
+    }
+
+    .case-btn {
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 10px;
+      border: 0.8px solid #c4ccd6;
+      background: linear-gradient(145deg, #f4f7fb, #e4eaf2);
+      color: #26354d;
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 0.38rem 0.66rem;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .case-btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 8px 16px rgba(23, 56, 90, 0.12);
+    }
+
+    .case-btn-primary {
+      border-color: rgba(23, 56, 90, 0.32);
+      background: linear-gradient(130deg, #f2ad5a, #ef8f3d);
+      color: #1a2737;
+    }
+
+    .case-btn-disabled {
+      border-color: #cfd6df;
+      background: linear-gradient(145deg, #eef2f6, #e6ebf2);
+      color: #6b7587;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 1rem;
+    }
+
+    .service-card {
+      background: linear-gradient(145deg, #f3f6fa 0%, #e6ebf2 56%, #d9e0e8 100%);
+      border: 0.8px solid #c4ccd6;
+      border-radius: var(--radius);
+      padding: 1rem;
+      box-shadow: 0 9px 18px rgba(23, 56, 90, 0.12);
+      display: grid;
+      gap: 0.7rem;
+    }
+
+    .service-tag {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #5a677b;
+    }
+
+    .service-card h3 {
+      font-size: 1.08rem;
+      color: #1f2e46;
+    }
+
+    .service-time {
+      font-size: 0.86rem;
+      color: var(--navy);
+      font-weight: 700;
+    }
+
+    .service-list {
+      list-style: none;
+      display: grid;
+      gap: 0.42rem;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .service-list li::before {
+      content: "•";
+      color: var(--sun);
+      margin-right: 0.45rem;
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+    }
+
+    .process-card {
+      background: linear-gradient(145deg, #f3f6fa 0%, #e6ebf2 56%, #d9e0e8 100%);
+      border: 0.8px solid #c4ccd6;
+      border-radius: var(--radius);
+      padding: 1rem;
+      box-shadow: 0 9px 18px rgba(23, 56, 90, 0.12);
+    }
+
+    .process-step {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #5a677b;
+      margin-bottom: 0.35rem;
+    }
+
+    .process-card h3 {
+      font-size: 1.03rem;
+      margin-bottom: 0.4rem;
+      color: #1f2e46;
+    }
+
+    .process-card p {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .contact-note {
+      margin-top: 0.75rem;
+      font-size: 0.88rem;
+      color: rgba(249, 248, 245, 0.9);
+    }
+
+    .contact {
+      background: linear-gradient(125deg, rgba(23, 56, 90, 0.92), rgba(30, 106, 121, 0.92));
+      color: #f9f8f5;
+      border-radius: var(--radius);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 2rem;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 1rem;
+      align-items: center;
+      box-shadow: 0 20px 38px rgba(23, 56, 90, 0.25);
+    }
+
+    .contact p {
+      max-width: 56ch;
+      color: rgba(249, 248, 245, 0.9);
+      margin-top: 0.55rem;
+    }
+
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      justify-content: flex-end;
+    }
+
+    .contact .btn-secondary {
+      border-color: rgba(255, 255, 255, 0.45);
+      color: #f9f8f5;
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    footer {
+      padding: 2.1rem 0;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    [data-reveal] {
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+
+    [data-reveal].in {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 960px) {
+      .hero {
+        padding-top: 5.6rem;
+      }
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .cards {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .contact {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-links {
+        justify-content: flex-start;
+      }
+
+      .profile-image {
+        width: 96px;
+        height: 96px;
+      }
+    }
+
+    @media (max-width: 740px) {
+      .menu-toggle {
+        display: inline-flex;
+      }
+
+      .nav-links {
+        position: absolute;
+        right: 1rem;
+        top: 64px;
+        flex-direction: column;
+        align-items: flex-start;
+        width: min(250px, calc(100% - 2rem));
+        background: rgba(255, 254, 250, 0.98);
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        box-shadow: var(--shadow);
+        padding: 0.85rem;
+        gap: 0.75rem;
+        transform: scale(0.95);
+        transform-origin: top right;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.2s ease, transform 0.2s ease;
+      }
+
+      .nav-links.open {
+        opacity: 1;
+        transform: scale(1);
+        pointer-events: auto;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 3.9rem 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="orb orb-sun"></div>
+  <div class="orb orb-sea"></div>
+
+  <header class="nav">
+    <div class="container nav-wrap">
+      <a class="brand" href="#inicio">Yago <span>Dev</span></a>
+      <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="menu">Menu</button>
+      <ul class="nav-links" id="menu">
+        <li><a href="#inicio">Início</a></li>
+        <li><a href="#projetos">Projetos</a></li>
+        <li><a href="#cases">Cases</a></li>
+        <li><a href="#capacidade">Capacidade</a></li>
+        <li><a href="#servicos">Serviços</a></li>
+        <li><a href="#processo">Processo</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="container hero-grid">
+        <div data-reveal>
+          <span class="eyebrow eyebrow-mono">Jornada profissional em evolução</span>
+          <h1>Eu transformo ideias em páginas que contam histórias e geram resultado.</h1>
+          <p>
+            Sou <strong>Yago Fellipe Amorim</strong>. Meu foco é construir projetos reais com
+            visual forte, estrutura sólida e melhorias contínuas para escalar cada sistema.
+          </p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="#projetos">Ver trabalhos</a>
+            <a class="btn btn-secondary" href="#contato">Falar comigo</a>
+          </div>
+          <p class="microcopy">Meta atual: conquistar os primeiros clientes e tirar projetos do papel.</p>
+        </div>
+
+        <aside class="hero-card" data-reveal>
+          <div class="profile-wrap">
+            <div class="profile-image" id="profile-image">
+              <img
+                src="./eu.jpeg"
+                alt="Foto de Yago Fellipe Amorim"
+                class="profile-photo"
+                id="profile-photo"
+              >
+              <div class="photo-fallback" aria-hidden="true">YF</div>
+            </div>
+            <div>
+              <h3>Momento atual</h3>
+              <p class="microcopy">Portfólio local em construção contínua, com projetos reais já entregues.</p>
+            </div>
+          </div>
+          <ul class="hero-list">
+            <li><strong>04</strong> projetos reais desenvolvidos</li>
+            <li><strong>01</strong> sistema em foco de escala com PDVs</li>
+            <li><strong>100%</strong> disposição para construir sonhos</li>
+          </ul>
+          <p class="microcopy">Sua foto já está conectada e pode ser trocada depois quando quiser.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section id="projetos">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <span class="chip">Projetos realizados</span>
+          <h2>Cases que já desenvolvi na prática</h2>
+          <p>Projetos reais com foco em resultado. Indicadores abaixo são técnicos, extraídos do código e histórico Git local (março/2026).</p>
+        </div>
+
+        <div class="cards">
+          <article class="card" data-reveal>
+            <span class="badge badge-live">Concluído</span>
+            <h3>Hort-fruit</h3>
+            <ul>
+              <li><strong>Desafio:</strong> organizar apresentação dos produtos e facilitar o atendimento.</li>
+              <li><strong>Solução:</strong> estrutura web com fluxo claro para pedidos e contato rápido.</li>
+              <li><strong>Resultado:</strong> base digital pronta para evoluir com módulos de estoque e vendas.</li>
+            </ul>
+            <div class="stack">
+              <span>Front-end</span>
+              <span>Node.js</span>
+              <span>Express</span>
+            </div>
+            <div class="kpi-grid" aria-label="Indicadores técnicos do projeto Hort-fruit">
+              <div class="kpi"><span>Páginas front</span><strong>16 telas</strong></div>
+              <div class="kpi"><span>Rotas API</span><strong>45 endpoints</strong></div>
+              <div class="kpi"><span>Assets visuais</span><strong>43 imagens</strong></div>
+            </div>
+          </article>
+
+          <article class="card" data-reveal>
+            <span class="badge badge-live">Concluído</span>
+            <h3>Sistema de RH</h3>
+            <ul>
+              <li><strong>Desafio:</strong> centralizar processos internos e reduzir retrabalho administrativo.</li>
+              <li><strong>Solução:</strong> sistema para organizar fluxos, cadastros e acompanhamento de demandas.</li>
+              <li><strong>Resultado:</strong> rotina mais padronizada e melhor controle operacional.</li>
+            </ul>
+            <div class="stack">
+              <span>PHP</span>
+              <span>MySQL</span>
+              <span>RBAC</span>
+            </div>
+            <div class="kpi-grid" aria-label="Indicadores técnicos do projeto Sistema de RH">
+              <div class="kpi"><span>Páginas PHP</span><strong>36 módulos</strong></div>
+              <div class="kpi"><span>Tabelas SQL</span><strong>11 tabelas</strong></div>
+              <div class="kpi"><span>Prepared stmts</span><strong>81 refs</strong></div>
+            </div>
+          </article>
+
+          <article class="card" data-reveal>
+            <span class="badge badge-live">Concluído</span>
+            <h3>Chácara Estância Renascer Belvedere</h3>
+            <ul>
+              <li><strong>Desafio:</strong> melhorar a presença digital e aumentar a captação de reservas.</li>
+              <li><strong>Solução:</strong> site institucional responsivo com galeria, seções estratégicas e contato direto.</li>
+              <li><strong>Resultado:</strong> comunicação profissional do espaço e jornada mais simples para o cliente.</li>
+            </ul>
+            <div class="stack">
+              <span>HTML</span>
+              <span>JavaScript</span>
+              <span>UX</span>
+            </div>
+            <div class="kpi-grid" aria-label="Indicadores técnicos do projeto Chácara Estância Renascer Belvedere">
+              <div class="kpi"><span>Seções da landing</span><strong>7 seções</strong></div>
+              <div class="kpi"><span>Galeria</span><strong>18 imagens</strong></div>
+              <div class="kpi"><span>Sync calendário</span><strong>a cada 60s</strong></div>
+            </div>
+          </article>
+
+          <article class="card" data-reveal>
+            <span class="badge badge-live">Escalando</span>
+            <h3>Lanchonete com sistema de PDVs</h3>
+            <ul>
+              <li><strong>Desafio:</strong> sustentar crescimento da operação com mais de um PDV sem gargalos.</li>
+              <li><strong>Solução:</strong> fluxo operacional preparado para múltiplos pontos de venda e separação de filas.</li>
+              <li><strong>Resultado:</strong> estrutura pronta para escalar atendimento com consistência.</li>
+            </ul>
+            <div class="stack">
+              <span>Laravel 11</span>
+              <span>Multi-tenant</span>
+              <span>PDV</span>
+            </div>
+            <div class="kpi-grid" aria-label="Indicadores técnicos do projeto Lanchonete com sistema de PDVs">
+              <div class="kpi"><span>Rotas mapeadas</span><strong>114 defs</strong></div>
+              <div class="kpi"><span>Modelos de domínio</span><strong>37 models</strong></div>
+              <div class="kpi"><span>Testes</span><strong>23 arquivos</strong></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="cases">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <span class="chip">Cases visuais</span>
+          <h2>Prints rápidos dos projetos</h2>
+          <p>Prévia visual para validar padrão de interface, clareza e organização das entregas.</p>
+        </div>
+
+        <div class="case-grid">
+          <article class="case-card" data-reveal>
+            <a class="case-thumb" href="#projetos" aria-label="Preview do projeto Hort-fruit">
+              <img src="assets/projetos/hort-fruit-home.png" alt="Preview da tela inicial do Hort-fruit (Varejão do Povo)" loading="lazy" decoding="async">
+            </a>
+            <p class="case-title">Hort-fruit</p>
+            <p class="case-desc">Tela inicial com busca global, navegação por setores e status operacional da loja.</p>
+                      <div class="case-actions">
+              <a class="case-btn case-btn-primary" href="http://127.0.0.1:8011/index.html?api=http://127.0.0.1:3001" target="_blank" rel="noopener noreferrer">Ver demo</a>
+              <a class="case-btn" href="https://github.com/japaprp/varejao-backend" target="_blank" rel="noopener noreferrer">Ver repositório</a>
+            </div>
+          </article>
+
+          <article class="case-card" data-reveal>
+            <a class="case-thumb" href="#projetos" aria-label="Preview do Sistema de RH">
+              <img src="assets/projetos/rh-painel.png" alt="Preview do painel do Sistema de RH" loading="lazy" decoding="async">
+            </a>
+            <p class="case-title">Sistema de RH</p>
+            <p class="case-desc">Painel com menu lateral, indicadores operacionais e módulos de gestão de pessoas.</p>
+                      <div class="case-actions">
+              <a class="case-btn case-btn-primary" href="http://127.0.0.1:8013/index.php" target="_blank" rel="noopener noreferrer">Ver demo</a>
+              <a class="case-btn case-btn-disabled" href="#contato">Repositório sob solicitação</a>
+            </div>
+          </article>
+
+          <article class="case-card" data-reveal>
+            <a class="case-thumb" href="#projetos" aria-label="Preview da Chácara Estância Renascer Belvedere">
+              <img src="assets/projetos/estancia.jpg" alt="Preview da Chácara Estância Renascer Belvedere" loading="lazy" decoding="async">
+            </a>
+            <p class="case-title">Chácara Estância Renascer</p>
+            <p class="case-desc">Apresentação institucional com foco em experiência visual e captação de reservas.</p>
+                      <div class="case-actions">
+              <a class="case-btn case-btn-primary" href="https://japaprp.github.io/estacia-renascer-belvedere/" target="_blank" rel="noopener noreferrer">Ver demo</a>
+              <a class="case-btn" href="https://github.com/japaprp/estacia-renascer-belvedere" target="_blank" rel="noopener noreferrer">Ver repositório</a>
+            </div>
+          </article>
+
+          <article class="case-card" data-reveal>
+            <a class="case-thumb" href="#projetos" aria-label="Preview da plataforma de lanchonete com PDVs">
+              <img src="assets/projetos/hamburgueria-cardapio.png" alt="Preview do cardápio digital da lanchonete com PDVs" loading="lazy" decoding="async">
+            </a>
+            <p class="case-title">Lanchonete com PDVs</p>
+            <p class="case-desc">Cardápio digital com categorias, vitrine de produtos e fluxo pronto para pedidos multi-PDV.</p>
+                      <div class="case-actions">
+              <a class="case-btn case-btn-primary" href="http://127.0.0.1:8080/cardapio/hamburgueria-demo" target="_blank" rel="noopener noreferrer">Ver demo</a>
+              <a class="case-btn case-btn-disabled" href="#contato">Repositório sob solicitação</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+    <section id="capacidade">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <span class="chip">Capacidade comprovada</span>
+          <h2>Entrega essencial, com base técnica</h2>
+          <p>Resumo executivo da capacidade atual com base em evidências técnicas dos projetos desenvolvidos.</p>
+        </div>
+
+        <div class="capability-grid">
+          <article class="capability-card" data-reveal>
+            <p class="capability-label">Arquitetura e escala</p>
+            <p class="capability-number">159</p>
+            <p class="capability-unit">rotas e endpoints mapeados</p>
+            <p class="capability-note">Node.js, PHP e Laravel com estrutura pronta para crescer.</p>
+          </article>
+
+          <article class="capability-card" data-reveal>
+            <p class="capability-label">Domínio de negócio</p>
+            <p class="capability-number">48</p>
+            <p class="capability-unit">entidades de operação estruturadas</p>
+            <p class="capability-note">11 tabelas SQL de RH + 37 models no sistema de PDVs.</p>
+          </article>
+
+          <article class="capability-card" data-reveal>
+            <p class="capability-label">Qualidade e segurança</p>
+            <p class="capability-number">104</p>
+            <p class="capability-unit">pontos de robustez validados</p>
+            <p class="capability-note">81 prepared statements + 23 arquivos de teste automatizado.</p>
+          </article>
+
+          <article class="capability-card" data-reveal>
+            <p class="capability-label">Interfaces entregues</p>
+            <p class="capability-number">74</p>
+            <p class="capability-unit">telas e módulos funcionais</p>
+            <p class="capability-note">16 telas comerciais + 36 módulos RH + 22 views operacionais.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+    <section id="servicos">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <span class="chip">Serviços</span>
+          <h2>Pacotes para tirar seu projeto do papel</h2>
+          <p>Modelos objetivos para começar rápido, com escopo claro e prazo definido.</p>
+        </div>
+
+        <div class="service-grid">
+          <article class="service-card" data-reveal>
+            <p class="service-tag">Pacote 1</p>
+            <h3>Landing Page Estratégica</h3>
+            <p class="service-time">Prazo médio: 5 a 7 dias</p>
+            <ul class="service-list">
+              <li>Estrutura de página com foco em conversão.</li>
+              <li>Seções institucionais e chamada para WhatsApp.</li>
+              <li>Layout responsivo para desktop e mobile.</li>
+            </ul>
+            <a class="btn btn-secondary" href="#contato">Solicitar proposta</a>
+          </article>
+
+          <article class="service-card" data-reveal>
+            <p class="service-tag">Pacote 2</p>
+            <h3>Site Institucional Completo</h3>
+            <p class="service-time">Prazo médio: 10 a 15 dias</p>
+            <ul class="service-list">
+              <li>Páginas principais da empresa e apresentação de serviços.</li>
+              <li>Seção de projetos, diferenciais e formulário de contato.</li>
+              <li>Estrutura pronta para evoluir com SEO e blog.</li>
+            </ul>
+            <a class="btn btn-secondary" href="#contato">Solicitar proposta</a>
+          </article>
+
+          <article class="service-card" data-reveal>
+            <p class="service-tag">Pacote 3</p>
+            <h3>Sistema Web Sob Medida</h3>
+            <p class="service-time">Prazo inicial: 20 a 45 dias</p>
+            <ul class="service-list">
+              <li>Painel administrativo com regras do seu negócio.</li>
+              <li>Cadastros, relatórios e módulos de operação.</li>
+              <li>Arquitetura preparada para escala e novas funcionalidades.</li>
+            </ul>
+            <a class="btn btn-secondary" href="#contato">Solicitar proposta</a>
+          </article>
+        </div>
+      </div>
+    </section>
+    <section id="processo">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <span class="chip">Processo de trabalho</span>
+          <h2>Como entrego do briefing à publicação</h2>
+          <p>Fluxo objetivo para garantir clareza, velocidade e qualidade em cada projeto.</p>
+        </div>
+
+        <div class="process-grid">
+          <article class="process-card" data-reveal>
+            <p class="process-step">Etapa 1</p>
+            <h3>Briefing e objetivo</h3>
+            <p>Defino escopo, público e meta principal para orientar todo o projeto.</p>
+          </article>
+
+          <article class="process-card" data-reveal>
+            <p class="process-step">Etapa 2</p>
+            <h3>Estrutura e protótipo</h3>
+            <p>Organizo arquitetura da página e apresento layout base para validação.</p>
+          </article>
+
+          <article class="process-card" data-reveal>
+            <p class="process-step">Etapa 3</p>
+            <h3>Desenvolvimento</h3>
+            <p>Implemento front e integrações com foco em performance e responsividade.</p>
+          </article>
+
+          <article class="process-card" data-reveal>
+            <p class="process-step">Etapa 4</p>
+            <h3>Entrega e suporte</h3>
+            <p>Publico, reviso pontos finais e acompanho melhorias iniciais pós-lançamento.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+    <section id="sonhos">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <span class="chip">Roadmap estratégico</span>
+          <h2>Próximas entregas de alto impacto</h2>
+          <p>Plano de evolução com foco em produto, escala operacional e consolidação da marca profissional.</p>
+        </div>
+
+        <div class="cards">
+          <article class="card" data-reveal>
+            <span class="badge badge-next">Prioridade 1</span>
+            <h3>Plataforma de reservas online</h3>
+            <ul>
+              <li><strong>Objetivo:</strong> digitalizar o processo de reserva ponta a ponta.</li>
+              <li><strong>Entrega:</strong> agenda em tempo real, aprovação e notificações automatizadas.</li>
+              <li><strong>Impacto esperado:</strong> reduzir operação manual e acelerar confirmações.</li>
+            </ul>
+            <div class="stack">
+              <span>Node.js</span>
+              <span>Banco de dados</span>
+              <span>APIs</span>
+            </div>
+          </article>
+
+          <article class="card" data-reveal>
+            <span class="badge badge-next">Prioridade 2</span>
+            <h3>SaaS para pequenos negócios</h3>
+            <ul>
+              <li><strong>Objetivo:</strong> entregar sistema recorrente para gestão diária.</li>
+              <li><strong>Entrega:</strong> painel administrativo + página pública em produto único.</li>
+              <li><strong>Impacto esperado:</strong> criar base escalável de receita por assinatura.</li>
+            </ul>
+            <div class="stack">
+              <span>Produto</span>
+              <span>Escalabilidade</span>
+              <span>Cloud</span>
+            </div>
+          </article>
+
+          <article class="card" data-reveal>
+            <span class="badge badge-next">Prioridade 3</span>
+            <h3>Marca pessoal digital</h3>
+            <ul>
+              <li><strong>Objetivo:</strong> fortalecer posicionamento técnico e comercial.</li>
+              <li><strong>Entrega:</strong> hub de cases, conteúdo técnico e autoridade online.</li>
+              <li><strong>Impacto esperado:</strong> aumentar captação qualificada de clientes e parceiros.</li>
+            </ul>
+            <div class="stack">
+              <span>Conteúdo</span>
+              <span>SEO</span>
+              <span>Comunidade</span>
+            </div>
+          </article>
+        </div>
+
+        <article class="roadmap" data-reveal>
+          <h3>Direção de execução</h3>
+          <p>
+            Minha estratégia é simples: transformar cada entrega em ativo de negócio real, com arquitetura limpa,
+            clareza de uso e capacidade de escalar sem perder qualidade.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section id="contato">
+      <div class="container">
+        <article class="contact" data-reveal>
+          <div>
+          <h2>Solicite sua proposta em 24h</h2>
+          <p>
+            Receba um plano direto para o seu projeto com escopo inicial, prazo estimado e faixa de investimento.
+            Sem enrolação, com foco em execução e resultado.
+          </p>
+          <p class="contact-note">Resposta em até 24h úteis. E-mail direto: yagoamorim.oficial@outlook.com</p>
+        </div>
+          <div class="contact-links">
+            <a class="btn btn-primary" href="https://wa.me/5516996360162?text=Ol%C3%A1%2C%20Yago!%20Vi%20seu%20portf%C3%B3lio%20e%20quero%20solicitar%20uma%20proposta%20para%20meu%20projeto." target="_blank" rel="noopener noreferrer">Solicitar proposta no WhatsApp</a>
+            <a class="btn btn-secondary" href="mailto:yagoamorim.oficial@outlook.com?subject=Briefing%20de%20Projeto">Enviar briefing por e-mail</a>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; <span id="year"></span> Yago Fellipe Amorim. Portfólio em evolução contínua.</p>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      const menuToggle = document.getElementById("menu-toggle");
+      const menu = document.getElementById("menu");
+      const year = document.getElementById("year");
+      const profilePhoto = document.getElementById("profile-photo");
+      const profileImage = document.getElementById("profile-image");
+
+      if (year) {
+        year.textContent = String(new Date().getFullYear());
+      }
+
+      if (menuToggle && menu) {
+        menuToggle.addEventListener("click", function () {
+          const isOpen = menu.classList.toggle("open");
+          menuToggle.setAttribute("aria-expanded", String(isOpen));
+        });
+
+        menu.querySelectorAll("a").forEach(function (link) {
+          link.addEventListener("click", function () {
+            menu.classList.remove("open");
+            menuToggle.setAttribute("aria-expanded", "false");
+          });
+        });
+      }
+
+      if (profilePhoto && profileImage) {
+        profilePhoto.addEventListener("error", function () {
+          profileImage.classList.add("missing");
+        });
+      }
+
+      const revealElements = document.querySelectorAll("[data-reveal]");
+      const observer = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("in");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.12 }
+      );
+
+      revealElements.forEach(function (element) {
+        observer.observe(element);
+      });
+    })();
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
