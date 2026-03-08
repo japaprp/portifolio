@@ -4,10 +4,36 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Portfólio de Yago Fellipe Amorim: projetos criados, sonhos em construção e serviços para sites modernos.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://japaprp.github.io/portifolio/">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="Portfólio | Yago Fellipe Amorim">
+  <meta property="og:title" content="Portfólio | Yago Fellipe Amorim">
+  <meta property="og:description" content="Projetos reais, demos e serviços para sites e sistemas web profissionais.">
+  <meta property="og:url" content="https://japaprp.github.io/portifolio/">
+  <meta property="og:image" content="https://japaprp.github.io/portifolio/eu.jpeg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Portfólio | Yago Fellipe Amorim">
+  <meta name="twitter:description" content="Projetos reais, demos e serviços para sites e sistemas web profissionais.">
+  <meta name="twitter:image" content="https://japaprp.github.io/portifolio/eu.jpeg">
   <title>Portfólio | Yago Fellipe Amorim</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Yago Fellipe Amorim",
+      "jobTitle": "Desenvolvedor Web",
+      "url": "https://japaprp.github.io/portifolio/",
+      "sameAs": [
+        "https://github.com/japaprp",
+        "https://wa.me/5516991145034"
+      ]
+    }
+  </script>
   <style>
     :root {
       --bg: #f6f2e8;
@@ -814,6 +840,78 @@
       background: rgba(255, 255, 255, 0.08);
     }
 
+    .briefing-card {
+      margin-top: 1rem;
+      background: linear-gradient(145deg, #f4f8fc 0%, #e9eff7 55%, #dde6f1 100%);
+      border: 0.8px solid #c4ccd6;
+      border-radius: var(--radius);
+      padding: 1.2rem;
+      box-shadow: 0 12px 24px rgba(23, 56, 90, 0.12);
+    }
+
+    .briefing-head h3 {
+      font-family: "Bricolage Grotesque", sans-serif;
+      font-size: 1.25rem;
+      color: #1f2e46;
+      margin-bottom: 0.3rem;
+    }
+
+    .briefing-head p {
+      color: var(--muted);
+      font-size: 0.92rem;
+      margin-bottom: 0.9rem;
+    }
+
+    .briefing-form {
+      display: grid;
+      gap: 0.75rem;
+    }
+
+    .briefing-form label {
+      display: grid;
+      gap: 0.35rem;
+      font-weight: 600;
+      color: #27374f;
+      font-size: 0.9rem;
+    }
+
+    .briefing-form input,
+    .briefing-form select,
+    .briefing-form textarea {
+      width: 100%;
+      border: 1px solid #bfcadb;
+      border-radius: 12px;
+      padding: 0.62rem 0.72rem;
+      background: #fbfdff;
+      color: #1d2a3b;
+      font: inherit;
+    }
+
+    .briefing-form textarea {
+      resize: vertical;
+      min-height: 92px;
+    }
+
+    .briefing-form input:focus,
+    .briefing-form select:focus,
+    .briefing-form textarea:focus {
+      outline: 2px solid rgba(30, 106, 121, 0.28);
+      border-color: #8ea5c3;
+    }
+
+    .briefing-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.7rem;
+    }
+
+    .briefing-feedback {
+      font-size: 0.86rem;
+      color: #294665;
+      font-weight: 600;
+    }
+
     footer {
       padding: 2.1rem 0;
       text-align: center;
@@ -1347,9 +1445,46 @@
           <p class="contact-note">Resposta em até 24h úteis. E-mail direto: yagoamorim.oficial@outlook.com</p>
         </div>
           <div class="contact-links">
-            <a class="btn btn-primary" href="https://wa.me/5516991145034?text=Ol%C3%A1%2C%20Yago!%20Vi%20seu%20portf%C3%B3lio%20e%20quero%20solicitar%20uma%20proposta%20para%20meu%20projeto." target="_blank" rel="noopener noreferrer">Solicitar proposta no WhatsApp</a>
-            <a class="btn btn-secondary" href="mailto:yagoamorim.oficial@outlook.com?subject=Briefing%20de%20Projeto">Enviar briefing por e-mail</a>
+            <a class="btn btn-primary" data-track-event="click_whatsapp_proposta" href="https://wa.me/5516991145034?text=Ol%C3%A1%2C%20Yago!%20Vi%20seu%20portf%C3%B3lio%20e%20quero%20solicitar%20uma%20proposta%20para%20meu%20projeto." target="_blank" rel="noopener noreferrer">Solicitar proposta no WhatsApp</a>
+            <a class="btn btn-secondary" data-track-event="click_email_briefing" href="mailto:yagoamorim.oficial@outlook.com?subject=Briefing%20de%20Projeto">Enviar briefing por e-mail</a>
           </div>
+        </article>
+
+        <article class="briefing-card" data-reveal>
+          <div class="briefing-head">
+            <h3>Briefing rápido</h3>
+            <p>Preencha em 1 minuto e envie seu briefing direto no WhatsApp com as informações essenciais do projeto.</p>
+          </div>
+
+          <form id="briefing-form" class="briefing-form">
+            <label for="briefing-name">Seu nome
+              <input id="briefing-name" name="name" type="text" placeholder="Ex.: Maria Oliveira" required>
+            </label>
+
+            <label for="briefing-whatsapp">Seu WhatsApp
+              <input id="briefing-whatsapp" name="whatsapp" type="tel" placeholder="(16) 99999-9999" required>
+            </label>
+
+            <label for="briefing-type">Tipo de projeto
+              <select id="briefing-type" name="type" required>
+                <option value="" selected disabled>Selecione uma opção</option>
+                <option value="Landing Page">Landing Page</option>
+                <option value="Site Institucional">Site Institucional</option>
+                <option value="Sistema Web">Sistema Web</option>
+                <option value="E-commerce">E-commerce</option>
+                <option value="Outro">Outro</option>
+              </select>
+            </label>
+
+            <label for="briefing-notes">Resumo do objetivo
+              <textarea id="briefing-notes" name="notes" placeholder="Descreva o que você quer colocar no ar e o prazo desejado." required></textarea>
+            </label>
+
+            <div class="briefing-actions">
+              <button type="submit" class="btn btn-primary">Enviar briefing no WhatsApp</button>
+              <p id="briefing-feedback" class="briefing-feedback" aria-live="polite"></p>
+            </div>
+          </form>
         </article>
       </div>
     </section>
@@ -1368,6 +1503,48 @@
       const year = document.getElementById("year");
       const profilePhoto = document.getElementById("profile-photo");
       const profileImage = document.getElementById("profile-image");
+      const briefingForm = document.getElementById("briefing-form");
+      const briefingFeedback = document.getElementById("briefing-feedback");
+      const metricsStorageKey = "portfolio_click_metrics_v1";
+      const metricsNamespace = "japaprp-portifolio";
+
+      function readMetrics() {
+        try {
+          return JSON.parse(localStorage.getItem(metricsStorageKey) || "{}");
+        } catch (error) {
+          return {};
+        }
+      }
+
+      function writeMetrics(metrics) {
+        localStorage.setItem(metricsStorageKey, JSON.stringify(metrics));
+      }
+
+      function trackClick(eventName) {
+        const metrics = readMetrics();
+        metrics[eventName] = (metrics[eventName] || 0) + 1;
+        writeMetrics(metrics);
+
+        const remoteUrl = "https://api.countapi.xyz/hit/" + metricsNamespace + "/" + encodeURIComponent(eventName);
+        fetch(remoteUrl, { method: "GET", keepalive: true }).catch(function () {});
+      }
+
+      function classifyLink(link) {
+        const href = (link.getAttribute("href") || "").toLowerCase();
+        if (link.dataset.trackEvent) {
+          return link.dataset.trackEvent;
+        }
+        if (href.includes("wa.me")) {
+          return "click_whatsapp";
+        }
+        if (href.startsWith("mailto:")) {
+          return "click_email";
+        }
+        if (href.includes("/demos/") || (href.includes("github.io") && link.target === "_blank")) {
+          return "click_demo";
+        }
+        return "";
+      }
 
       if (year) {
         year.textContent = String(new Date().getFullYear());
@@ -1393,6 +1570,55 @@
         });
       }
 
+      document.querySelectorAll("a[href]").forEach(function (link) {
+        const eventName = classifyLink(link);
+        if (!eventName) {
+          return;
+        }
+        link.addEventListener("click", function () {
+          trackClick(eventName);
+        });
+      });
+
+      if (briefingForm) {
+        briefingForm.addEventListener("submit", function (event) {
+          event.preventDefault();
+
+          const name = String(document.getElementById("briefing-name").value || "").trim();
+          const whatsapp = String(document.getElementById("briefing-whatsapp").value || "").trim();
+          const type = String(document.getElementById("briefing-type").value || "").trim();
+          const notes = String(document.getElementById("briefing-notes").value || "").trim();
+
+          if (!name || !whatsapp || !type || !notes) {
+            if (briefingFeedback) {
+              briefingFeedback.textContent = "Preencha todos os campos antes de enviar.";
+            }
+            return;
+          }
+
+          const normalizedWhatsapp = whatsapp.replace(/\D+/g, "");
+          const messageLines = [
+            "Olá, Yago! Quero solicitar uma proposta.",
+            "Nome: " + name,
+            "WhatsApp: " + normalizedWhatsapp,
+            "Tipo de projeto: " + type,
+            "Resumo: " + notes,
+            "Origem: formulario_briefing_portfolio"
+          ];
+          const message = messageLines.join("\n");
+          const url = "https://wa.me/5516991145034?text=" + encodeURIComponent(message);
+
+          trackClick("briefing_form_submit");
+
+          if (briefingFeedback) {
+            briefingFeedback.textContent = "Briefing pronto. Abrindo WhatsApp...";
+          }
+
+          window.open(url, "_blank", "noopener,noreferrer");
+          briefingForm.reset();
+        });
+      }
+
       const revealElements = document.querySelectorAll("[data-reveal]");
       const observer = new IntersectionObserver(
         function (entries) {
@@ -1409,10 +1635,19 @@
       revealElements.forEach(function (element) {
         observer.observe(element);
       });
+
+      window.portfolioMetrics = {
+        read: readMetrics,
+        reset: function () {
+          localStorage.removeItem(metricsStorageKey);
+        }
+      };
     })();
   </script>
 </body>
 </html>
+
+
 
 
 
