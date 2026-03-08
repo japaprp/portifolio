@@ -992,6 +992,39 @@
       gap: 0.55rem;
     }
 
+    .agenda-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 0.85rem;
+      margin-top: 0.9rem;
+    }
+
+    .agenda-card {
+      background: linear-gradient(145deg, #f4f8fc 0%, #e9eff7 55%, #dde6f1 100%);
+      border: 0.8px solid #c4ccd6;
+      border-radius: 14px;
+      padding: 0.9rem;
+      box-shadow: 0 9px 18px rgba(23, 56, 90, 0.1);
+    }
+
+    .agenda-card h3 {
+      font-size: 1rem;
+      color: #1f2e46;
+      margin-bottom: 0.3rem;
+    }
+
+    .agenda-card p {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .agenda-actions {
+      margin-top: 0.8rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+    }
+
     .faq-grid {
       display: grid;
       gap: 0.75rem;
@@ -1148,6 +1181,7 @@
         <li><a href="#servicos">Serviços</a></li>
         <li><a href="#processo">Processo</a></li>
         <li><a href="#contratar">Como contratar</a></li>
+        <li><a href="#agendamento">Agendamento</a></li>
         <li><a href="#faq">FAQ</a></li>
         <li><a href="#contato">Contato</a></li>
       </ul>
@@ -1580,6 +1614,37 @@
       </div>
     </section>
 
+    <section id="agendamento">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <span class="chip">Agendamento rápido</span>
+          <h2>Vamos alinhar seu projeto em 15 minutos</h2>
+          <p>Reunião curta para entender objetivo, escopo inicial e melhor pacote para começar sem atraso.</p>
+        </div>
+
+        <div class="agenda-grid">
+          <article class="agenda-card" data-reveal>
+            <h3>Formato</h3>
+            <p>Chamada rápida por WhatsApp com foco em decisão e próximo passo claro.</p>
+          </article>
+
+          <article class="agenda-card" data-reveal>
+            <h3>Resposta</h3>
+            <p>Retorno em até 24h úteis com proposta resumida, prazo e investimento.</p>
+          </article>
+
+          <article class="agenda-card" data-reveal>
+            <h3>Objetivo</h3>
+            <p>Evitar retrabalho, acertar escopo e começar a execução com segurança.</p>
+          </article>
+        </div>
+
+        <div class="agenda-actions" data-reveal>
+          <a class="btn btn-primary" data-track-event="click_agendamento_15min" href="https://wa.me/5516991145034?text=Ol%C3%A1%2C%20Yago!%20Quero%20agendar%20uma%20chamada%20de%2015%20minutos%20para%20alinhar%20meu%20projeto." target="_blank" rel="noopener noreferrer">Agendar chamada de 15 min</a>
+          <a class="btn btn-secondary" href="#contato">Prefiro enviar briefing</a>
+        </div>
+      </div>
+    </section>
     <section id="faq">
       <div class="container">
         <div class="section-head" data-reveal>
@@ -1723,6 +1788,7 @@
       const metricsStatus = document.getElementById("metrics-status");
       const metricsStorageKey = "portfolio_click_metrics_v1";
       const metricsNamespace = "japaprp-portifolio";
+      const attributionStorageKey = "portfolio_lead_attribution_v1";
       const internalMetricsMode = new URLSearchParams(window.location.search).get("painel") === "1";
 
       function readMetrics() {
@@ -1761,6 +1827,46 @@
           return "click_demo";
         }
         return "";
+      }
+
+      function readAttribution() {
+        try {
+          return JSON.parse(localStorage.getItem(attributionStorageKey) || "{}");
+        } catch (error) {
+          return {};
+        }
+      }
+
+      function captureAttributionFromUrl() {
+        const params = new URLSearchParams(window.location.search);
+        const keys = ["utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content", "gclid"];
+        const current = readAttribution();
+        let changed = false;
+
+        keys.forEach(function (key) {
+          const value = params.get(key);
+          if (value) {
+            current[key] = value;
+            changed = true;
+          }
+        });
+
+        if (changed) {
+          localStorage.setItem(attributionStorageKey, JSON.stringify(current));
+        }
+
+        return current;
+      }
+
+      function formatAttributionLine() {
+        const source = readAttribution();
+        const parts = [];
+        Object.keys(source).forEach(function (key) {
+          if (source[key]) {
+            parts.push(key + "=" + source[key]);
+          }
+        });
+        return parts.join(" | ");
       }
 
       function setMetricValue(elementId, value) {
@@ -1854,6 +1960,8 @@
         });
       }
 
+      captureAttributionFromUrl();
+
       document.querySelectorAll("a[href]").forEach(function (link) {
         const eventName = classifyLink(link);
         if (!eventName) {
@@ -1900,13 +2008,14 @@
           }
 
           const normalizedWhatsapp = whatsapp.replace(/\D+/g, "");
+          const attributionLine = formatAttributionLine();
           const messageLines = [
             "Olá, Yago! Quero solicitar uma proposta.",
             "Nome: " + name,
             "WhatsApp: " + normalizedWhatsapp,
             "Tipo de projeto: " + type,
             "Resumo: " + notes,
-            "Origem: formulario_briefing_portfolio"
+            "Origem: formulario_briefing_portfolio" + (attributionLine ? " | " + attributionLine : "")
           ];
           const message = messageLines.join("\n");
           const url = "https://wa.me/5516991145034?text=" + encodeURIComponent(message);
@@ -1949,38 +2058,3 @@
   </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
