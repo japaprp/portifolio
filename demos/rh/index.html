@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Demo Controlada | Sistema RH</title>
+  <meta name="description" content="Demo controlada do Sistema RH de Yago Fellipe Amorim.">
+  <style>
+    :root {
+      --bg: #0f1724;
+      --panel: #162235;
+      --card: #f7f9fc;
+      --ink: #1a2534;
+      --muted: #5a697f;
+      --line: #d2d9e4;
+      --brand: #2f7cf6;
+      --ok: #1f9d66;
+      --warn: #ef8f3d;
+      --radius: 16px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background:
+        radial-gradient(circle at 14% 6%, rgba(47,124,246,0.22), transparent 35%),
+        radial-gradient(circle at 95% 4%, rgba(31,157,102,0.16), transparent 40%),
+        var(--bg);
+      color: #f4f8ff;
+      line-height: 1.45;
+      min-height: 100vh;
+      padding: 1.2rem;
+    }
+
+    .shell {
+      max-width: 1140px;
+      margin: 0 auto;
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 22px;
+      overflow: hidden;
+      box-shadow: 0 18px 44px rgba(0, 0, 0, 0.35);
+      background: #111a29;
+    }
+
+    .top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.8rem;
+      padding: 1rem 1.2rem;
+      background: rgba(6, 12, 22, 0.7);
+      border-bottom: 1px solid rgba(255,255,255,0.13);
+    }
+
+    .badge {
+      border: 1px solid rgba(255,255,255,0.26);
+      border-radius: 999px;
+      font-size: 0.74rem;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      padding: 0.28rem 0.68rem;
+    }
+
+    .top a {
+      color: #d8e8ff;
+      text-decoration: none;
+      font-weight: 600;
+      border: 1px solid rgba(255,255,255,0.25);
+      border-radius: 10px;
+      padding: 0.45rem 0.7rem;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: 245px 1fr;
+      min-height: 640px;
+    }
+
+    .side {
+      background: linear-gradient(180deg, #122036 0%, #101c2f 100%);
+      border-right: 1px solid rgba(255,255,255,0.11);
+      padding: 1rem 0.8rem;
+    }
+
+    .brand {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      padding: 0 0.5rem;
+    }
+
+    .menu {
+      list-style: none;
+      display: grid;
+      gap: 0.35rem;
+    }
+
+    .menu li {
+      padding: 0.55rem 0.65rem;
+      border-radius: 10px;
+      color: #d8e3f2;
+      border: 1px solid transparent;
+      font-size: 0.92rem;
+    }
+
+    .menu li.active {
+      background: rgba(47, 124, 246, 0.22);
+      border-color: rgba(47,124,246,0.42);
+      color: #ecf4ff;
+      font-weight: 700;
+    }
+
+    .main {
+      padding: 1.1rem;
+      background: #f2f5fa;
+      color: var(--ink);
+    }
+
+    .hero {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 1rem;
+      background: white;
+      margin-bottom: 0.9rem;
+    }
+
+    .hero h1 {
+      font-size: 1.4rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .hero p {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+      gap: 0.7rem;
+      margin-bottom: 0.9rem;
+    }
+
+    .kpi {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: white;
+      padding: 0.75rem;
+    }
+
+    .kpi span {
+      color: var(--muted);
+      display: block;
+      font-size: 0.82rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .kpi strong {
+      font-size: 1.4rem;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 0.8rem;
+    }
+
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: white;
+      padding: 0.8rem;
+    }
+
+    .card h2 {
+      font-size: 1rem;
+      margin-bottom: 0.55rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.86rem;
+    }
+
+    th, td {
+      text-align: left;
+      padding: 0.45rem;
+      border-bottom: 1px solid #e9eef6;
+    }
+
+    th { color: #5a697f; }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      border-radius: 999px;
+      padding: 0.12rem 0.45rem;
+      font-size: 0.74rem;
+      font-weight: 700;
+      color: #fff;
+      background: var(--ok);
+    }
+
+    .pill.warn { background: var(--warn); }
+
+    .disclaimer {
+      margin-top: 0.9rem;
+      font-size: 0.8rem;
+      color: #4b5d75;
+      background: #e9eef6;
+      border: 1px solid #d7e0ed;
+      border-radius: 10px;
+      padding: 0.55rem 0.6rem;
+    }
+
+    @media (max-width: 900px) {
+      .layout { grid-template-columns: 1fr; }
+      .side { border-right: 0; border-bottom: 1px solid rgba(255,255,255,0.11); }
+      .cards { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <header class="top">
+      <span class="badge">Demo Publica Controlada</span>
+      <a href="../../index.html">Voltar ao portfolio</a>
+    </header>
+
+    <div class="layout">
+      <aside class="side">
+        <p class="brand">SGE System RH</p>
+        <ul class="menu">
+          <li class="active">Dashboard</li>
+          <li>Meu Perfil</li>
+          <li>Solicitacoes</li>
+          <li>Beneficios</li>
+          <li>Avaliacoes</li>
+          <li>Pessoas</li>
+          <li>Cartao de Ponto</li>
+          <li>Ferias</li>
+          <li>Documentos</li>
+        </ul>
+      </aside>
+
+      <main class="main">
+        <section class="hero">
+          <h1>Bem-vindo, Yago</h1>
+          <p>Painel executivo com visao de pessoas, solicitacoes e operacao administrativa do RH.</p>
+        </section>
+
+        <section class="grid" aria-label="Indicadores do RH">
+          <article class="kpi"><span>Usuarios cadastrados</span><strong>42</strong></article>
+          <article class="kpi"><span>Pessoas ativas</span><strong>137</strong></article>
+          <article class="kpi"><span>Solicitacoes em aberto</span><strong>09</strong></article>
+          <article class="kpi"><span>Avaliacoes do ciclo</span><strong>24</strong></article>
+        </section>
+
+        <section class="cards">
+          <article class="card">
+            <h2>Ultimas solicitacoes</h2>
+            <table>
+              <thead>
+                <tr><th>Colaborador</th><th>Tipo</th><th>Status</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Marcia S.</td><td>Ferias</td><td><span class="pill">Aprovado</span></td></tr>
+                <tr><td>Joao P.</td><td>Documento</td><td><span class="pill warn">Analise</span></td></tr>
+                <tr><td>Carla M.</td><td>Beneficio</td><td><span class="pill">Aprovado</span></td></tr>
+                <tr><td>Rafael A.</td><td>Avaliacao</td><td><span class="pill warn">Pendente</span></td></tr>
+              </tbody>
+            </table>
+          </article>
+
+          <article class="card">
+            <h2>Modulos em destaque</h2>
+            <table>
+              <tbody>
+                <tr><td>Gestao de Pessoas</td><td>Ativo</td></tr>
+                <tr><td>Permissoes e Acessos</td><td>Ativo</td></tr>
+                <tr><td>Cartao de Ponto</td><td>Ativo</td></tr>
+                <tr><td>Auditoria</td><td>Ativo</td></tr>
+              </tbody>
+            </table>
+          </article>
+        </section>
+
+        <p class="disclaimer">Esta pagina e uma demonstracao visual controlada para apresentacao comercial. Nao exibe dados reais de clientes.</p>
+      </main>
+    </div>
+  </div>
+</body>
+</html>
