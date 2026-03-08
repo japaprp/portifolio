@@ -736,6 +736,46 @@
       color: var(--muted);
     }
 
+    .hire-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+    }
+
+    .hire-item {
+      background: linear-gradient(145deg, #f3f6fa 0%, #e6ebf2 56%, #d9e0e8 100%);
+      border: 0.8px solid #c4ccd6;
+      border-radius: var(--radius);
+      padding: 1rem;
+      box-shadow: 0 9px 18px rgba(23, 56, 90, 0.12);
+      display: grid;
+      gap: 0.55rem;
+    }
+
+    .hire-step {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #5a677b;
+    }
+
+    .hire-item h3 {
+      font-size: 1.03rem;
+      color: #1f2e46;
+    }
+
+    .hire-item p {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .hire-cta {
+      margin-top: 1rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+    }
+
     .contact-note {
       margin-top: 0.75rem;
       font-size: 0.88rem;
@@ -875,6 +915,7 @@
         <li><a href="#capacidade">Capacidade</a></li>
         <li><a href="#servicos">Serviços</a></li>
         <li><a href="#processo">Processo</a></li>
+        <li><a href="#contratar">Como contratar</a></li>
         <li><a href="#contato">Contato</a></li>
       </ul>
     </div>
@@ -1020,7 +1061,7 @@
         <div class="section-head" data-reveal>
           <span class="chip">Cases visuais</span>
           <h2>Prints rápidos dos projetos</h2>
-          <p>Prévia visual para validar padrão de interface, clareza e organização das entregas.</p>
+          <p>Prévia visual para validar padrão de interface, clareza e organização das entregas. Demos públicas estão online; demos privadas são apresentadas de forma guiada.</p>
         </div>
 
         <div class="case-grid">
@@ -1043,7 +1084,7 @@
             <p class="case-title">Sistema de RH</p>
             <p class="case-desc">Painel com menu lateral, indicadores operacionais e módulos de gestão de pessoas.</p>
                       <div class="case-actions">
-              <a class="case-btn case-btn-primary" href="http://127.0.0.1:8013/index.php" target="_blank" rel="noopener noreferrer">Ver demo</a>
+              <a class="case-btn case-btn-primary" href="https://wa.me/5516991145034?text=Ol%C3%A1%2C%20Yago!%20Quero%20agendar%20a%20demo%20guiada%20do%20Sistema%20de%20RH." target="_blank" rel="noopener noreferrer">Agendar demo guiada</a>
               <a class="case-btn case-btn-disabled" href="#contato">Repositório sob solicitação</a>
             </div>
           </article>
@@ -1067,7 +1108,7 @@
             <p class="case-title">Lanchonete com PDVs</p>
             <p class="case-desc">Cardápio digital com categorias, vitrine de produtos e fluxo pronto para pedidos multi-PDV.</p>
                       <div class="case-actions">
-              <a class="case-btn case-btn-primary" href="http://127.0.0.1:8080/cardapio/hamburgueria-demo" target="_blank" rel="noopener noreferrer">Ver demo</a>
+              <a class="case-btn case-btn-primary" href="https://wa.me/5516991145034?text=Ol%C3%A1%2C%20Yago!%20Quero%20agendar%20a%20demo%20guiada%20da%20Lanchonete%20com%20PDVs." target="_blank" rel="noopener noreferrer">Agendar demo guiada</a>
               <a class="case-btn case-btn-disabled" href="#contato">Repositório sob solicitação</a>
             </div>
           </article>
@@ -1192,6 +1233,40 @@
             <h3>Entrega e suporte</h3>
             <p>Publico, reviso pontos finais e acompanho melhorias iniciais pós-lançamento.</p>
           </article>
+        </div>
+      </div>
+    </section>
+    <section id="contratar">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <span class="chip">Como contratar</span>
+          <h2>Fechamento simples, direto e profissional</h2>
+          <p>Fluxo comercial em 3 passos para iniciar rápido, com escopo claro e previsibilidade de entrega.</p>
+        </div>
+
+        <div class="hire-grid">
+          <article class="hire-item" data-reveal>
+            <p class="hire-step">Passo 1</p>
+            <h3>Envie o briefing</h3>
+            <p>Me fale objetivo, público, prazo ideal e referências. Em até 24h eu retorno com direcionamento inicial.</p>
+          </article>
+
+          <article class="hire-item" data-reveal>
+            <p class="hire-step">Passo 2</p>
+            <h3>Receba a proposta</h3>
+            <p>Você recebe escopo, prazo, investimento e etapas de entrega para aprovar com segurança.</p>
+          </article>
+
+          <article class="hire-item" data-reveal>
+            <p class="hire-step">Passo 3</p>
+            <h3>Começo da execução</h3>
+            <p>Após aprovação, inicio o desenvolvimento com checkpoints curtos e visibilidade de progresso.</p>
+          </article>
+        </div>
+
+        <div class="hire-cta" data-reveal>
+          <a class="btn btn-primary" href="https://wa.me/5516991145034?text=Ol%C3%A1%2C%20Yago!%20Quero%20iniciar%20um%20projeto%20com%20voc%C3%AA." target="_blank" rel="noopener noreferrer">Iniciar pelo WhatsApp</a>
+          <a class="btn btn-secondary" href="mailto:yagoamorim.oficial@outlook.com?subject=Quero%20contratar%20um%20projeto">Iniciar por e-mail</a>
         </div>
       </div>
     </section>
@@ -1338,6 +1413,7 @@
   </script>
 </body>
 </html>
+
 
 
 
