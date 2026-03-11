@@ -4,12 +4,12 @@ Portifolio profissional com apresentacao, stack e estudos de caso dos projetos e
 
 ## Objetivo
 
-Apresentar resultados de projetos web de forma clara para clientes e parceiros.
+Apresentar resultados de projetos web de forma clara para clientes e parceiros, com demos controladas para projetos sob NDA.
 
 ## Projetos em destaque
 
 - Horti Fruit / Varejao do Povo
-- Sistema de RH
+- Portal RH e operacoes internas
 - Chacara Estacia Renascer Belvedere
 - Plataforma de Lanchonete com multiplos PDVs
 
