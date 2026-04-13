@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Como integrar o Amorim PDV Mobile com site ou sistema proprio sem virar uma estrutura caotica.">
+  <meta name="theme-color" content="#0f2531">
+  <link rel="icon" type="image/svg+xml" href="../assets/branding/favicon.svg">
+  <title>Cliente com Site Proprio | Amorim PDV Mobile</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #efe7d9;
+      --paper: rgba(255,250,241,0.86);
+      --ink: #11202b;
+      --muted: #455462;
+      --line: rgba(17,32,43,0.12);
+      --deep: #0f2531;
+      --gold: #d38a31;
+      --mint: #d7ece6;
+      --sky: #dfeaf7;
+      --radius-xl: 30px;
+      --radius-lg: 22px;
+      --shadow: 0 28px 70px rgba(17,32,43,0.15);
+      --display: "Chakra Petch", sans-serif;
+      --body: "Manrope", sans-serif;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: var(--body);
+      color: var(--ink);
+      line-height: 1.58;
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at 14% 12%, rgba(23,60,67,0.18), transparent 30%),
+        radial-gradient(circle at 86% 14%, rgba(211,138,49,0.18), transparent 30%),
+        linear-gradient(180deg, #fbf6ee 0%, var(--bg) 100%);
+    }
+    .container { width: min(1120px, calc(100% - 2rem)); margin: 0 auto; padding: 1.4rem 0 3rem; }
+    .hero, .card, .note {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(14px);
+    }
+    .hero { padding: 1.2rem; margin-bottom: 1rem; display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 1rem; }
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.34rem 0.82rem;
+      border-radius: 999px;
+      border: 1px solid rgba(17,32,43,0.14);
+      background: rgba(255,255,255,0.68);
+      font-family: var(--display);
+      font-size: 0.76rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #334554;
+      margin-bottom: 0.8rem;
+    }
+    .chip::before {
+      content: "";
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--gold), #ebb46e);
+      box-shadow: 0 0 0 5px rgba(211,138,49,0.14);
+    }
+    h1, h2, h3 {
+      font-family: var(--display);
+      text-transform: uppercase;
+      letter-spacing: -0.03em;
+      color: var(--deep);
+    }
+    h1 { font-size: clamp(2.4rem, 5vw, 4.6rem); line-height: 0.92; margin-bottom: 0.8rem; max-width: 10ch; }
+    h2 { font-size: 1.22rem; margin-bottom: 0.45rem; }
+    h3 { font-size: 1rem; margin-bottom: 0.35rem; }
+    p { color: var(--muted); }
+    .lead { max-width: 62ch; margin-bottom: 1rem; }
+    .actions, .cta { display: flex; flex-wrap: wrap; gap: 0.7rem; }
+    .btn {
+      text-decoration: none;
+      border-radius: 14px;
+      padding: 0.86rem 1rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      border: 1px solid rgba(17,32,43,0.14);
+      background: rgba(255,255,255,0.78);
+      color: var(--deep);
+    }
+    .btn-primary { background: linear-gradient(135deg, #ebb46e, #cf7e22); }
+    .btn-dark { background: linear-gradient(145deg, #173c43, #0f2531); color: #f8fafc; }
+    .hero-side { display: grid; gap: 0.85rem; }
+    .signal, .card, .note { padding: 1rem; }
+    .signal {
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(17,32,43,0.08);
+    }
+    .signal.mint { background: linear-gradient(145deg, #eff8f6 0%, var(--mint) 100%); }
+    .signal.sky { background: linear-gradient(145deg, #f5f9ff 0%, var(--sky) 100%); }
+    .signal.deep { background: linear-gradient(145deg, rgba(23,60,67,0.98), rgba(15,37,49,0.98)); }
+    .signal.deep h3, .signal.deep p, .signal.deep li { color: #edf6f5; }
+    .signal ul, .card ul, .note ul { list-style: none; display: grid; gap: 0.42rem; margin-top: 0.55rem; }
+    .signal li::before, .card li::before, .note li::before { content: "•"; color: var(--gold); margin-right: 0.45rem; }
+    .grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.9rem; margin-bottom: 1rem; }
+    .flow {
+      display: grid;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+    }
+    .step {
+      border-radius: var(--radius-lg);
+      padding: 0.9rem 1rem;
+      border: 1px solid rgba(17,32,43,0.08);
+      background: linear-gradient(145deg, rgba(255,255,255,0.76), rgba(223,234,247,0.74));
+    }
+    .step strong {
+      display: inline-flex;
+      width: fit-content;
+      padding: 0.3rem 0.64rem;
+      border-radius: 999px;
+      background: var(--deep);
+      color: #f8fafc;
+      font-family: var(--display);
+      font-size: 0.78rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 0.55rem;
+    }
+    @media (max-width: 1040px) {
+      .hero, .grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 760px) {
+      .actions, .cta { display: grid; }
+      .btn { width: 100%; }
+      h1 { max-width: none; }
+    }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <section class="hero">
+      <div>
+        <span class="chip">Integracao sob controle</span>
+        <h1>Cliente com site proprio nao precisa virar caos tecnico.</h1>
+        <p class="lead">O Amorim PDV Mobile nao pede que o cliente abandone o que ja tem. O caminho certo e acoplar por contrato ou adapter, mantendo o app limpo, a venda escalavel e a manutencao sob criterio.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="https://wa.me/5516991145034?text=Quero%20avaliar%20a%20integracao%20do%20Amorim%20PDV%20Mobile%20com%20meu%20sistema." target="_blank" rel="noopener noreferrer">Avaliar integracao</a>
+          <a class="btn btn-dark" href="./pacotes/amorim-pdv-mobile.html">Ver produto principal</a>
+          <a class="btn" href="./visao-geral.html">Voltar ao ecossistema</a>
+        </div>
+      </div>
+      <div class="hero-side">
+        <article class="signal deep">
+          <h3>Regra de ouro</h3>
+          <ul>
+            <li>nao adaptar o app para cada cliente no susto</li>
+            <li>nao apontar o app para API arbitraria</li>
+            <li>nao liberar operacao sem homologacao minima</li>
+          </ul>
+        </article>
+        <article class="signal mint">
+          <h3>O que faz sentido</h3>
+          <p>Preservar o core do produto e adaptar so a ponte de integracao. Isso reduz risco, custo e desgaste de suporte no medio prazo.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="grid">
+      <article class="card">
+        <h2>Contrato food</h2>
+        <ul>
+          <li>lanchonete, hamburgueria, bar, restaurante</li>
+          <li>pedido, preparo, pagamento e expedicao</li>
+          <li>bom para operacao de salao e cozinha</li>
+        </ul>
+      </article>
+      <article class="card">
+        <h2>Contrato varejo</h2>
+        <ul>
+          <li>mercado, hortfruit, padaria e farmacia</li>
+          <li>catalogo, leitura, checkout e balcao</li>
+          <li>separacao por businessProfile</li>
+        </ul>
+      </article>
+      <article class="card">
+        <h2>Adapter</h2>
+        <ul>
+          <li>entra quando a API do cliente nao bate no contrato</li>
+          <li>protege o app de customizacao desordenada</li>
+          <li>deixa onboarding mais rapido e seguro</li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="flow">
+      <article class="step">
+        <strong>Passo 1</strong>
+        <h2>Escolher o contrato certo</h2>
+        <p>Primeiro enquadra o negocio em `food` ou `varejo`. Sem isso, a integracao comeca torta e o suporte vira excecao acumulada.</p>
+      </article>
+      <article class="step">
+        <strong>Passo 2</strong>
+        <h2>Apontar para adapter ou API homologada</h2>
+        <p>Se a API do cliente ja falar o contrato, conecta. Se nao falar, o adapter faz a ponte. O app continua limpo.</p>
+      </article>
+      <article class="step">
+        <strong>Passo 3</strong>
+        <h2>Homologar antes do go-live</h2>
+        <p>Login, busca, operacao, sync e erro. O minimo precisa ser validado antes de liberar uso real.</p>
+      </article>
+    </section>
+
+    <section class="note">
+      <h2>O que mais reduz dor de cabeca futura</h2>
+      <ul>
+        <li>usar o businessProfile correto por cliente e setor</li>
+        <li>manter a camada de integracao fora do app quando o sistema for terceiro</li>
+        <li>passar por homologacao curta, mas obrigatoria</li>
+        <li>documentar o combinado de implantacao e suporte desde o inicio</li>
+      </ul>
+      <div class="cta">
+        <a class="btn btn-primary" href="https://wa.me/5516991145034?text=Quero%20falar%20sobre%20contrato%20ou%20adapter%20para%20meu%20site." target="_blank" rel="noopener noreferrer">Falar sobre contrato e adapter</a>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

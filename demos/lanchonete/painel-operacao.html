@@ -4,19 +4,27 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Painel de Operação | Lanchonete Multi-PDV</title>
-  <meta name="description" content="Painel operacional da demonstração da lanchonete multi-PDV de Yago Fellipe Amorim.">
+  <meta name="description" content="Painel operacional da demo controlada da lanchonete multi-PDV com visão de pedidos, caixa, PDVs e adaptação por porte de operação.">
+  <meta name="theme-color" content="#10213A">
+  <link rel="icon" type="image/svg+xml" href="../../assets/branding/favicon.svg">
   <style>
     :root {
       --bg: #091426;
       --line: #22385f;
       --ink: #edf4ff;
-      --muted: #9fb5d5;
+      --muted: #cfe0f7;
       --brand: #f6c33f;
       --brand-2: #21c07a;
       --radius: 16px;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    a:focus-visible,
+    button:focus-visible {
+      outline: 3px solid rgba(255, 196, 90, 0.42);
+      outline-offset: 3px;
+    }
 
     html { scroll-behavior: smooth; }
 
@@ -128,6 +136,12 @@
       color: #f6fff9;
     }
 
+    .hero-note {
+      margin-top: 0.75rem;
+      color: #b9cae5;
+      font-size: 0.88rem;
+    }
+
     .status-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -213,6 +227,47 @@
       font-size: 0.85rem;
     }
 
+    .value-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 0.7rem;
+      padding: 0.9rem 1rem;
+      border-bottom: 1px solid var(--line);
+      background: #0b1c38;
+    }
+
+    .value-card {
+      border: 1px solid #2c4671;
+      border-radius: 12px;
+      background: #0f2648;
+      padding: 0.7rem;
+    }
+
+    .value-card h2 {
+      font-size: 0.98rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .value-card p {
+      color: #c5d6f1;
+      font-size: 0.88rem;
+    }
+
+    .value-card ul {
+      list-style: none;
+      display: grid;
+      gap: 0.34rem;
+      margin-top: 0.65rem;
+      color: #dce8fc;
+      font-size: 0.86rem;
+    }
+
+    .value-card ul li::before {
+      content: "•";
+      color: var(--brand);
+      margin-right: 0.4rem;
+    }
+
     .preview {
       padding: 1rem;
       display: grid;
@@ -270,6 +325,42 @@
       font-size: 0.82rem;
     }
 
+    .cta-band {
+      margin: 0 1rem 1rem;
+      border: 1px solid #29507f;
+      border-radius: 14px;
+      background: linear-gradient(135deg, #102645 0%, #132d53 100%);
+      padding: 0.9rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.8rem;
+    }
+
+    .cta-band strong {
+      display: block;
+      font-size: 1rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .cta-band p {
+      color: #c7d7f0;
+      font-size: 0.88rem;
+      max-width: 62ch;
+    }
+
+    .cta-band a {
+      text-decoration: none;
+      border-radius: 10px;
+      padding: 0.58rem 0.82rem;
+      border: 1px solid #178c5d;
+      background: linear-gradient(180deg, #1ead74 0%, #189964 100%);
+      color: #f6fff9;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
     @media (max-width: 760px) {
       body { padding: 0.7rem; }
       .top { align-items: flex-start; flex-direction: column; }
@@ -282,7 +373,7 @@
 <body>
   <div class="wrap">
     <header class="top">
-      <span class="chip">Hamburgueria SaaS</span>
+      <span class="chip">Demo Controlada • Painel de Lanchonete</span>
       <div class="top-actions">
         <a href="./index.html">Cardápio Demo</a>
         <a class="active" href="./painel-operacao.html">Painel Operacional</a>
@@ -293,14 +384,16 @@
     </header>
 
     <section class="hero">
-      <h1>Dashboard operacional com foco em decisões rápidas</h1>
-      <p>Análise de vendas, caixa, estoque, canais e pedidos pendentes em uma visão única para acelerar a operação da lanchonete.</p>
+      <h1>Dashboard operacional para dono e gerente decidirem rápido</h1>
+      <p>Painel comercial da lanchonete com visão de vendas, caixa, canais, pedidos pendentes e capacidade operacional para reduzir gargalos no dia a dia.</p>
       <div class="hero-actions">
         <a href="./index.html">Ver cardápio demo</a>
+        <a href="#gestao">Ver ganhos de gestão</a>
         <a href="#pdvs">Visualizar PDVs</a>
         <a href="#caixa">Visualizar Caixa</a>
-        <a class="cta" href="https://wa.me/5516991145034?text=Ol%C3%A1%2C%20Yago!%20Quero%20o%20painel%20operacional%20da%20lanchonete%20no%20meu%20neg%C3%B3cio." target="_blank" rel="noopener noreferrer">Quero esse painel</a>
+        <a class="cta" href="https://wa.me/5516991145034?text=Ol%C3%A1%2C%20Yago!%20Quero%20o%20painel%20operacional%20da%20lanchonete%20no%20meu%20neg%C3%B3cio." target="_blank" rel="noopener noreferrer">Falar sobre implantação</a>
       </div>
+      <p class="hero-note">A mesma base pode operar com visão enxuta para negócio menor ou com mais controle por PDV e cozinha quando a demanda cresce.</p>
     </section>
 
     <section class="status-grid" aria-label="Resumo operacional">
@@ -308,6 +401,38 @@
       <article class="status-card"><p class="status-label">Faturamento</p><p class="status-value">R$ 89,70</p></article>
       <article class="status-card"><p class="status-label">Ticket médio</p><p class="status-value">R$ 29,90</p></article>
       <article class="status-card"><p class="status-label">Pendentes</p><p class="status-value warn">3</p></article>
+    </section>
+
+    <section id="gestao" class="value-grid" aria-label="Ganhos de gestão">
+      <article class="value-card">
+        <h2>O que o dono vê</h2>
+        <p>O painel concentra os indicadores que realmente influenciam a operação e a tomada de decisão.</p>
+        <ul>
+          <li>Pedidos, ticket médio e faturamento.</li>
+          <li>Caixas abertos e gargalos do período.</li>
+          <li>Visão única do movimento diário.</li>
+        </ul>
+      </article>
+
+      <article class="value-card">
+        <h2>Adaptação por porte</h2>
+        <p>O mesmo produto pode ficar mais simples para operação menor ou mais segmentado para alta demanda.</p>
+        <ul>
+          <li>Controle enxuto para começar rápido.</li>
+          <li>Mais PDVs e mais visibilidade quando cresce.</li>
+          <li>Cozinha separada quando a operação pede.</li>
+        </ul>
+      </article>
+
+      <article class="value-card">
+        <h2>Integração complementar</h2>
+        <p>Quando fizer sentido, o módulo mobile amplia a operação sem descaracterizar o sistema web.</p>
+        <ul>
+          <li>Leitura e atendimento pelo celular.</li>
+          <li>Perfis por função e módulos liberados.</li>
+          <li>Continuidade entre web e mobile.</li>
+        </ul>
+      </article>
     </section>
 
     <section class="section" aria-label="Status de pedidos e operação">
@@ -362,13 +487,21 @@
     <section class="preview">
       <figure>
         <img src="../../assets/projetos/hamburgueria-dashboard-operacional.png" alt="Preview do painel operacional da lanchonete">
-        <figcaption>Painel com visão de performance diária, comparativo de período e controle operacional para múltiplos PDVs.</figcaption>
+        <figcaption>Painel com visão de performance diária, comparativo de período e controle operacional para múltiplos PDVs, com base pronta para adaptação por cliente.</figcaption>
       </figure>
       <div class="preview-actions">
         <a href="../../assets/projetos/hamburgueria-dashboard-operacional.png" target="_blank" rel="noopener noreferrer">Ver dashboard em tela cheia</a>
         <a href="#pdvs">Voltar para PDVs</a>
         <a href="#caixa">Ir para Caixa</a>
       </div>
+    </section>
+
+    <section class="cta-band" aria-label="Chamada comercial do painel">
+      <div>
+        <strong>Painel pensado para gestão do dia, não só para mostrar gráfico.</strong>
+        <p>Esta demo representa o núcleo de gestão da lanchonete: visão rápida, adaptação por porte e estrutura para implantação com a identidade e a rotina do cliente.</p>
+      </div>
+      <a href="https://wa.me/5516991145034?text=Ol%C3%A1%2C%20Yago!%20Vi%20o%20painel%20operacional%20da%20lanchonete%20e%20quero%20entender%20como%20implantar%20no%20meu%20neg%C3%B3cio." target="_blank" rel="noopener noreferrer">Falar sobre implantação</a>
     </section>
 
     <p class="alert">Página de demonstração visual controlada para apresentação comercial. Não processa pedidos nem pagamentos reais.</p>

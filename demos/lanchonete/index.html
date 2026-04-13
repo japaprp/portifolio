@@ -4,7 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Demo Controlada | Lanchonete Multi-PDV</title>
-  <meta name="description" content="Demonstração comercial do cardápio e operação da lanchonete multi-PDV de Yago Fellipe Amorim.">
+  <meta name="description" content="Demo controlada da lanchonete multi-PDV com cardápio digital, painel operacional, cozinha adaptável e base pronta para implantação por cliente.">
+  <meta name="theme-color" content="#10213A">
+  <link rel="icon" type="image/svg+xml" href="../../assets/branding/favicon.svg">
   <style>
     :root {
       --bg: #091426;
@@ -13,7 +15,7 @@
       --surface-2: #102447;
       --line: #22385f;
       --ink: #edf4ff;
-      --muted: #9fb5d5;
+      --muted: #cfe0f7;
       --brand: #f6c33f;
       --brand-2: #21c07a;
       --accent: #2b84ff;
@@ -21,6 +23,12 @@
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    a:focus-visible,
+    button:focus-visible {
+      outline: 3px solid rgba(255, 196, 90, 0.42);
+      outline-offset: 3px;
+    }
 
     body {
       font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -136,6 +144,12 @@
       color: #f6fff9;
     }
 
+    .hero-note {
+      margin-top: 0.75rem;
+      color: #b9cae5;
+      font-size: 0.88rem;
+    }
+
     .kpi-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
@@ -194,6 +208,49 @@
     .section h2 {
       font-size: 1.1rem;
       margin-bottom: 0.4rem;
+    }
+
+    .value-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 0.75rem;
+      padding: 1rem;
+      border-bottom: 1px solid var(--line);
+      background: #0b1c38;
+    }
+
+    .value-card {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: #0d2142;
+      padding: 0.8rem;
+      box-shadow: 0 10px 22px rgba(0, 0, 0, 0.22);
+    }
+
+    .value-card h2 {
+      font-size: 1rem;
+      margin-bottom: 0.35rem;
+      color: #f4f8ff;
+    }
+
+    .value-card p {
+      color: #c4d5ef;
+      font-size: 0.9rem;
+    }
+
+    .value-card ul {
+      list-style: none;
+      display: grid;
+      gap: 0.35rem;
+      margin-top: 0.7rem;
+      color: #dbe7fb;
+      font-size: 0.88rem;
+    }
+
+    .value-card ul li::before {
+      content: "•";
+      color: var(--brand);
+      margin-right: 0.4rem;
     }
 
     .solve-list {
@@ -312,6 +369,42 @@
       font-size: 0.82rem;
     }
 
+    .cta-band {
+      margin: 0 1rem 1rem;
+      border: 1px solid #29507f;
+      border-radius: 14px;
+      background: linear-gradient(135deg, #102645 0%, #132d53 100%);
+      padding: 0.9rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.8rem;
+    }
+
+    .cta-band strong {
+      display: block;
+      font-size: 1rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .cta-band p {
+      color: #c7d7f0;
+      font-size: 0.88rem;
+      max-width: 62ch;
+    }
+
+    .cta-band a {
+      text-decoration: none;
+      border-radius: 10px;
+      padding: 0.58rem 0.82rem;
+      border: 1px solid #178c5d;
+      background: linear-gradient(180deg, #1ead74 0%, #189964 100%);
+      color: #f6fff9;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
     @media (max-width: 760px) {
       body { padding: 0.7rem; }
       .top { align-items: flex-start; flex-direction: column; }
@@ -323,7 +416,7 @@
 <body>
   <div class="wrap">
     <header class="top">
-      <span class="chip">Hamburgueria SaaS</span>
+      <span class="chip">Demo Controlada • Lanchonete Web</span>
       <div class="top-actions">
         <a class="active" href="./index.html">Cardápio Demo</a>
         <a href="./painel-operacao.html">Painel Operacional</a>
@@ -334,12 +427,14 @@
     </header>
 
     <section class="hero">
-      <h1>Cardápio + Operação Multi-PDV para vender mais com controle</h1>
-      <p>Demonstração comercial com vitrine digital, organização de pedidos e estrutura pronta para escalar atendimento sem perder padrão.</p>
+      <h1>Cardápio, caixa e operação multi-PDV para crescer sem perder controle</h1>
+      <p>Demonstração comercial de um sistema web para lanchonete com vitrine digital, fluxo operacional claro, gestão de pedidos e estrutura pronta para operação pequena ou alta demanda.</p>
       <div class="hero-actions">
         <a href="./painel-operacao.html">Ver painel operacional</a>
-        <a class="cta" href="https://wa.me/5516991145034?text=Ol%C3%A1%2C%20Yago!%20Quero%20um%20sistema%20de%20lanchonete%20com%20card%C3%A1pio%20e%20opera%C3%A7%C3%A3o%20multi-PDV." target="_blank" rel="noopener noreferrer">Quero um sistema assim</a>
+        <a href="#porte">Ver adaptação por porte</a>
+        <a class="cta" href="https://wa.me/5516991145034?text=Ol%C3%A1%2C%20Yago!%20Quero%20um%20sistema%20de%20lanchonete%20com%20card%C3%A1pio%20e%20opera%C3%A7%C3%A3o%20multi-PDV." target="_blank" rel="noopener noreferrer">Falar sobre implantação</a>
       </div>
+      <p class="hero-note">A mesma base pode operar em tela única para negócios menores ou com cozinha separada e múltiplos PDVs quando a demanda cresce.</p>
     </section>
 
     <section class="kpi-grid" aria-label="Indicadores de operação">
@@ -358,12 +453,45 @@
       <span>Pagamento</span>
     </section>
 
+    <section id="porte" class="value-grid" aria-label="Adaptação por porte de operação">
+      <article class="value-card">
+        <h2>Negócio menor</h2>
+        <p>Opera com menos atrito, em fluxo mais enxuto, sem precisar de telas demais para começar.</p>
+        <ul>
+          <li>Cardápio digital e fechamento direto.</li>
+          <li>Tela única para balcão e atendimento.</li>
+          <li>Implantação mais simples no início.</li>
+        </ul>
+      </article>
+
+      <article class="value-card">
+        <h2>Operação em crescimento</h2>
+        <p>Quando o volume aumenta, a mesma base absorve mais PDVs, mais fila e mais controle.</p>
+        <ul>
+          <li>Painel operacional para dono e gerente.</li>
+          <li>Cozinha separada quando fizer sentido.</li>
+          <li>Organização de canais, caixa e preparo.</li>
+        </ul>
+      </article>
+
+      <article class="value-card">
+        <h2>Módulo mobile opcional</h2>
+        <p>O sistema pode trabalhar junto com o LeitorCodigo para reforçar atendimento e leitura no celular.</p>
+        <ul>
+          <li>Operação complementar no mobile.</li>
+          <li>Perfis por função e módulos liberados.</li>
+          <li>Sem transformar a lanchonete em outro produto.</li>
+        </ul>
+      </article>
+    </section>
+
     <section class="section" aria-label="Problemas resolvidos">
       <h2>O que este sistema resolve</h2>
       <ul class="solve-list">
         <li>Organiza fila e preparo por etapa para reduzir gargalos de atendimento.</li>
         <li>Padroniza operação entre múltiplos PDVs sem retrabalho manual.</li>
         <li>Melhora experiência do cliente com cardápio claro e pedido mais rápido.</li>
+        <li>Entrega ao dono visão mais simples para acompanhar venda, fluxo e capacidade de atendimento.</li>
       </ul>
     </section>
 
@@ -375,7 +503,7 @@
           <p class="price">R$ 34,90</p>
           <p class="meta">Hambúrguer artesanal, fritas crocantes e refrigerante.</p>
           <div class="qty"><span class="btn-sim">-</span><span>1 unidade</span><span class="btn-sim">+</span></div>
-          <a class="card-cta" href="https://wa.me/5516991145034?text=Ol%C3%A1%2C%20Yago!%20Gostei%20da%20demo%20de%20card%C3%A1pio%20e%20quero%20uma%20proposta." target="_blank" rel="noopener noreferrer">Quero uma proposta</a>
+          <a class="card-cta" href="https://wa.me/5516991145034?text=Ol%C3%A1%2C%20Yago!%20Gostei%20da%20demo%20de%20card%C3%A1pio%20e%20quero%20entender%20a%20implanta%C3%A7%C3%A3o." target="_blank" rel="noopener noreferrer">Solicitar diagnóstico</a>
         </div>
       </article>
 
@@ -389,6 +517,14 @@
           <a class="card-cta" href="./painel-operacao.html">Abrir painel completo</a>
         </div>
       </article>
+    </section>
+
+    <section class="cta-band" aria-label="Chamada comercial da demo">
+      <div>
+        <strong>Base pronta para demo, venda e adaptação por cliente.</strong>
+        <p>Esta demonstração representa o produto-base da lanchonete. Depois da venda, a mesma base é ajustada ao cardápio, à identidade e ao ritmo operacional do cliente.</p>
+      </div>
+      <a href="https://wa.me/5516991145034?text=Ol%C3%A1%2C%20Yago!%20Vi%20a%20demo%20da%20lanchonete%20e%20quero%20entender%20a%20implanta%C3%A7%C3%A3o%20no%20meu%20com%C3%A9rcio." target="_blank" rel="noopener noreferrer">Falar sobre implantação</a>
     </section>
 
     <p class="alert">Esta página é uma demonstração visual controlada para apresentação comercial. Não processa pagamentos reais nem pedidos em produção.</p>

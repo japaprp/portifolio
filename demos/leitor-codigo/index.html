@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Demo Controlada | LeitorCodigo Mobile</title>
+  <meta name="description" content="Demo controlada do LeitorCodigo Mobile com tenant, licença, módulos por cliente, fila offline e integração com os sistemas web independentes Hamburgueria e Hortfruit.">
+  <meta name="theme-color" content="#10213A">
+  <link rel="icon" type="image/svg+xml" href="../../assets/branding/favicon.svg">
+  <style>
+    :root {
+      --bg: #f3ede4;
+      --ink: #1f2630;
+      --muted: #334155;
+      --line: #cbd5e1;
+      --card: #ffffff;
+      --sun: #c96a1b;
+      --teal: #0f766e;
+      --navy: #10213a;
+      --ok: #1e9d62;
+      --radius: 18px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    a:focus-visible,
+    button:focus-visible {
+      outline: 3px solid rgba(15, 118, 110, 0.42);
+      outline-offset: 3px;
+    }
+
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      color: var(--ink);
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at 10% 12%, rgba(201, 106, 27, 0.16), transparent 32%),
+        radial-gradient(circle at 90% 8%, rgba(15, 118, 110, 0.16), transparent 32%),
+        linear-gradient(180deg, #fbf8f2 0%, #f2ede4 100%);
+      padding: 1rem;
+    }
+
+    .shell {
+      max-width: 1180px;
+      margin: 0 auto;
+      border: 1px solid rgba(23, 56, 90, 0.14);
+      border-radius: 26px;
+      overflow: hidden;
+      background: rgba(255, 253, 248, 0.9);
+      box-shadow: 0 22px 50px rgba(25, 34, 48, 0.14);
+    }
+
+    .top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.8rem;
+      padding: 1rem 1.2rem;
+      background: rgba(255, 253, 248, 0.78);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(10px);
+    }
+
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      border: 1px solid rgba(23, 56, 90, 0.2);
+      border-radius: 999px;
+      padding: 0.32rem 0.72rem;
+      font-size: 0.76rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--navy);
+      font-weight: 700;
+      background: rgba(255,255,255,0.6);
+    }
+
+    .top a {
+      text-decoration: none;
+      color: var(--navy);
+      border: 1px solid rgba(23, 56, 90, 0.22);
+      border-radius: 12px;
+      padding: 0.5rem 0.8rem;
+      font-weight: 700;
+      background: rgba(255,255,255,0.55);
+    }
+
+    .top-actions {
+      display: inline-flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      justify-content: flex-end;
+    }
+
+    .hero {
+      padding: 1.4rem;
+      border-bottom: 1px solid var(--line);
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 1.2rem;
+      align-items: center;
+    }
+
+    .hero h1 {
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      line-height: 1.05;
+      color: #132640;
+      margin-bottom: 0.7rem;
+    }
+
+    .hero p {
+      color: var(--muted);
+      max-width: 62ch;
+      margin-bottom: 1rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+    }
+
+    .hero-actions a {
+      text-decoration: none;
+      border-radius: 13px;
+      padding: 0.75rem 1rem;
+      font-weight: 700;
+      border: 1px solid rgba(23, 56, 90, 0.22);
+      color: var(--navy);
+      background: rgba(255,255,255,0.7);
+    }
+
+    .hero-actions a.primary {
+      background: linear-gradient(130deg, #efb35c, #ef8f3d);
+      color: #172230;
+      border-color: rgba(239, 143, 61, 0.45);
+    }
+
+    .hero-note {
+      margin-top: 0.8rem;
+      color: #5d6472;
+      font-size: 0.88rem;
+      max-width: 64ch;
+    }
+
+    .phone {
+      justify-self: center;
+      width: min(100%, 290px);
+      aspect-ratio: 10 / 20;
+      border-radius: 36px;
+      padding: 1rem 0.85rem 0.9rem;
+      background: linear-gradient(180deg, #182942 0%, #0f1e31 100%);
+      border: 1px solid rgba(255,255,255,0.1);
+      box-shadow: 0 24px 40px rgba(9, 18, 28, 0.24);
+      position: relative;
+      display: grid;
+      gap: 0.65rem;
+    }
+
+    .phone::before {
+      content: "";
+      position: absolute;
+      top: 10px;
+      left: 50%;
+      width: 40%;
+      height: 16px;
+      transform: translateX(-50%);
+      border-radius: 999px;
+      background: rgba(255,255,255,0.08);
+    }
+
+    .phone-top {
+      margin-top: 0.8rem;
+      border-radius: 16px;
+      padding: 0.75rem;
+      background: linear-gradient(135deg, #f8fafc, #e8edf4);
+      color: var(--navy);
+    }
+
+    .phone-top strong {
+      display: block;
+      font-size: 0.9rem;
+      margin-bottom: 0.15rem;
+    }
+
+    .phone-top span {
+      font-size: 0.78rem;
+      color: #516078;
+    }
+
+    .phone-stack {
+      display: grid;
+      gap: 0.55rem;
+    }
+
+    .phone-card {
+      border-radius: 15px;
+      padding: 0.7rem;
+      background: rgba(255,255,255,0.92);
+      color: #203249;
+    }
+
+    .phone-card small {
+      display: block;
+      font-size: 0.66rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #6f7d90;
+      margin-bottom: 0.18rem;
+      font-weight: 700;
+    }
+
+    .phone-card strong {
+      display: block;
+      font-size: 0.9rem;
+      margin-bottom: 0.18rem;
+    }
+
+    .phone-card p {
+      font-size: 0.78rem;
+      color: #5c6777;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 0.9rem;
+      padding: 1.2rem;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .card {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--card);
+      padding: 1rem;
+      box-shadow: 0 10px 22px rgba(23, 56, 90, 0.08);
+    }
+
+    .card h2 {
+      font-size: 1.02rem;
+      margin-bottom: 0.45rem;
+      color: #163252;
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .card ul {
+      list-style: none;
+      display: grid;
+      gap: 0.35rem;
+      margin-top: 0.7rem;
+      color: #344155;
+      font-size: 0.9rem;
+    }
+
+    .card ul li::before {
+      content: "•";
+      color: var(--sun);
+      margin-right: 0.45rem;
+    }
+
+    .flow {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 0.9rem;
+      padding: 0 1.2rem 1.2rem;
+    }
+
+    .flow-card {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--card);
+      padding: 1rem;
+      box-shadow: 0 10px 22px rgba(23, 56, 90, 0.08);
+    }
+
+    .flow-card small {
+      display: block;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--teal);
+      font-size: 0.7rem;
+      margin-bottom: 0.35rem;
+      font-weight: 700;
+    }
+
+    .flow-card h2 {
+      font-size: 1rem;
+      margin-bottom: 0.4rem;
+      color: #163252;
+    }
+
+    .flow-card p {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .flow-card ul {
+      list-style: none;
+      display: grid;
+      gap: 0.35rem;
+      margin-top: 0.65rem;
+      color: #344155;
+      font-size: 0.88rem;
+    }
+
+    .flow-card ul li::before {
+      content: "•";
+      color: var(--sun);
+      margin-right: 0.45rem;
+    }
+
+    .kpis {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 0.8rem;
+      padding: 1.2rem;
+    }
+
+    .kpi {
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: var(--card);
+      padding: 0.9rem;
+    }
+
+    .kpi span {
+      display: block;
+      color: var(--muted);
+      font-size: 0.76rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.2rem;
+      font-weight: 700;
+    }
+
+    .kpi strong {
+      display: block;
+      font-size: 1.35rem;
+      color: #163252;
+    }
+
+    .footer-note {
+      margin: 0 1.2rem 1.2rem;
+      border: 1px solid #d7ddd0;
+      border-radius: 14px;
+      background: #eef4ee;
+      color: #355249;
+      padding: 0.8rem 0.9rem;
+      font-size: 0.84rem;
+    }
+
+    .cta-band {
+      margin: 0 1.2rem 1.2rem;
+      border: 1px solid #d8d0c1;
+      border-radius: 16px;
+      background: linear-gradient(135deg, #fff8ee 0%, #f5ede1 100%);
+      padding: 0.9rem 1rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.8rem;
+    }
+
+    .cta-band strong {
+      display: block;
+      margin-bottom: 0.2rem;
+      color: #163252;
+    }
+
+    .cta-band p {
+      color: #5a6270;
+      font-size: 0.88rem;
+      max-width: 62ch;
+    }
+
+    .cta-band a {
+      text-decoration: none;
+      border-radius: 12px;
+      padding: 0.65rem 0.9rem;
+      font-weight: 700;
+      border: 1px solid rgba(239, 143, 61, 0.45);
+      background: linear-gradient(130deg, #efb35c, #ef8f3d);
+      color: #172230;
+      white-space: nowrap;
+    }
+
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <header class="top">
+      <span class="chip">Demo Controlada • Flutter Mobile</span>
+      <div class="top-actions">
+        <a href="../../index.html">Voltar ao portfólio</a>
+        <a href="https://wa.me/5516991145034?text=Ol%C3%A1%2C%20Yago!%20Quero%20conhecer%20o%20LeitorCodigo%20Mobile." target="_blank" rel="noopener noreferrer">Falar sobre implantação</a>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div>
+        <h1>LeitorCodigo Mobile para caixa, comanda e leitura em múltiplos comércios</h1>
+        <p>Aplicativo Flutter universal com tenant, licença, módulos liberados por cliente, perfis por função, fila offline e integração com sistemas web independentes.</p>
+        <div class="hero-actions">
+          <a class="primary" href="https://wa.me/5516991145034?text=Ol%C3%A1%2C%20Yago!%20Quero%20um%20m%C3%B3dulo%20mobile%20integrado%20ao%20meu%20sistema." target="_blank" rel="noopener noreferrer">Falar sobre implantação</a>
+          <a href="#cenarios">Ver cenários de uso</a>
+          <a href="../../index.html#modelo-comercial">Ver modelo comercial</a>
+        </div>
+        <p class="hero-note">O app não substitui os sistemas web. Ele entra como extensão operacional configurável, liberada por cliente e integrada ao produto certo.</p>
+      </div>
+
+      <div class="phone" aria-hidden="true">
+        <div class="phone-top">
+          <strong>Tenant: lanchonete_demo</strong>
+          <span>Gestor define módulos dentro do teto liberado pelo programador</span>
+        </div>
+        <div class="phone-stack">
+          <div class="phone-card">
+            <small>Setor</small>
+            <strong>Caixa Scanner</strong>
+            <p>Leitura por câmera, código manual e finalização opcional no próprio app.</p>
+          </div>
+          <div class="phone-card">
+            <small>Setor</small>
+            <strong>Atendimento / Comanda</strong>
+            <p>Mesa única para operação menor ou envio para cozinha separada em operação grande.</p>
+          </div>
+          <div class="phone-card">
+            <small>Integração</small>
+            <strong>Hamburgueria + Hortfruit</strong>
+            <p>Adapters independentes para conversar com cada sistema web sem unificar os dois produtos.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="kpis" aria-label="Indicadores do módulo mobile">
+      <article class="kpi"><span>Integrações web</span><strong>2 adapters</strong></article>
+      <article class="kpi"><span>Perfis de acesso</span><strong>4 roles</strong></article>
+      <article class="kpi"><span>Presets de negócio</span><strong>3 presets</strong></article>
+      <article class="kpi"><span>Fallback operacional</span><strong>Fila offline</strong></article>
+    </section>
+
+    <section class="grid">
+      <article class="card">
+        <h2>Camada do programador / ADM SaaS</h2>
+        <p>Você controla o que cada cliente comprou e quais seções podem existir no app.</p>
+        <ul>
+          <li>Tenant, licença e preset do negócio.</li>
+          <li>Módulos liberados por cliente.</li>
+          <li>Integração com hamburgueria ou hortfruit.</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h2>Camada do gestor</h2>
+        <p>O cliente administra só o que foi autorizado, sem poluir a operação.</p>
+        <ul>
+          <li>Nomes operacionais por comércio.</li>
+          <li>Ativação interna de caixa, estoque e atendimento.</li>
+          <li>Teste de fila offline e ajustes do dia a dia.</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h2>Camada do funcionário</h2>
+        <p>Cada papel visualiza somente o fluxo necessário para executar a função.</p>
+        <ul>
+          <li>Caixa com leitura e fechamento.</li>
+          <li>Garçom com comanda e envio para cozinha.</li>
+          <li>Gestor com histórico e sincronização.</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h2>Modo pequeno ou grande comércio</h2>
+        <p>A mesma base atende operação enxuta e operação com tela dedicada.</p>
+        <ul>
+          <li>Tela única para negócio menor.</li>
+          <li>Cozinha separada quando a operação cresce.</li>
+          <li>Sem trocar produto nem reescrever fluxo.</li>
+        </ul>
+      </article>
+    </section>
+
+    <section id="cenarios" class="flow" aria-label="Cenários de uso do modulo mobile">
+      <article class="flow-card">
+        <small>Cenário 1</small>
+        <h2>Quando entra na lanchonete</h2>
+        <p>Amplia atendimento, caixa e operação de comanda sem transformar o sistema web da lanchonete em outro produto.</p>
+        <ul>
+          <li>Leitura e fechamento no celular.</li>
+          <li>Apoio para atendimento e cozinha.</li>
+          <li>Módulos liberados conforme o contrato.</li>
+        </ul>
+      </article>
+
+      <article class="flow-card">
+        <small>Cenário 2</small>
+        <h2>Quando entra no hortfruit</h2>
+        <p>Funciona como braço móvel de leitura e operação, conversando com o sistema web de varejo alimentar.</p>
+        <ul>
+          <li>Leitura por código ou entrada manual.</li>
+          <li>Histórico e fila offline.</li>
+          <li>Integração sem unificar os dois webs.</li>
+        </ul>
+      </article>
+
+      <article class="flow-card">
+        <small>Cenário 3</small>
+        <h2>Como você vende</h2>
+        <p>Você decide o que o cliente comprou, o que o gestor pode ajustar e o que cada funcionário realmente vê.</p>
+        <ul>
+          <li>Tenant, licença e preset por cliente.</li>
+          <li>Perfis operacionais por função.</li>
+          <li>Menos poluição de interface na ponta.</li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="cta-band" aria-label="Fechamento comercial do modulo mobile">
+      <div>
+        <strong>Módulo complementar pronto para venda junto com os sistemas web.</strong>
+        <p>Esta demo apresenta o papel comercial e operacional do LeitorCodigo: configuração por cliente, operação por função e integração com Hamburgueria e Hortfruit sem misturar os produtos.</p>
+      </div>
+      <a href="https://wa.me/5516991145034?text=Ol%C3%A1%2C%20Yago!%20Vi%20a%20demo%20do%20LeitorCodigo%20Mobile%20e%20quero%20entender%20como%20vender%20ou%20implantar%20junto%20com%20um%20sistema%20web." target="_blank" rel="noopener noreferrer">Falar sobre implantação</a>
+    </section>
+
+    <p class="footer-note">Esta página é uma demonstração comercial controlada. Ela representa o posicionamento e a arquitetura do módulo mobile, não uma loja real em produção.</p>
+  </div>
+</body>
+</html>

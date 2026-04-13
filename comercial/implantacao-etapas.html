@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Política de implantação por etapas para reduzir ruído antes do go-live.">
+  <meta name="theme-color" content="#10213A">
+  <link rel="icon" type="image/svg+xml" href="../assets/branding/favicon.svg">
+  <title>Implantação por Etapas | Yago Fellipe Amorim</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root { --ink:#0f172a; --muted:#334155; --line:#cbd5e1; --navy:#10213a; --teal:#0f766e; --radius:22px; --shadow:0 18px 45px rgba(15,23,42,0.12); }
+    * { box-sizing:border-box; margin:0; padding:0; }
+    body { font-family:"IBM Plex Sans",sans-serif; color:var(--ink); background: radial-gradient(circle at 14% 12%, rgba(15,118,110,0.16), transparent 42%), radial-gradient(circle at 88% 18%, rgba(16,33,58,0.12), transparent 40%), linear-gradient(180deg,#fbf8f2 0%,#f7f4ee 100%); line-height:1.6; }
+    .container { width:min(1040px, calc(100% - 2rem)); margin:0 auto; padding:2rem 0 3rem; }
+    .hero,.step,.note { background:rgba(255,255,255,0.86); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow); }
+    .hero,.step,.note { padding:1rem; }
+    .hero,.note { margin-bottom:1rem; }
+    .grid { display:grid; gap:0.9rem; }
+    .chip { display:inline-block; margin-bottom:0.65rem; padding:0.3rem 0.72rem; border-radius:999px; border:1px solid rgba(16,33,58,0.18); font-family:"Bricolage Grotesque",sans-serif; font-size:0.74rem; text-transform:uppercase; letter-spacing:0.05em; color:#334155; background:#f9fbfd; }
+    h1,h2 { font-family:"Bricolage Grotesque",sans-serif; letter-spacing:-0.02em; color:#1f2e46; }
+    h1 { font-size:clamp(1.95rem,5vw,3rem); margin-bottom:0.6rem; }
+    h2 { font-size:1.08rem; margin-bottom:0.32rem; }
+    p, li { color:var(--muted); }
+    .lead { max-width:70ch; margin-bottom:1rem; }
+    .actions { display:flex; flex-wrap:wrap; gap:0.75rem; }
+    .btn { text-decoration:none; border-radius:12px; padding:0.74rem 1rem; display:inline-flex; align-items:center; font-weight:700; border:1px solid rgba(16,33,58,0.2); color:var(--navy); background:#fff; }
+    .btn-primary { background:linear-gradient(135deg,#5cc5a1,#25a26c); color:#0d1d19; }
+    ul { list-style:none; display:grid; gap:0.42rem; margin-top:0.45rem; }
+    li::before { content:"•"; color:var(--teal); margin-right:0.45rem; }
+    @media (max-width:740px){ .btn{ width:100%; justify-content:center; } }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <section class="hero">
+      <span class="chip">Implantação por etapas</span>
+      <h1>Descoberta, configuração, homologação, go-live e estabilização</h1>
+      <p class="lead">Esta política existe para reduzir ruído, alinhar expectativa e evitar que a entrega vire mistura de escopo novo com suporte inicial.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="https://wa.me/5516991145034?text=Ol%C3%A1%2C%20quero%20entender%20como%20funciona%20a%20implanta%C3%A7%C3%A3o%20por%20etapas." target="_blank" rel="noopener noreferrer">Falar sobre implantação</a>
+        <a class="btn" href="./visao-geral.html">Voltar para visão comercial</a>
+      </div>
+    </section>
+
+    <section class="grid">
+      <article class="step"><h2>Etapa 1. Diagnóstico</h2><p>Entender nicho, problema principal, urgência e pacote correto.</p></article>
+      <article class="step"><h2>Etapa 2. Enquadramento técnico</h2><p>Definir módulos, perfis, integrações e se a operação usa `contrato` ou `adapter`.</p></article>
+      <article class="step"><h2>Etapa 3. Configuração</h2><p>Tenant, licença, usuários, identidade básica, parâmetros operacionais e modulação do cliente.</p></article>
+      <article class="step"><h2>Etapa 4. Integração</h2><p>Validar `health`, login, busca e operação principal do web próprio ou adapter.</p></article>
+      <article class="step"><h2>Etapa 5. Homologação</h2><p>Executar o fluxo real do nicho e corrigir o que impedir a liberação.</p></article>
+      <article class="step"><h2>Etapa 6. Go-live</h2><p>Liberar ambiente e acompanhar o fluxo principal em uso real.</p></article>
+      <article class="step"><h2>Etapa 7. Estabilização</h2><p>Tratar ajuste fino, separar incidente de melhoria e organizar backlog futuro.</p></article>
+    </section>
+
+    <section class="note">
+      <h2>Regras da política</h2>
+      <ul>
+        <li>Não pular homologação.</li>
+        <li>Não prometer integração direta fora do contrato.</li>
+        <li>Não misturar novo escopo com suporte inicial.</li>
+        <li>Não publicar como pronto sem fluxo principal validado.</li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Pacote comercial premium do Hortfruit Web com escopo, implantação e homologação.">
+  <meta name="theme-color" content="#0f2531">
+  <link rel="icon" type="image/svg+xml" href="../../assets/branding/favicon.svg">
+  <title>Hortfruit Web | Pacote Comercial</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #efe7d9; --paper: rgba(255, 250, 241, 0.86); --ink: #11202b; --muted: #4b5a67; --line: rgba(17, 32, 43, 0.12);
+      --deep: #0f2531; --mint: #cdebe4; --sky: #dfeaf7; --radius-xl: 30px; --radius-lg: 22px;
+      --shadow: 0 30px 80px rgba(17, 32, 43, 0.16); --display: "Chakra Petch", sans-serif; --body: "Manrope", sans-serif;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: var(--body); color: var(--ink);
+      background:
+        radial-gradient(circle at 10% 14%, rgba(15,118,110,0.18), transparent 30%),
+        radial-gradient(circle at 86% 18%, rgba(211,138,49,0.14), transparent 30%),
+        linear-gradient(180deg, #fbf6ee 0%, var(--bg) 100%);
+      line-height: 1.58;
+    }
+    .container { width: min(1120px, calc(100% - 2rem)); margin: 0 auto; padding: 1.2rem 0 3rem; }
+    .hero, .shell, .card, .closing { background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius-xl); box-shadow: var(--shadow); backdrop-filter: blur(14px); }
+    .hero, .shell, .closing { padding: 1.15rem; margin-bottom: 1.18rem; }
+    .chip {
+      display:inline-flex; align-items:center; gap:0.45rem; padding:0.34rem 0.82rem; border-radius:999px; border:1px solid rgba(17,32,43,0.14);
+      background:rgba(255,255,255,0.68); color:#30414f; font-family:var(--display); font-size:0.76rem; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; margin-bottom:0.8rem;
+    }
+    .chip::before {
+      content:""; width:10px; height:10px; border-radius:50%; background:linear-gradient(135deg, #33b08b, #79d1ae); box-shadow:0 0 0 5px rgba(15,118,110,0.12);
+    }
+    h1, h2, h3 { font-family: var(--display); letter-spacing: -0.03em; text-transform: uppercase; color: var(--deep); }
+    h1 { font-size: clamp(2.6rem, 5vw, 4.5rem); line-height: 0.92; max-width: 8ch; margin-bottom: 0.7rem; }
+    h2 { font-size: clamp(1.45rem, 3vw, 2.1rem); line-height: 0.96; margin-bottom: 0.5rem; }
+    h3 { font-size: 1rem; }
+    p { color: var(--muted); }
+    .hero-grid, .grid, .steps, .closing { display:grid; gap:1.08rem; }
+    .hero-grid { grid-template-columns:minmax(0,1.02fr) minmax(320px,0.98fr); }
+    .grid, .steps { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .lead { max-width: 34ch; font-size: 1.04rem; font-weight: 700; color: #203341; margin-bottom: 0.75rem; }
+    .sublead { max-width: 58ch; margin-bottom: 1rem; }
+    .actions { display:flex; flex-wrap:wrap; gap:0.72rem; }
+    .btn {
+      text-decoration:none; border-radius:15px; padding:0.9rem 1rem; display:inline-flex; justify-content:center; align-items:center; font-weight:800;
+      border:1px solid rgba(17,32,43,0.16); background:rgba(255,255,255,0.78); color:var(--deep); min-height:50px;
+    }
+    .btn.primary { background: linear-gradient(135deg, #79d1ae, #25a26c); color:#0d1d19; }
+    .btn.dark { background: linear-gradient(145deg, #173c43, #0f2531); color: #f7fafc; }
+    .argument { padding:1rem; border-radius:var(--radius-lg); background:linear-gradient(165deg, rgba(23,60,67,0.98), rgba(15,37,49,0.98)); border:1px solid rgba(255,255,255,0.08); }
+    .argument h3, .argument li { color:#edf6f5; }
+    .argument ul, .card ul { list-style:none; display:grid; gap:0.45rem; margin-top:0.6rem; }
+    .argument li::before, .card li::before { content:"•"; color:#79d1ae; margin-right:0.45rem; }
+    .card { padding:1.08rem; display:grid; gap:0.76rem; border-radius:var(--radius-lg); }
+    .card.mint { background:linear-gradient(145deg, #eefaf7 0%, #d8ece6 100%); }
+    .card.sky { background:linear-gradient(145deg, #f5f9ff 0%, var(--sky) 100%); }
+    .step { border-radius:20px; padding:0.95rem; border:1px solid rgba(17,32,43,0.08); background:linear-gradient(145deg, rgba(255,255,255,0.74), rgba(245,240,231,0.9)); }
+    .section-head { display:flex; justify-content:space-between; gap:1rem; align-items:end; margin-bottom:1.08rem; }
+    .section-head p { max-width:60ch; }
+    .closing { grid-template-columns:1.1fr 0.9fr; align-items:center; }
+    .micro { font-size:0.94rem; color:#556474; margin-top:0.45rem; }
+    @media (max-width: 980px) { .hero-grid, .grid, .steps, .closing { grid-template-columns:1fr; } }
+    @media (max-width: 760px) {
+      .container { width:min(100%, calc(100% - 1rem)); }
+      .hero, .shell, .closing { padding:0.9rem; }
+      .actions, .section-head { display:grid; }
+      .btn { width:100%; }
+      h1 { font-size:2.45rem; max-width:none; }
+      h2 { font-size:1.7rem; }
+      .lead { max-width:none; font-size:0.98rem; }
+      .chip { gap:0.3rem; padding:0; margin-bottom:0.5rem; font-size:0.62rem; border:0; border-radius:0; background:transparent; }
+      .chip::before { width:8px; height:8px; box-shadow:0 0 0 4px rgba(15,118,110,0.12); }
+    }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <section class="hero">
+      <div class="hero-grid">
+        <div>
+          <span class="chip">Pacote comercial</span>
+          <h1>Hortfruit Web</h1>
+          <p class="lead">Produto web para hortfruit, varejão e varejo leve com leitura, catálogo, checkout e operação mais previsível.</p>
+          <p class="sublead">Aqui a venda fica mais forte quando o cliente entende que existe segregação de catálogo, profile controlado e uma base que pode conversar com padaria e farmácia sem bagunçar o produto.</p>
+          <div class="actions">
+            <a class="btn primary" href="https://wa.me/5516991145034?text=Ol%C3%A1%2C%20quero%20avaliar%20o%20pacote%20Hortfruit%20Web." target="_blank" rel="noopener noreferrer">Falar sobre implantação</a>
+            <a class="btn dark" href="../../produtos/hort-fruit.html" target="_blank" rel="noopener noreferrer">Ver pagina do produto</a>
+            <a class="btn" href="../visao-geral.html">Voltar para visão comercial</a>
+          </div>
+        </div>
+        <article class="argument">
+          <h3>O argumento de compra</h3>
+          <ul>
+            <li>catálogo, leitura e checkout no mesmo eixo</li>
+            <li>profile controlado para evitar mistura operacional</li>
+            <li>base pronta para escalar com mobile e integração</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="shell">
+      <div class="section-head">
+        <div>
+          <span class="chip">Escopo e encaixe</span>
+          <h2>Para quem serve e o que entrega</h2>
+        </div>
+        <p>O foco é varejo leve com necessidade de leitura rápida, catálogo organizado e uma operação que não dependa de improviso no balcão.</p>
+      </div>
+      <div class="grid">
+        <article class="card mint">
+          <h3>Para quem serve</h3>
+          <ul>
+            <li>hortfruit e varejão</li>
+            <li>mercado leve com balcão e checkout</li>
+            <li>operação que precisa de leitura e catálogo limpo</li>
+          </ul>
+        </article>
+        <article class="card sky">
+          <h3>Escopo base</h3>
+          <ul>
+            <li>login, perfis e catálogo</li>
+            <li>busca por código e nome</li>
+            <li>carrinho, checkout e histórico operacional</li>
+          </ul>
+        </article>
+        <article class="card mint">
+          <h3>O que protege a operação</h3>
+          <ul>
+            <li>businessProfile separado por nicho</li>
+            <li>sync e histórico sem mistura de fluxo</li>
+            <li>padaria e farmácia entram com homologação obrigatória</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="shell">
+      <div class="section-head">
+        <div>
+          <span class="chip">Entrega correta</span>
+          <h2>Homologação que evita ruído depois</h2>
+        </div>
+        <p>O ponto principal aqui é validar que o produto está lendo, cadastrando, montando carrinho, fechando checkout e gravando histórico no perfil certo.</p>
+      </div>
+      <div class="steps">
+        <article class="step">
+          <h3>Passo 1</h3>
+          <p>Definir perfil de negócio, escopo inicial e como o cliente vai operar o catálogo.</p>
+        </article>
+        <article class="step">
+          <h3>Passo 2</h3>
+          <p>Homologar busca, cadastro, carrinho, checkout e sincronização sem falha.</p>
+        </article>
+        <article class="step">
+          <h3>Passo 3</h3>
+          <p>Subir go-live com critério e travas certas para evitar mistura de domínio e dor de cabeça futura.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="closing">
+      <div>
+        <span class="chip">Formato de venda</span>
+        <h2>Web próprio forte, mobile opcional e integração sob contrato.</h2>
+        <p>O melhor posicionamento aqui é vender o Hortfruit Web como base sólida de varejo e usar o Amorim PDV Mobile como módulo complementar quando leitura, operação e mobilidade fizerem sentido.</p>
+        <p class="micro">Padaria e farmácia podem nascer sobre o mesmo contrato varejo, mas com governança e homologação obrigatória para não transformar flexibilidade em bagunça.</p>
+      </div>
+      <div class="actions">
+        <a class="btn primary" href="https://wa.me/5516991145034?text=Quero%20diagnosticar%20uma%20opera%C3%A7%C3%A3o%20de%20hortfruit%20ou%20mercado." target="_blank" rel="noopener noreferrer">Solicitar diagnóstico</a>
+        <a class="btn" href="./amorim-pdv-mobile.html">Ver Amorim PDV</a>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

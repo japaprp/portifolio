@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Politica base de suporte inicial e SLA para implantacao dos produtos.">
+  <meta name="theme-color" content="#10213A">
+  <link rel="icon" type="image/svg+xml" href="../assets/branding/favicon.svg">
+  <title>Suporte e SLA | Yago Fellipe Amorim</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink:#0f172a; --muted:#334155; --line:#cbd5e1; --navy:#10213a; --teal:#0f766e; --radius:22px; --shadow:0 18px 45px rgba(15,23,42,0.12);
+    }
+    * { box-sizing:border-box; margin:0; padding:0; }
+    body {
+      font-family:"IBM Plex Sans",sans-serif; color:var(--ink);
+      background:
+        radial-gradient(circle at 14% 12%, rgba(15,118,110,0.16), transparent 42%),
+        radial-gradient(circle at 88% 18%, rgba(16,33,58,0.12), transparent 40%),
+        linear-gradient(180deg,#fbf8f2 0%,#f7f4ee 100%);
+      line-height:1.55;
+    }
+    .container { width:min(1040px, calc(100% - 2rem)); margin:0 auto; padding:2rem 0 3rem; }
+    .hero,.card { background:rgba(255,255,255,0.86); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow); }
+    .hero { padding:1.3rem; margin-bottom:1rem; }
+    .chip { display:inline-block; margin-bottom:0.65rem; padding:0.3rem 0.72rem; border-radius:999px; border:1px solid rgba(16,33,58,0.18); font-family:"Bricolage Grotesque",sans-serif; font-size:0.74rem; text-transform:uppercase; letter-spacing:0.05em; color:#334155; background:#f9fbfd; }
+    h1,h2 { font-family:"Bricolage Grotesque",sans-serif; letter-spacing:-0.02em; color:#1f2e46; }
+    h1 { font-size:clamp(1.95rem,5vw,3rem); margin-bottom:0.6rem; }
+    h2 { font-size:1.12rem; }
+    p { color:var(--muted); }
+    .lead { max-width:70ch; margin-bottom:1rem; }
+    .actions { display:flex; flex-wrap:wrap; gap:0.75rem; }
+    .btn { text-decoration:none; border-radius:12px; padding:0.74rem 1rem; display:inline-flex; align-items:center; font-weight:700; border:1px solid rgba(16,33,58,0.2); color:var(--navy); background:#fff; }
+    .btn-primary { background:linear-gradient(135deg,#5cc5a1,#25a26c); color:#0d1d19; }
+    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:1rem; }
+    .card { padding:1rem; display:grid; gap:0.55rem; }
+    ul { list-style:none; display:grid; gap:0.42rem; color:#334155; }
+    li::before { content:"•"; color:var(--teal); margin-right:0.45rem; }
+    @media (max-width:740px){ .btn{ width:100%; justify-content:center; } }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <section class="hero">
+      <span class="chip">Suporte e estabilizacao</span>
+      <h1>O que entra, o que nao entra e como funciona o pos-go-live</h1>
+      <p class="lead">Esta pagina existe para dar clareza comercial e evitar ruido depois da implantacao. O objetivo e separar ajuste fino real de pedido novo disfarçado de suporte.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="https://wa.me/5516991145034?text=Ol%C3%A1%2C%20quero%20entender%20como%20funciona%20o%20suporte%20inicial." target="_blank" rel="noopener noreferrer">Falar sobre suporte</a>
+        <a class="btn" href="./faixas-comerciais.html">Abrir faixas comerciais</a>
+      </div>
+    </section>
+
+    <section class="grid">
+      <article class="card">
+        <h2>Entra no suporte inicial</h2>
+        <ul>
+          <li>Ajuste fino de implantacao.</li>
+          <li>Validacao do fluxo principal.</li>
+          <li>Correcoes pequenas de configuracao.</li>
+          <li>Estabilizacao curta apos go-live.</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h2>Nao entra por padrao</h2>
+        <ul>
+          <li>Novo modulo fora do escopo.</li>
+          <li>Integracao nova nao prevista.</li>
+          <li>Refacao grande de identidade ou regra de negocio.</li>
+          <li>Ampliação de escopo depois do aceite.</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h2>Regra pratica de prioridade</h2>
+        <ul>
+          <li>Incidente critico: prioridade maxima.</li>
+          <li>Ajuste operacional importante: prioridade alta.</li>
+          <li>Melhoria futura: backlog e nova proposta.</li>
+        </ul>
+      </article>
+    </section>
+  </main>
+</body>
+</html>

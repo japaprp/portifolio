@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Ecossistema comercial de produtos web e mobile com identidade forte, governanca e implantacao profissional.">
+  <meta name="theme-color" content="#0f2531">
+  <link rel="icon" type="image/svg+xml" href="../assets/branding/favicon.svg">
+  <title>Visao Comercial | Ecossistema Amorim</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #efe7d9;
+      --paper: rgba(255,250,241,0.86);
+      --ink: #11202b;
+      --muted: #455462;
+      --line: rgba(17,32,43,0.12);
+      --deep: #0f2531;
+      --deep-2: #173c43;
+      --gold: #d38a31;
+      --sky: #dfeaf7;
+      --mint: #d7ece6;
+      --radius-xl: 30px;
+      --radius-lg: 22px;
+      --shadow: 0 28px 70px rgba(17,32,43,0.15);
+      --display: "Chakra Petch", sans-serif;
+      --body: "Manrope", sans-serif;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: var(--body);
+      color: var(--ink);
+      line-height: 1.58;
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at 12% 10%, rgba(211,138,49,0.2), transparent 28%),
+        radial-gradient(circle at 88% 14%, rgba(23,60,67,0.18), transparent 32%),
+        linear-gradient(180deg, #fbf6ee 0%, var(--bg) 100%);
+    }
+    .container { width: min(1180px, calc(100% - 2rem)); margin: 0 auto; padding: 1.4rem 0 3rem; }
+    .hero, .card, .note {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(14px);
+    }
+    .hero { padding: 1.2rem; margin-bottom: 1rem; display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 1rem; }
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.34rem 0.82rem;
+      border-radius: 999px;
+      border: 1px solid rgba(17,32,43,0.14);
+      background: rgba(255,255,255,0.68);
+      font-family: var(--display);
+      font-size: 0.76rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #334554;
+      margin-bottom: 0.8rem;
+    }
+    .chip::before {
+      content: "";
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--gold), #ebb46e);
+      box-shadow: 0 0 0 5px rgba(211,138,49,0.14);
+    }
+    h1, h2, h3 {
+      font-family: var(--display);
+      text-transform: uppercase;
+      letter-spacing: -0.03em;
+      color: var(--deep);
+    }
+    h1 { font-size: clamp(2.5rem, 5vw, 4.8rem); line-height: 0.9; margin-bottom: 0.8rem; max-width: 10ch; }
+    h2 { font-size: 1.28rem; margin-bottom: 0.45rem; }
+    h3 { font-size: 1rem; margin-bottom: 0.35rem; }
+    p { color: var(--muted); }
+    .lead { max-width: 64ch; margin-bottom: 1rem; }
+    .actions { display: flex; flex-wrap: wrap; gap: 0.7rem; }
+    .btn {
+      text-decoration: none;
+      border-radius: 14px;
+      padding: 0.86rem 1rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      border: 1px solid rgba(17,32,43,0.14);
+      background: rgba(255,255,255,0.78);
+      color: var(--deep);
+    }
+    .btn-primary { background: linear-gradient(135deg, #ebb46e, #cf7e22); }
+    .btn-dark { background: linear-gradient(145deg, #173c43, #0f2531); color: #f8fafc; }
+    .hero-side { display: grid; gap: 0.85rem; }
+    .signal {
+      border-radius: var(--radius-lg);
+      padding: 1rem;
+      border: 1px solid rgba(17,32,43,0.08);
+    }
+    .signal.deep {
+      background: linear-gradient(145deg, rgba(23,60,67,0.98), rgba(15,37,49,0.98));
+      color: #edf6f5;
+    }
+    .signal.deep h3, .signal.deep p, .signal.deep li { color: #edf6f5; }
+    .signal ul, .card ul { list-style: none; display: grid; gap: 0.42rem; margin-top: 0.55rem; }
+    .signal li::before, .card li::before, .note li::before { content: "•"; color: var(--gold); margin-right: 0.45rem; }
+    .signal.sky { background: linear-gradient(145deg, #f5f9ff 0%, var(--sky) 100%); }
+    .signal.mint { background: linear-gradient(145deg, #eff8f6 0%, var(--mint) 100%); }
+    .grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0.9rem; margin-bottom: 1rem; }
+    .card { padding: 1rem; display: grid; gap: 0.58rem; }
+    .card a { margin-top: 0.35rem; }
+    .note { padding: 1rem; display: grid; gap: 0.65rem; background: linear-gradient(145deg, rgba(255,255,255,0.86), rgba(223,234,247,0.82)); }
+    .note ul { list-style: none; display: grid; gap: 0.42rem; }
+    @media (max-width: 1080px) {
+      .hero, .grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 760px) {
+      .actions { display: grid; }
+      .btn { width: 100%; }
+      h1 { max-width: none; }
+    }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <section class="hero">
+      <div>
+        <span class="chip">Ecossistema comercial</span>
+        <h1>Sistemas que parecem produto e operam como produto.</h1>
+        <p class="lead">Aqui o foco nao e vender pagina bonita ou app isolado. E montar um ecossistema coerente de web, mobile, implantacao e integracao, com identidade propria, governanca clara e manutencao que continua saudavel quando o cliente entra.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="https://wa.me/5516991145034?text=Ol%C3%A1%2C%20quero%20um%20diagn%C3%B3stico%20estrat%C3%A9gico%20do%20meu%20cen%C3%A1rio." target="_blank" rel="noopener noreferrer">Solicitar diagnostico</a>
+          <a class="btn btn-dark" href="./pacotes/amorim-pdv-mobile.html">Abrir pagina principal do Amorim</a>
+          <a class="btn" href="./site-proprio.html">Cliente com site proprio</a>
+          <a class="btn" href="./one-page.html">Versao curta</a>
+        </div>
+      </div>
+      <div class="hero-side">
+        <article class="signal deep">
+          <h3>Direcao comercial</h3>
+          <ul>
+            <li>web por nicho quando fizer sentido</li>
+            <li>app universal para mobilidade operacional</li>
+            <li>integracao por contrato ou adapter</li>
+            <li>implantacao curta, homologada e repetivel</li>
+          </ul>
+        </article>
+        <article class="signal sky">
+          <h3>O que evita dor de cabeca</h3>
+          <p>Um produto fixo, uma camada de adaptacao controlada e uma implantacao com metodo. E isso que segura escala sem virar suporte infinito.</p>
+        </article>
+        <article class="signal mint">
+          <h3>O que gera valor</h3>
+          <p>Mais clareza operacional, mais mobilidade, menos retrabalho, menos improviso de integracao e mais confianca para quem compra.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="grid">
+      <article class="card">
+        <h2>Amorim PDV Mobile</h2>
+        <p>Produto principal de mobilidade, operacao por perfil e integracao controlada.</p>
+        <ul>
+          <li>tenant, licenca e modulos por cliente</li>
+          <li>caixa, leitura, atendimento, cozinha e ADM</li>
+          <li>produto forte para venda e publicacao</li>
+        </ul>
+        <a class="btn" href="./pacotes/amorim-pdv-mobile.html">Abrir produto</a>
+      </article>
+
+      <article class="card">
+        <h2>Lanchonete</h2>
+        <p>Web proprio para food service com comanda, caixa, cozinha e operacao.</p>
+        <ul>
+          <li>mais maduro para operacao real</li>
+          <li>bom para salao, balcao e preparo</li>
+          <li>complementa o modulo mobile</li>
+        </ul>
+        <a class="btn" href="./pacotes/lanchonete.html">Abrir pacote</a>
+      </article>
+
+      <article class="card">
+        <h2>Hortfruit</h2>
+        <p>Web de varejo com base flexivel para mercado, padaria e farmacia por profile.</p>
+        <ul>
+          <li>catalogo, checkout e operacao de balcao</li>
+          <li>qa minima e smoke operacional ja montadas</li>
+          <li>bom para implantacao guiada</li>
+        </ul>
+        <a class="btn" href="./pacotes/hortfruit.html">Abrir pacote</a>
+      </article>
+
+      <article class="card">
+        <h2>Confiança publica</h2>
+        <p>Documentos, suporte e material para fechar publicacao e venda com mais respeito.</p>
+        <ul>
+          <li>politica de privacidade</li>
+          <li>termos de uso</li>
+          <li>faq, implantacao e sla</li>
+        </ul>
+        <a class="btn" href="./politica-privacidade.html">Abrir documentos</a>
+      </article>
+    </section>
+
+    <section class="note">
+      <h2>Modelo que mais faz sentido hoje</h2>
+      <ul>
+        <li>produto-base com identidade forte</li>
+        <li>demo controlada e sem bagunca de escopo</li>
+        <li>adaptacao por cliente com metodo e homologacao</li>
+        <li>condicao comercial via cupom e licenca promocional, nunca na operacao do cliente</li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>

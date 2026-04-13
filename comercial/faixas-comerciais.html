@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Faixas comerciais por nicho para diagnostico inicial de implantacao, homologacao e modulo mobile.">
+  <meta name="theme-color" content="#10213A">
+  <link rel="icon" type="image/svg+xml" href="../assets/branding/favicon.svg">
+  <title>Faixas Comerciais | Yago Fellipe Amorim</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink:#0f172a; --muted:#334155; --line:#cbd5e1; --navy:#10213a; --sun:#c96a1b; --teal:#0f766e; --radius:22px; --shadow:0 18px 45px rgba(15,23,42,0.12);
+    }
+    * { box-sizing:border-box; margin:0; padding:0; }
+    body {
+      font-family:"IBM Plex Sans",sans-serif; color:var(--ink);
+      background:
+        radial-gradient(circle at 14% 12%, rgba(201,106,27,0.16), transparent 42%),
+        radial-gradient(circle at 88% 18%, rgba(15,118,110,0.15), transparent 40%),
+        linear-gradient(180deg,#fbf8f2 0%,#f7f4ee 100%);
+      line-height:1.55;
+    }
+    .container { width:min(1080px, calc(100% - 2rem)); margin:0 auto; padding:2rem 0 3rem; }
+    .hero,.card,.note { background:rgba(255,255,255,0.86); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow); }
+    .hero,.note { padding:1.3rem; }
+    .hero { margin-bottom:1rem; }
+    .chip { display:inline-block; margin-bottom:0.65rem; padding:0.3rem 0.72rem; border-radius:999px; border:1px solid rgba(16,33,58,0.18); font-family:"Bricolage Grotesque",sans-serif; font-size:0.74rem; text-transform:uppercase; letter-spacing:0.05em; color:#334155; background:#f9fbfd; }
+    h1,h2 { font-family:"Bricolage Grotesque",sans-serif; letter-spacing:-0.02em; color:#1f2e46; }
+    h1 { font-size:clamp(1.95rem,5vw,3rem); margin-bottom:0.6rem; }
+    h2 { font-size:1.12rem; }
+    p { color:var(--muted); }
+    .lead { max-width:70ch; margin-bottom:1rem; }
+    .actions { display:flex; flex-wrap:wrap; gap:0.75rem; }
+    .btn { text-decoration:none; border-radius:12px; padding:0.74rem 1rem; display:inline-flex; align-items:center; font-weight:700; border:1px solid rgba(16,33,58,0.2); color:var(--navy); background:#fff; }
+    .btn-primary { background:linear-gradient(135deg,#f2ad5a,#ef8f3d); }
+    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:1rem; margin-bottom:1rem; }
+    .card { padding:1rem; display:grid; gap:0.55rem; }
+    ul { list-style:none; display:grid; gap:0.42rem; color:#334155; }
+    li::before { content:"•"; color:var(--sun); margin-right:0.45rem; }
+    .price { font-family:"Bricolage Grotesque",sans-serif; font-size:1.6rem; color:var(--navy); }
+    .tag { display:inline-flex; align-items:center; width:max-content; border-radius:999px; padding:0.24rem 0.65rem; background:#eef4fb; color:#334155; font-size:0.82rem; }
+    @media (max-width:740px){ .btn{ width:100%; justify-content:center; } }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <section class="hero">
+      <span class="chip">Faixas comerciais base</span>
+      <h1>Diagnostico rapido por nicho, sem fechar escopo no escuro</h1>
+      <p class="lead">Estas faixas servem para enquadramento inicial. O valor final sempre depende de diagnostico, quantidade de adaptacoes, integracoes e homologacao.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="https://wa.me/5516991145034?text=Ol%C3%A1%2C%20quero%20avaliar%20a%20faixa%20comercial%20do%20meu%20projeto." target="_blank" rel="noopener noreferrer">Solicitar diagnostico</a>
+        <a class="btn" href="./one-page.html">Abrir one-page</a>
+      </div>
+    </section>
+
+    <section class="grid">
+      <article class="card">
+        <span class="tag">Produto-base web</span>
+        <h2>Lanchonete Web</h2>
+        <div class="price">Entrada sob diagnostico</div>
+        <ul>
+          <li>Comanda, mesa, viagem, cozinha e fechamento.</li>
+          <li>Separar `base`, `adaptacao`, `homologacao` e `suporte inicial`.</li>
+          <li>Modulo mobile entra como opcional de alto valor.</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <span class="tag">Produto-base web</span>
+        <h2>Hortfruit Web</h2>
+        <div class="price">Entrada sob diagnostico</div>
+        <ul>
+          <li>Catalogo, leitura, carrinho, checkout e perfis operacionais.</li>
+          <li>`Padaria` e `farmacia` entram pelo contrato `varejo`.</li>
+          <li>Homologacao de leitura, checkout e sync e obrigatoria.</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <span class="tag">Modulo universal</span>
+        <h2>Amorim PDV Mobile</h2>
+        <div class="price">Entrada sob diagnostico</div>
+        <ul>
+          <li>Tenant, licenca, modulos, operacao e integracao.</li>
+          <li>Pode integrar com web proprio ou com site do cliente.</li>
+          <li>Usa contrato ou adapter para evitar bagunca e retrabalho.</li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="note">
+      <h2>Como compor proposta sem erro</h2>
+      <ul>
+        <li>Separar valor de `base`, `modulo mobile`, `homologacao` e `suporte inicial`.</li>
+        <li>Nao prometer plug-and-play sem rodada minima de validacao.</li>
+        <li>Quando houver site proprio do cliente, prever `contrato` ou `adapter`.</li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>

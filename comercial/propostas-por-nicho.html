@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Modelos de proposta por nicho para lanchonete, hortfruit e Amorim PDV Mobile.">
+  <meta name="theme-color" content="#10213A">
+  <link rel="icon" type="image/svg+xml" href="../assets/branding/favicon.svg">
+  <title>Propostas por Nicho | Yago Fellipe Amorim</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root { --ink:#0f172a; --muted:#334155; --line:#cbd5e1; --navy:#10213a; --sun:#c96a1b; --radius:22px; --shadow:0 18px 45px rgba(15,23,42,0.12); }
+    * { box-sizing:border-box; margin:0; padding:0; }
+    body { font-family:"IBM Plex Sans",sans-serif; color:var(--ink); background: radial-gradient(circle at 14% 12%, rgba(201,106,27,0.16), transparent 42%), radial-gradient(circle at 88% 18%, rgba(15,118,110,0.12), transparent 40%), linear-gradient(180deg,#fbf8f2 0%,#f7f4ee 100%); line-height:1.6; }
+    .container { width:min(1040px, calc(100% - 2rem)); margin:0 auto; padding:2rem 0 3rem; }
+    .hero,.card { background:rgba(255,255,255,0.86); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow); }
+    .hero { padding:1.3rem; margin-bottom:1rem; }
+    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:1rem; }
+    .card { padding:1rem; display:grid; gap:0.55rem; }
+    .chip { display:inline-block; margin-bottom:0.65rem; padding:0.3rem 0.72rem; border-radius:999px; border:1px solid rgba(16,33,58,0.18); font-family:"Bricolage Grotesque",sans-serif; font-size:0.74rem; text-transform:uppercase; letter-spacing:0.05em; color:#334155; background:#f9fbfd; }
+    h1,h2 { font-family:"Bricolage Grotesque",sans-serif; letter-spacing:-0.02em; color:#1f2e46; }
+    h1 { font-size:clamp(1.95rem,5vw,3rem); margin-bottom:0.6rem; }
+    h2 { font-size:1.08rem; }
+    p, li { color:var(--muted); }
+    .lead { max-width:70ch; margin-bottom:1rem; }
+    .actions { display:flex; flex-wrap:wrap; gap:0.75rem; }
+    .btn { text-decoration:none; border-radius:12px; padding:0.74rem 1rem; display:inline-flex; align-items:center; font-weight:700; border:1px solid rgba(16,33,58,0.2); color:var(--navy); background:#fff; }
+    .btn-primary { background:linear-gradient(135deg,#f2ad5a,#ef8f3d); }
+    ul { list-style:none; display:grid; gap:0.42rem; }
+    li::before { content:"•"; color:var(--sun); margin-right:0.45rem; }
+    @media (max-width:740px){ .btn{ width:100%; justify-content:center; } }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <section class="hero">
+      <span class="chip">Propostas por nicho</span>
+      <h1>Modelos prontos para começar a proposta sem página em branco</h1>
+      <p class="lead">Aqui o objetivo é acelerar o fechamento. Os modelos seguem o pacote, a implantação, a homologação e a condição comercial de cada nicho, em vez de usar uma proposta genérica para tudo.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="https://wa.me/5516991145034?text=Ol%C3%A1%2C%20quero%20estruturar%20uma%20proposta%20pelo%20pacote%20certo." target="_blank" rel="noopener noreferrer">Fechar diagnóstico</a>
+        <a class="btn" href="./visao-geral.html">Voltar para visão comercial</a>
+      </div>
+    </section>
+
+    <section class="grid">
+      <article class="card">
+        <h2>Lanchonete Web</h2>
+        <p>Modelo focado em comanda, mesa, viagem, cozinha e fechamento, com módulo mobile opcional.</p>
+        <ul>
+          <li>Fluxo principal de atendimento e preparo.</li>
+          <li>Homologação de salão e cozinha.</li>
+          <li>Campo para cupom comercial, desconto aprovado e dias livres.</li>
+          <li>Modelo local: `docs/comercial/PROPOSTA_LANCHONETE_MODELO.md`</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h2>Hortfruit Web</h2>
+        <p>Modelo focado em catálogo, leitura, carrinho e checkout, com operação por perfil.</p>
+        <ul>
+          <li>Escolha clara de `mercado`, `padaria` ou `farmácia`.</li>
+          <li>Homologação de leitura, cadastro e checkout.</li>
+          <li>Campo para cupom comercial sem misturar isso com o uso do sistema.</li>
+          <li>Modelo local: `docs/comercial/PROPOSTA_HORTFRUIT_MODELO.md`</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h2>Amorim PDV Mobile</h2>
+        <p>Modelo focado em tenant, licença, módulos, operação e integração por contrato ou adapter.</p>
+        <ul>
+          <li>Integração controlada com web próprio do cliente.</li>
+          <li>Homologação do fluxo principal do app.</li>
+          <li>Condição promocional registrada como licença comercial, não como função operacional.</li>
+          <li>Modelo local: `docs/comercial/PROPOSTA_AMORIM_PDV_MOBILE_MODELO.md`</li>
+        </ul>
+      </article>
+    </section>
+  </main>
+</body>
+</html>

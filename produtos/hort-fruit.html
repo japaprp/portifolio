@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Pacote de Landing Page Estrategica com foco em conversao, apresentacao clara da oferta e captacao rapida por WhatsApp.">
+  <meta name="description" content="Produto Hort-fruit para varejo alimentar com catalogo, checkout em tempo real, leitura de itens e base pronta para adaptacao por cliente.">
   <meta name="theme-color" content="#10213A">
   <link rel="icon" type="image/svg+xml" href="../assets/branding/favicon.svg">
-  <title>Pacote | Landing Page Estrategica</title>
+  <title>Produto | Hort-fruit</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
@@ -17,7 +17,6 @@
       --muted: #334155;
       --line: #cbd5e1;
       --sun: #c96a1b;
-      --teal: #0f766e;
       --navy: #10213a;
       --radius: 20px;
       --shadow: 0 18px 45px rgba(29, 35, 48, 0.13);
@@ -42,7 +41,7 @@
       line-height: 1.5;
     }
 
-    .container { width: min(1000px, calc(100% - 2rem)); margin: 0 auto; }
+    .container { width: min(1040px, calc(100% - 2rem)); margin: 0 auto; }
 
     .nav {
       position: sticky;
@@ -61,36 +60,40 @@
       padding: 0.9rem 0;
     }
 
+    .brand, .back {
+      text-decoration: none;
+      color: var(--navy);
+      font-weight: 700;
+    }
+
     .brand {
       font-family: "Bricolage Grotesque", sans-serif;
-      font-size: 1.08rem;
-      font-weight: 800;
-      color: var(--navy);
-      text-decoration: none;
       text-transform: uppercase;
       letter-spacing: 0.04em;
+      font-size: 1.08rem;
     }
 
     .brand span { color: var(--sun); }
 
     .back {
-      text-decoration: none;
-      color: var(--navy);
       border: 1px solid rgba(23, 56, 90, 0.28);
       border-radius: 10px;
       padding: 0.45rem 0.68rem;
-      font-weight: 600;
       background: rgba(255, 255, 255, 0.56);
     }
 
-    main { padding: 2rem 0 2.4rem; }
+    main { padding: 2rem 0 2.6rem; }
 
-    .card {
+    .hero, .panel {
       background: linear-gradient(145deg, #ffffff 0%, #f3f8fd 56%, #e9eff7 100%);
       border: 0.8px solid #cbd5e1;
       border-radius: var(--radius);
-      padding: 1.2rem;
       box-shadow: var(--shadow);
+    }
+
+    .hero {
+      padding: 1.2rem;
+      margin-bottom: 1rem;
     }
 
     .chip {
@@ -109,62 +112,36 @@
 
     h1, h2 {
       font-family: "Bricolage Grotesque", sans-serif;
-      letter-spacing: -0.02em;
       color: #1f2e46;
+      letter-spacing: -0.02em;
     }
 
     h1 {
-      font-size: clamp(1.7rem, 5vw, 2.5rem);
+      font-size: clamp(1.9rem, 5vw, 2.8rem);
       margin-bottom: 0.45rem;
     }
 
-    .lead { color: var(--muted); margin-bottom: 0.9rem; max-width: 65ch; }
+    .lead {
+      color: var(--muted);
+      max-width: 70ch;
+      margin-bottom: 0.9rem;
+    }
 
-    .price {
-      display: inline-block;
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      margin-bottom: 1rem;
+    }
+
+    .tag {
       border: 1px solid #c7d5e8;
       border-radius: 999px;
       padding: 0.24rem 0.7rem;
       background: #edf3fb;
       color: #2a3f5f;
       font-weight: 700;
-      margin-bottom: 0.95rem;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 0.85rem;
-      margin-bottom: 1rem;
-    }
-
-    .box {
-      border: 0.8px solid #cbd5e1;
-      border-radius: 14px;
-      padding: 0.8rem;
-      background: #f9fbff;
-    }
-
-    .box h2 { font-size: 1.02rem; margin-bottom: 0.4rem; }
-
-    .box ul {
-      margin-left: 1.1rem;
-      display: grid;
-      gap: 0.35rem;
-      color: var(--muted);
-      font-size: 0.92rem;
-    }
-
-    .box p { color: var(--muted); font-size: 0.92rem; }
-
-    .note {
-      border: 0.8px solid #c7d5e8;
-      border-radius: 14px;
-      padding: 0.8rem;
-      background: #edf3fb;
-      color: #31445f;
-      font-size: 0.92rem;
-      margin-bottom: 1rem;
+      font-size: 0.82rem;
     }
 
     .actions {
@@ -191,8 +168,52 @@
       color: #1a2737;
     }
 
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 1rem;
+    }
+
+    .panel {
+      padding: 1rem;
+    }
+
+    .panel h2 {
+      font-size: 1.05rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .panel p {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .panel ul {
+      list-style: none;
+      display: grid;
+      gap: 0.38rem;
+      margin-top: 0.65rem;
+      color: #36445d;
+      font-size: 0.9rem;
+    }
+
+    .panel ul li::before {
+      content: "•";
+      color: var(--sun);
+      margin-right: 0.45rem;
+    }
+
+    .footer-note {
+      margin-top: 1rem;
+      border: 1px solid #d7e0ed;
+      border-radius: 12px;
+      padding: 0.8rem;
+      background: #eef4fb;
+      color: #41536c;
+      font-size: 0.9rem;
+    }
+
     @media (max-width: 740px) {
-      main { padding-top: 1.2rem; }
       .btn { width: 100%; justify-content: center; }
     }
   </style>
@@ -201,50 +222,63 @@
   <header class="nav">
     <div class="container nav-wrap">
       <a class="brand" href="../index.html">Yago <span>Dev</span></a>
-      <a class="back" href="../index.html#servicos">Voltar ao portfolio</a>
+      <a class="back" href="../index.html#valor-produtos">Voltar ao portfolio</a>
     </div>
   </header>
 
   <main>
     <div class="container">
-      <article class="card">
-        <span class="chip">Pacote 1</span>
-        <h1>Landing Page Estrategica</h1>
-        <p class="lead">Pagina pensada para apresentar uma oferta com clareza, reduzir atrito na decisao e gerar contato rapido pelo canal principal do negocio.</p>
-        <p class="price">Investimento base: R$ 790 a R$ 1.390</p>
-        <p class="note">Melhor escolha para quem precisa vender um servico, validar uma campanha, divulgar um negocio local ou sair rapido do improviso sem partir para um site maior logo de inicio.</p>
-
-        <div class="grid">
-          <section class="box">
-            <h2>Entrega base</h2>
-            <ul>
-              <li>Secoes principais com CTA para WhatsApp.</li>
-              <li>Layout responsivo e boa leitura em mobile.</li>
-              <li>Texto e estrutura pensados para conversao.</li>
-            </ul>
-          </section>
-
-          <section class="box">
-            <h2>Prazo e publico</h2>
-            <p>Prazo medio de 5 a 7 dias. Ideal para negocios locais, autonomos, lancamentos, campanhas de trafego e captacao rapida de leads.</p>
-          </section>
-
-          <section class="box">
-            <h2>Resultado esperado</h2>
-            <ul>
-              <li>Oferta mais clara para o visitante.</li>
-              <li>Contato comercial mais rapido.</li>
-              <li>Base simples para evoluir depois.</li>
-            </ul>
-          </section>
+      <section class="hero">
+        <span class="chip">Produto web independente</span>
+        <h1>Hort-fruit</h1>
+        <p class="lead">Sistema web para varejo alimentar com catalogo, leitura de itens, carrinho, checkout em tempo real e base pronta para adaptacao por cliente.</p>
+        <div class="tag-row">
+          <span class="tag">Catalogo</span>
+          <span class="tag">Checkout em tempo real</span>
+          <span class="tag">Leitura de itens</span>
+          <span class="tag">Base pronta para mobile</span>
         </div>
-
         <div class="actions">
-          <a class="btn btn-primary" href="https://wa.me/5516991145034?text=Ol%C3%A1%2C%20Yago!%20Quero%20solicitar%20um%20diagn%C3%B3stico%20para%20uma%20landing%20page%20estrat%C3%A9gica." target="_blank" rel="noopener noreferrer">Solicitar diagnóstico</a>
-          <a class="btn" href="../index.html#contato">Enviar briefing</a>
-          <a class="btn" href="../index.html#processo">Ver processo</a>
+          <a class="btn btn-primary" href="https://wa.me/5516991145034?text=Ol%C3%A1%2C%20Yago!%20Quero%20entender%20a%20implanta%C3%A7%C3%A3o%20do%20Hort-fruit." target="_blank" rel="noopener noreferrer">Falar sobre implantacao</a>
+          <a class="btn" href="https://japaprp.github.io/varejao-backend/" target="_blank" rel="noopener noreferrer">Ver demo</a>
         </div>
-      </article>
+      </section>
+
+      <section class="grid">
+        <article class="panel">
+          <h2>Para quem serve</h2>
+          <p>Hortifruti, mercado de bairro, varejo alimentar local e operacao que precisa organizar leitura, venda e fluxo de atendimento.</p>
+        </article>
+
+        <article class="panel">
+          <h2>O que resolve</h2>
+          <ul>
+            <li>Leitura de itens e organizacao do carrinho.</li>
+            <li>Checkout em tempo real com menos improviso.</li>
+            <li>Base mais clara para operacao diaria.</li>
+          </ul>
+        </article>
+
+        <article class="panel">
+          <h2>Modulos principais</h2>
+          <ul>
+            <li>Catalogo e busca de produtos.</li>
+            <li>Carrinho e fluxo de fechamento.</li>
+            <li>Monitoramento da operacao.</li>
+          </ul>
+        </article>
+
+        <article class="panel">
+          <h2>Como implanta</h2>
+          <ul>
+            <li>Parte de uma base validada.</li>
+            <li>Ajusta visual e regras do comercio.</li>
+            <li>Pode evoluir junto com o modulo mobile.</li>
+          </ul>
+        </article>
+      </section>
+
+      <p class="footer-note">O Hort-fruit continua como produto web independente. Quando fizer sentido, o LeitorCodigo entra apenas como extensao operacional no mobile.</p>
     </div>
   </main>
 </body>

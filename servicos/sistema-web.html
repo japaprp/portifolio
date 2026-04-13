@@ -3,33 +3,41 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Pacote Sistema Web Sob Medida de Yago Fellipe Amorim.">
-  <title>Pacote | Sistema Web Sob Medida</title>
+  <meta name="description" content="Sistema web com diagnostico, produto-base adaptavel quando fizer sentido e desenvolvimento sob medida quando o cenario pedir.">
+  <meta name="theme-color" content="#10213A">
+  <link rel="icon" type="image/svg+xml" href="../assets/branding/favicon.svg">
+  <title>Pacote | Sistema Web ou Produto-base Adaptavel</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #f6f2e8;
-      --ink: #1d2330;
-      --muted: #4f5a6f;
-      --line: #d9d4c9;
-      --sun: #ef8f3d;
-      --teal: #1e6a79;
-      --navy: #17385a;
+      --bg: #f7f4ee;
+      --ink: #0f172a;
+      --muted: #334155;
+      --line: #cbd5e1;
+      --sun: #c96a1b;
+      --teal: #0f766e;
+      --navy: #10213a;
       --radius: 20px;
       --shadow: 0 18px 45px rgba(29, 35, 48, 0.13);
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
+    a:focus-visible,
+    button:focus-visible {
+      outline: 3px solid rgba(15, 118, 110, 0.42);
+      outline-offset: 3px;
+    }
+
     body {
       font-family: "IBM Plex Sans", sans-serif;
       color: var(--ink);
       background:
-        radial-gradient(circle at 14% 12%, rgba(239, 143, 61, 0.18), transparent 42%),
-        radial-gradient(circle at 90% 18%, rgba(30, 106, 121, 0.22), transparent 40%),
-        linear-gradient(180deg, #f9f4ea 0%, #f5efe3 60%, #f1eadb 100%);
+        radial-gradient(circle at 14% 12%, rgba(201, 106, 27, 0.16), transparent 42%),
+        radial-gradient(circle at 90% 18%, rgba(15, 118, 110, 0.18), transparent 40%),
+        linear-gradient(180deg, #fbf8f2 0%, #f7f4ee 60%, #f1ece3 100%);
       min-height: 100vh;
       line-height: 1.5;
     }
@@ -78,8 +86,8 @@
     main { padding: 2rem 0 2.4rem; }
 
     .card {
-      background: linear-gradient(145deg, #f3f6fa 0%, #e6ebf2 56%, #d9e0e8 100%);
-      border: 0.8px solid #c4ccd6;
+      background: linear-gradient(145deg, #ffffff 0%, #f3f8fd 56%, #e9eff7 100%);
+      border: 0.8px solid #cbd5e1;
       border-radius: var(--radius);
       padding: 1.2rem;
       box-shadow: var(--shadow);
@@ -131,7 +139,7 @@
     }
 
     .box {
-      border: 0.8px solid #c4ccd6;
+      border: 0.8px solid #cbd5e1;
       border-radius: 14px;
       padding: 0.8rem;
       background: #f9fbff;
@@ -148,6 +156,16 @@
     }
 
     .box p { color: var(--muted); font-size: 0.92rem; }
+
+    .note {
+      border: 0.8px solid #c7d5e8;
+      border-radius: 14px;
+      padding: 0.8rem;
+      background: #edf3fb;
+      color: #31445f;
+      font-size: 0.92rem;
+      margin-bottom: 1rem;
+    }
 
     .actions {
       display: flex;
@@ -191,13 +209,14 @@
     <div class="container">
       <article class="card">
         <span class="chip">Pacote 3</span>
-        <h1>Sistema Web Sob Medida</h1>
-        <p class="lead">Estrutura de sistema para operacao real, com regras de negocio, modulos administrativos e base para escala.</p>
+        <h1>Sistema Web ou Produto-base Adaptavel</h1>
+        <p class="lead">Estrutura para operacao real com diagnostico inicial, regra de negocio clara e duas possibilidades: adaptar uma base pronta do portfolio ou desenvolver sob medida quando o cenario exigir.</p>
         <p class="price">Investimento inicial: R$ 3.900 a R$ 12.000+</p>
+        <p class="note">Esse formato atende melhor quem quer sair de planilhas, organizar operacao, criar painel administrativo e ganhar previsibilidade. Quando um produto-base do portfolio encaixa, a implantacao fica mais rapida. Quando nao encaixa, o desenvolvimento parte do zero com a mesma seriedade tecnica.</p>
 
         <div class="grid">
           <section class="box">
-            <h2>Escopo inicial</h2>
+            <h2>Entrega base</h2>
             <ul>
               <li>Mapeamento de fluxo e arquitetura de MVP.</li>
               <li>Cadastros, operacao e relatorios essenciais.</li>
@@ -209,11 +228,30 @@
             <h2>Prazo e publico</h2>
             <p>Inicio entre 20 e 45 dias para MVP funcional, ideal para negocios que querem sair de planilhas e padronizar processos.</p>
           </section>
+
+          <section class="box">
+            <h2>Quando adapto base pronta</h2>
+            <ul>
+              <li>Quando o cenario encaixa em um produto do portfolio.</li>
+              <li>Quando o cliente quer reduzir prazo e custo de implantacao.</li>
+              <li>Quando a operacao pode evoluir sobre uma base validada.</li>
+            </ul>
+          </section>
+
+          <section class="box">
+            <h2>Quando vai sob medida</h2>
+            <ul>
+              <li>Quando a regra de negocio foge do que ja esta pronto.</li>
+              <li>Quando o fluxo precisa ser modelado do zero.</li>
+              <li>Quando a empresa precisa de algo realmente proprio.</li>
+            </ul>
+          </section>
         </div>
 
         <div class="actions">
-          <a class="btn btn-primary" href="https://wa.me/5516991145034?text=Ol%C3%A1%2C%20Yago!%20Quero%20conversar%20sobre%20o%20pacote%20Sistema%20Web%20Sob%20Medida." target="_blank" rel="noopener noreferrer">Solicitar diagnostico</a>
+          <a class="btn btn-primary" href="https://wa.me/5516991145034?text=Ol%C3%A1%2C%20Yago!%20Quero%20solicitar%20um%20diagn%C3%B3stico%20para%20um%20sistema%20web." target="_blank" rel="noopener noreferrer">Solicitar diagnostico</a>
           <a class="btn" href="../index.html#contato">Enviar briefing</a>
+          <a class="btn" href="../index.html#modelo-comercial">Ver modelo comercial</a>
         </div>
       </article>
     </div>
