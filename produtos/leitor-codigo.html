@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="LeitorCodigo Mobile como modulo complementar para leitura, caixa e atendimento no celular com tenant, licenca e modulos por cliente.">
+  <meta name="description" content="Amorim PDV Mobile como modulo complementar para leitura, caixa, atendimento, licencas, tenant, ADM SaaS e integracao com sistemas web de comercio.">
   <meta name="theme-color" content="#10213A">
   <link rel="icon" type="image/svg+xml" href="../assets/branding/favicon.svg">
-  <title>Produto | LeitorCodigo Mobile</title>
+  <title>Produto | Amorim PDV Mobile</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
@@ -17,6 +17,7 @@
       --muted: #334155;
       --line: #cbd5e1;
       --sun: #c96a1b;
+      --teal: #0f766e;
       --navy: #10213a;
       --radius: 20px;
       --shadow: 0 18px 45px rgba(29, 35, 48, 0.13);
@@ -44,12 +45,14 @@
     .brand span { color: var(--sun); }
     .back { border: 1px solid rgba(23, 56, 90, 0.28); border-radius: 10px; padding: 0.45rem 0.68rem; background: rgba(255, 255, 255, 0.56); }
     main { padding: 2rem 0 2.6rem; }
-    .hero, .panel { background: linear-gradient(145deg, #ffffff 0%, #f3f8fd 56%, #e9eff7 100%); border: 0.8px solid #cbd5e1; border-radius: var(--radius); box-shadow: var(--shadow); }
+    .hero, .panel, .visual-panel, .screen-card { background: linear-gradient(145deg, #ffffff 0%, #f3f8fd 56%, #e9eff7 100%); border: 0.8px solid #cbd5e1; border-radius: var(--radius); box-shadow: var(--shadow); }
     .hero { padding: 1.2rem; margin-bottom: 1rem; }
     .chip { display: inline-block; font-family: "Bricolage Grotesque", sans-serif; text-transform: uppercase; font-size: 0.74rem; letter-spacing: 0.04em; color: #3c4758; margin-bottom: 0.5rem; border: 0.8px solid #bcc4ce; border-radius: 999px; padding: 0.26rem 0.7rem; background: linear-gradient(145deg, #f6f7f9 0%, #e7ecf2 52%, #d8dee6 100%); }
-    h1, h2 { font-family: "Bricolage Grotesque", sans-serif; color: #1f2e46; letter-spacing: -0.02em; }
+    h1, h2, h3 { font-family: "Bricolage Grotesque", sans-serif; color: #1f2e46; letter-spacing: -0.02em; }
     h1 { font-size: clamp(1.9rem, 5vw, 2.8rem); margin-bottom: 0.45rem; }
-    .lead { color: var(--muted); max-width: 70ch; margin-bottom: 0.9rem; }
+    h2 { font-size: clamp(1.35rem, 3vw, 2rem); margin-bottom: 0.45rem; }
+    h3 { font-size: 1.05rem; }
+    .lead { color: var(--muted); max-width: 72ch; margin-bottom: 0.9rem; }
     .tag-row { display: flex; flex-wrap: wrap; gap: 0.45rem; margin-bottom: 1rem; }
     .tag { border: 1px solid #c7d5e8; border-radius: 999px; padding: 0.24rem 0.7rem; background: #edf3fb; color: #2a3f5f; font-weight: 700; font-size: 0.82rem; }
     .actions { display: flex; flex-wrap: wrap; gap: 0.6rem; }
@@ -61,8 +64,21 @@
     .panel p { color: var(--muted); font-size: 0.92rem; }
     .panel ul { list-style: none; display: grid; gap: 0.38rem; margin-top: 0.65rem; color: #36445d; font-size: 0.9rem; }
     .panel ul li::before { content: "•"; color: var(--sun); margin-right: 0.45rem; }
+    .visual-panel { margin: 1rem 0; padding: 1rem; }
+    .visual-panel p { color: var(--muted); max-width: 74ch; margin-bottom: 1rem; }
+    .screen-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; }
+    .screen-card { padding: 0.9rem; overflow: hidden; }
+    .phone-mock { border: 10px solid #143f43; border-radius: 28px; background: #f7f4ee; min-height: 255px; padding: 0.85rem; display: flex; flex-direction: column; gap: 0.55rem; box-shadow: inset 0 0 0 1px rgba(255,255,255,0.4); }
+    .phone-top { font-weight: 800; color: #121a22; font-size: 0.92rem; }
+    .phone-box { border: 1px solid #d8d1c5; background: #fff; border-radius: 16px; padding: 0.7rem; color: #374151; font-size: 0.82rem; }
+    .phone-box strong { display: block; color: #10213a; margin-bottom: 0.18rem; }
+    .pill-row { display: flex; flex-wrap: wrap; gap: 0.34rem; }
+    .pill { border-radius: 999px; background: #d8f2df; border: 1px solid #b9dec3; color: #2d4a45; padding: 0.25rem 0.48rem; font-size: 0.75rem; font-weight: 700; }
+    .cta-dark { background: #143f43; color: #fff; border-radius: 16px; padding: 0.65rem; text-align: center; font-weight: 800; margin-top: auto; }
+    .screen-card h3 { margin-top: 0.7rem; margin-bottom: 0.25rem; }
+    .screen-card p { color: var(--muted); font-size: 0.88rem; }
     .footer-note { margin-top: 1rem; border: 1px solid #d7e0ed; border-radius: 12px; padding: 0.8rem; background: #eef4fb; color: #41536c; font-size: 0.9rem; }
-    @media (max-width: 740px) { .btn { width: 100%; justify-content: center; } }
+    @media (max-width: 740px) { .btn { width: 100%; justify-content: center; } .phone-mock { min-height: 230px; } }
   </style>
 </head>
 <body>
@@ -76,18 +92,87 @@
   <main>
     <div class="container">
       <section class="hero">
-        <span class="chip">Modulo mobile complementar</span>
-        <h1>LeitorCodigo Mobile</h1>
-        <p class="lead">Aplicativo Flutter para leitura, caixa e atendimento no celular com tenant, licenca, modulos por cliente, operacao por perfil e integracao com sistemas web independentes.</p>
+        <span class="chip">PDV mobile + ADM SaaS</span>
+        <h1>Amorim PDV Mobile</h1>
+        <p class="lead">Aplicativo mobile universal para leitura, caixa, atendimento, comanda e operacao de comercio, com painel ADM SaaS para liberar tenant, licenca, modulos, cupons, presets por setor e integracao com sistemas web independentes.</p>
         <div class="tag-row">
           <span class="tag">Tenant e licenca</span>
-          <span class="tag">Perfis por funcao</span>
-          <span class="tag">Fila offline</span>
+          <span class="tag">ADM SaaS</span>
+          <span class="tag">Modulos por cliente</span>
+          <span class="tag">Cupons comerciais</span>
           <span class="tag">Integracao com web</span>
         </div>
         <div class="actions">
-          <a class="btn btn-primary" href="https://wa.me/5516991145034?text=Ol%C3%A1%2C%20Yago!%20Quero%20entender%20a%20implanta%C3%A7%C3%A3o%20do%20LeitorCodigo%20Mobile." target="_blank" rel="noopener noreferrer">Falar sobre implantacao</a>
+          <a class="btn btn-primary" href="https://wa.me/5516991145034?text=Ol%C3%A1%2C%20Yago!%20Quero%20entender%20a%20implanta%C3%A7%C3%A3o%20do%20Amorim%20PDV%20Mobile." target="_blank" rel="noopener noreferrer">Falar sobre implantacao</a>
           <a class="btn" href="https://japaprp.github.io/portifolio/demos/leitor-codigo/" target="_blank" rel="noopener noreferrer">Ver demo</a>
+        </div>
+      </section>
+
+      <section class="visual-panel">
+        <span class="chip">Evolucao visual do produto</span>
+        <h2>Telas e fluxos que demonstram a progressao do PDV</h2>
+        <p>O produto saiu de um leitor simples para uma solucao mobile com login operacional, visao geral da sessao, painel administrativo SaaS, teto de modulos por cliente, cupons, presets por segmento e wizard de implantacao.</p>
+        <div class="screen-grid">
+          <article class="screen-card">
+            <div class="phone-mock">
+              <div class="phone-top">Amorim PDV Mobile</div>
+              <div class="phone-box"><strong>Acesso operacional</strong>Tenant, licenca, usuario e senha liberados por cliente.</div>
+              <div class="phone-box"><strong>Modo de operacao</strong>Entrada segura apenas para operadores autorizados.</div>
+              <div class="cta-dark">Entrar na operacao</div>
+            </div>
+            <h3>Login por tenant e licenca</h3>
+            <p>Mostra maturidade SaaS: o app nao fica aberto para qualquer usuario; cada cliente entra com credenciais proprias.</p>
+          </article>
+
+          <article class="screen-card">
+            <div class="phone-mock">
+              <div class="phone-top">Visao geral</div>
+              <div class="phone-box"><strong>Resumo da sessao</strong>Loja, sessao, comanda, cozinha, PDV e caixa.</div>
+              <div class="pill-row"><span class="pill">Scanner ativo</span><span class="pill">Estoque ativo</span><span class="pill">Cozinha ativo</span><span class="pill">Fechamento ativo</span></div>
+            </div>
+            <h3>Resumo operacional</h3>
+            <p>Consolida o que o operador pode usar na sessao e deixa os modulos visiveis conforme a licenca.</p>
+          </article>
+
+          <article class="screen-card">
+            <div class="phone-mock">
+              <div class="phone-top">Administrador SaaS</div>
+              <div class="phone-box"><strong>Painel ADM SaaS</strong>Define o que cada cliente comprou e ate onde o gestor pode mexer.</div>
+              <div class="phone-box"><strong>Wizard</strong>Etapas prontas, preset atual, usuarios ativos e integracao testada.</div>
+            </div>
+            <h3>Painel de administracao</h3>
+            <p>Transforma o app em produto vendavel por cliente, com controle interno de implantacao e suporte.</p>
+          </article>
+
+          <article class="screen-card">
+            <div class="phone-mock">
+              <div class="phone-top">Teto de modulos</div>
+              <div class="pill-row"><span class="pill">Scanner</span><span class="pill">Estoque</span><span class="pill">Comanda</span><span class="pill">Mesa</span><span class="pill">Cozinha</span><span class="pill">Historico</span></div>
+              <div class="phone-box"><strong>Controle comercial</strong>Libera somente os recursos contratados pelo cliente.</div>
+            </div>
+            <h3>Modulos por cliente</h3>
+            <p>Permite vender planos diferentes sem duplicar app: cada tenant recebe os modulos do pacote contratado.</p>
+          </article>
+
+          <article class="screen-card">
+            <div class="phone-mock">
+              <div class="phone-top">Cadastro rapido</div>
+              <div class="phone-box"><strong>Novo cliente</strong>Nome da empresa e codigo curto do tenant.</div>
+              <div class="pill-row"><span class="pill">Lanchonete</span><span class="pill">Hortfruit</span><span class="pill">Padaria</span><span class="pill">Farmacia</span><span class="pill">API propria</span></div>
+            </div>
+            <h3>Presets por segmento</h3>
+            <p>Prepara lanchonete, hortfruit, padaria, farmacia ou API propria com configuracao inicial coerente.</p>
+          </article>
+
+          <article class="screen-card">
+            <div class="phone-mock">
+              <div class="phone-top">Cupons comerciais</div>
+              <div class="phone-box"><strong>Oferta comercial</strong>Codigo, nome da oferta, desconto, dias livres e observacao interna.</div>
+              <div class="cta-dark">Salvar cupom</div>
+            </div>
+            <h3>Licencas promocionais</h3>
+            <p>Permite vender com desconto, liberar teste ou registrar campanha sem expor isso para o operador.</p>
+          </article>
         </div>
       </section>
 
@@ -103,6 +188,7 @@
             <li>Leitura movel por codigo, QR ou entrada manual.</li>
             <li>Operacao por perfil sem poluir a interface.</li>
             <li>Continuidade mesmo com fila offline.</li>
+            <li>ADM SaaS para cliente, licenca, cupom e modulos.</li>
           </ul>
         </article>
 
@@ -112,6 +198,7 @@
             <li>Integracao com Lanchonete e Hort-fruit.</li>
             <li>Tenant, licenca e modulos por cliente.</li>
             <li>Perfis como caixa, atendimento, gestor e ADM.</li>
+            <li>Presets para lanchonete, hortfruit, padaria, farmacia e API propria.</li>
           </ul>
         </article>
 
@@ -120,12 +207,13 @@
           <ul>
             <li>Libera apenas o que o cliente comprou.</li>
             <li>Configura por segmento e operacao.</li>
+            <li>Valida integracao e usuarios antes de entregar.</li>
             <li>Entra como complemento, nao como substituicao do web.</li>
           </ul>
         </article>
       </section>
 
-      <p class="footer-note">O LeitorCodigo nao unifica Hort-fruit e Lanchonete no mesmo sistema. Ele conversa com cada web de forma independente e configuravel, conforme o contrato do cliente.</p>
+      <p class="footer-note">O Amorim PDV Mobile nao unifica Hort-fruit e Lanchonete no mesmo sistema. Ele conversa com cada web de forma independente e configuravel, conforme o contrato do cliente.</p>
     </div>
   </main>
 </body>
