@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="420" viewBox="0 0 720 420" role="img" aria-labelledby="title desc">
+  <title id="title">Showcase Amorim PDV Mobile</title>
+  <desc id="desc">Montagem visual com telas do Amorim PDV Mobile, incluindo operacao, ADM SaaS, modulos, cupons e cadastro rapido.</desc>
+  <rect width="720" height="420" rx="26" fill="#f3f0e8"/>
+  <rect x="18" y="18" width="684" height="384" rx="22" fill="#ffffff" stroke="#d7d1c5"/>
+  <text x="42" y="58" font-family="Arial, sans-serif" font-size="28" font-weight="700" fill="#111827">Amorim PDV Mobile</text>
+  <text x="42" y="86" font-family="Arial, sans-serif" font-size="15" fill="#4b5563">PDV mobile com operacao + painel ADM SaaS para tenant, licenca, modulos e cupons.</text>
+
+  <g transform="translate(42 118)">
+    <rect width="185" height="230" rx="20" fill="#123f43"/>
+    <rect x="14" y="14" width="157" height="202" rx="14" fill="#f7f4ee"/>
+    <text x="28" y="45" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="#111827">Operacao</text>
+    <rect x="28" y="62" width="129" height="34" rx="8" fill="#ffffff" stroke="#d8d1c5"/>
+    <text x="40" y="84" font-family="Arial, sans-serif" font-size="12" fill="#334155">Tenant / cliente</text>
+    <rect x="28" y="106" width="129" height="34" rx="8" fill="#ffffff" stroke="#d8d1c5"/>
+    <text x="40" y="128" font-family="Arial, sans-serif" font-size="12" fill="#334155">Licenca</text>
+    <rect x="28" y="150" width="129" height="38" rx="12" fill="#123f43"/>
+    <text x="56" y="174" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#ffffff">Entrar</text>
+  </g>
+
+  <g transform="translate(267 118)">
+    <rect width="185" height="230" rx="20" fill="#ffffff" stroke="#d7d1c5"/>
+    <text x="22" y="42" font-family="Arial, sans-serif" font-size="15" font-weight="700" fill="#111827">ADM SaaS</text>
+    <rect x="22" y="60" width="141" height="34" rx="17" fill="#d8f2df" stroke="#b9dec3"/>
+    <text x="42" y="82" font-family="Arial, sans-serif" font-size="12" font-weight="700" fill="#24533f">Scanner ativo</text>
+    <rect x="22" y="105" width="141" height="34" rx="17" fill="#d8f2df" stroke="#b9dec3"/>
+    <text x="43" y="127" font-family="Arial, sans-serif" font-size="12" font-weight="700" fill="#24533f">Estoque ativo</text>
+    <rect x="22" y="150" width="141" height="34" rx="17" fill="#d8f2df" stroke="#b9dec3"/>
+    <text x="39" y="172" font-family="Arial, sans-serif" font-size="12" font-weight="700" fill="#24533f">Comanda ativa</text>
+    <text x="22" y="207" font-family="Arial, sans-serif" font-size="12" fill="#4b5563">Modulos por cliente</text>
+  </g>
+
+  <g transform="translate(492 118)">
+    <rect width="185" height="230" rx="20" fill="#ffffff" stroke="#d7d1c5"/>
+    <text x="22" y="42" font-family="Arial, sans-serif" font-size="15" font-weight="700" fill="#111827">Venda e implantacao</text>
+    <rect x="22" y="62" width="141" height="32" rx="8" fill="#f7f4ee" stroke="#9ca3af"/>
+    <text x="35" y="83" font-family="Arial, sans-serif" font-size="12" fill="#4b5563">Codigo do cupom</text>
+    <rect x="22" y="106" width="141" height="32" rx="8" fill="#f7f4ee" stroke="#9ca3af"/>
+    <text x="35" y="127" font-family="Arial, sans-serif" font-size="12" fill="#4b5563">Nome da oferta</text>
+    <rect x="22" y="152" width="62" height="28" rx="14" fill="#123f43"/>
+    <text x="38" y="171" font-family="Arial, sans-serif" font-size="11" font-weight="700" fill="#ffffff">Salvar</text>
+    <text x="22" y="207" font-family="Arial, sans-serif" font-size="12" fill="#4b5563">Cupons + presets</text>
+  </g>
+
+  <text x="42" y="382" font-family="Arial, sans-serif" font-size="14" fill="#334155">Evolucao: leitor de codigo -> PDV mobile universal -> ADM SaaS configuravel por cliente.</text>
+</svg>
