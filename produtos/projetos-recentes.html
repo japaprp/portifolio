@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Projetos recentes de Yago Dev organizados por tipo, status e repositorio GitHub.">
+  <meta name="theme-color" content="#10213A">
+  <link rel="icon" type="image/svg+xml" href="../assets/branding/favicon.svg">
+  <title>Projetos recentes | Yago Dev</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root { --bg:#f7f4ee; --ink:#0f172a; --muted:#334155; --line:#cbd5e1; --sun:#c96a1b; --navy:#10213a; --radius:20px; --shadow:0 18px 45px rgba(29,35,48,.13); }
+    * { box-sizing:border-box; margin:0; padding:0; }
+    body { font-family:"IBM Plex Sans",sans-serif; color:var(--ink); background:radial-gradient(circle at 14% 12%, rgba(201,106,27,.16), transparent 42%), radial-gradient(circle at 90% 18%, rgba(15,118,110,.18), transparent 40%), linear-gradient(180deg,#fbf8f2 0%,#f7f4ee 60%,#f1ece3 100%); min-height:100vh; line-height:1.5; }
+    .container { width:min(1080px, calc(100% - 2rem)); margin:0 auto; }
+    .nav { position:sticky; top:0; z-index:10; backdrop-filter:blur(10px); background:rgba(246,242,232,.86); border-bottom:1px solid rgba(23,56,90,.14); }
+    .nav-wrap { display:flex; align-items:center; justify-content:space-between; gap:.8rem; padding:.9rem 0; }
+    .brand,.back { text-decoration:none; color:var(--navy); font-weight:700; }
+    .brand { font-family:"Bricolage Grotesque",sans-serif; text-transform:uppercase; letter-spacing:.04em; font-size:1.08rem; }
+    .brand span { color:var(--sun); }
+    .back { border:1px solid rgba(23,56,90,.28); border-radius:10px; padding:.45rem .68rem; background:rgba(255,255,255,.56); }
+    main { padding:2rem 0 2.8rem; }
+    .hero,.card,.note { background:linear-gradient(145deg,#ffffff 0%,#f3f8fd 56%,#e9eff7 100%); border:.8px solid #cbd5e1; border-radius:var(--radius); box-shadow:var(--shadow); }
+    .hero { padding:1.25rem; margin-bottom:1rem; }
+    .chip { display:inline-block; font-family:"Bricolage Grotesque",sans-serif; text-transform:uppercase; font-size:.74rem; letter-spacing:.04em; color:#3c4758; margin-bottom:.5rem; border:.8px solid #bcc4ce; border-radius:999px; padding:.26rem .7rem; background:linear-gradient(145deg,#f6f7f9 0%,#e7ecf2 52%,#d8dee6 100%); }
+    h1,h2,h3 { font-family:"Bricolage Grotesque",sans-serif; color:#1f2e46; letter-spacing:-.02em; }
+    h1 { font-size:clamp(1.9rem,5vw,2.9rem); margin-bottom:.45rem; }
+    .lead { color:var(--muted); max-width:76ch; }
+    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:1rem; }
+    .card { padding:1rem; display:flex; flex-direction:column; gap:.62rem; }
+    .card h2 { font-size:1.16rem; }
+    .card p { color:var(--muted); font-size:.92rem; }
+    .tag-row { display:flex; flex-wrap:wrap; gap:.38rem; }
+    .tag { border:1px solid #c7d5e8; border-radius:999px; padding:.2rem .58rem; background:#edf3fb; color:#2a3f5f; font-weight:700; font-size:.76rem; }
+    .actions { display:flex; flex-wrap:wrap; gap:.45rem; margin-top:.2rem; }
+    .btn { text-decoration:none; display:inline-flex; align-items:center; justify-content:center; border-radius:10px; border:.8px solid #c4ccd6; background:linear-gradient(145deg,#f4f7fb,#e4eaf2); color:#26354d; font-size:.82rem; font-weight:700; padding:.42rem .7rem; }
+    .btn-primary { border-color:rgba(23,56,90,.34); background:linear-gradient(130deg,#f2ad5a,#ef8f3d); color:#1a2737; }
+    .note { margin-top:1rem; padding:.95rem; color:#41536c; font-size:.92rem; }
+    @media (max-width:740px){ .nav-wrap{align-items:flex-start; flex-direction:column;} .btn{width:100%;} }
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-wrap">
+      <a class="brand" href="../index.html">Yago <span>Dev</span></a>
+      <a class="back" href="../index.html#valor-produtos">Voltar ao portfolio</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <section class="hero">
+        <span class="chip">Atualizacao de portfolio</span>
+        <h1>Projetos recentes e repositorios</h1>
+        <p class="lead">Lista complementar dos projetos mais recentes no GitHub, organizada no mesmo posicionamento comercial do portfolio: sistemas web, produtos, demos, modulos mobile e experiencias digitais.</p>
+      </section>
+
+      <section class="grid">
+        <article class="card">
+          <span class="chip">Sistema web</span>
+          <h2>Salao</h2>
+          <p>Solucao para atendimento, organizacao de servicos e apresentacao comercial de operacao local.</p>
+          <div class="tag-row"><span class="tag">Web</span><span class="tag">Servicos</span><span class="tag">Publico</span></div>
+          <div class="actions"><a class="btn btn-primary" href="https://github.com/japaprp/salao" target="_blank" rel="noopener noreferrer">Ver repositorio</a></div>
+        </article>
+
+        <article class="card">
+          <span class="chip">Modulo mobile</span>
+          <h2>LeitorCodigo</h2>
+          <p>Modulo complementar para leitura, caixa e atendimento, com uso integrado a produtos web.</p>
+          <div class="tag-row"><span class="tag">Mobile</span><span class="tag">Operacao</span><span class="tag">Publico</span></div>
+          <div class="actions"><a class="btn btn-primary" href="./leitor-codigo.html">Pagina do produto</a><a class="btn" href="https://github.com/japaprp/leitordecodigo" target="_blank" rel="noopener noreferrer">Repositorio</a></div>
+        </article>
+
+        <article class="card">
+          <span class="chip">Alimentacao</span>
+          <h2>Hamburgueria</h2>
+          <p>Projeto privado para hamburgueria/lanchonete, alinhado ao produto de multiplos PDVs e operacao de atendimento.</p>
+          <div class="tag-row"><span class="tag">PDV</span><span class="tag">Lanchonete</span><span class="tag">Privado</span></div>
+          <div class="actions"><a class="btn btn-primary" href="./lanchonete.html">Pagina relacionada</a></div>
+        </article>
+
+        <article class="card">
+          <span class="chip">Varejo</span>
+          <h2>Varejao Backend</h2>
+          <p>Backend do produto Horti Fruit / Varejao, usado como base de sistema web para gestao comercial.</p>
+          <div class="tag-row"><span class="tag">Backend</span><span class="tag">PHP/SQL</span><span class="tag">Publico</span></div>
+          <div class="actions"><a class="btn btn-primary" href="./hort-fruit.html">Pagina relacionada</a><a class="btn" href="https://github.com/japaprp/varejao-backend" target="_blank" rel="noopener noreferrer">Repositorio</a></div>
+        </article>
+
+        <article class="card">
+          <span class="chip">Institucional</span>
+          <h2>Estacia Renascer Belvedere</h2>
+          <p>Presenca web para chacara/eventos, com foco em apresentacao, contato e autoridade local.</p>
+          <div class="tag-row"><span class="tag">Site</span><span class="tag">Eventos</span><span class="tag">Publico</span></div>
+          <div class="actions"><a class="btn btn-primary" href="https://github.com/japaprp/estacia-renascer-belvedere" target="_blank" rel="noopener noreferrer">Ver repositorio</a></div>
+        </article>
+
+        <article class="card">
+          <span class="chip">Jogo web</span>
+          <h2>Infinit War / Guerra Infinita</h2>
+          <p>Projeto de entretenimento/jogo web, demonstrando criacao de experiencias digitais interativas.</p>
+          <div class="tag-row"><span class="tag">Game</span><span class="tag">Web</span><span class="tag">Publico</span></div>
+          <div class="actions"><a class="btn btn-primary" href="https://github.com/japaprp/infinit-war-guerra-infinita" target="_blank" rel="noopener noreferrer">Ver repositorio</a></div>
+        </article>
+
+        <article class="card">
+          <span class="chip">Memorias</span>
+          <h2>Memorias Amigos</h2>
+          <p>Projeto web para registro e apresentacao de memorias, com proposta afetiva e visual.</p>
+          <div class="tag-row"><span class="tag">Web</span><span class="tag">Conteudo</span><span class="tag">Publico</span></div>
+          <div class="actions"><a class="btn btn-primary" href="https://github.com/japaprp/memorias-amigos" target="_blank" rel="noopener noreferrer">Ver repositorio</a></div>
+        </article>
+
+        <article class="card">
+          <span class="chip">Esporte</span>
+          <h2>Favela Soccer</h2>
+          <p>Projeto privado de experiencia esportiva/futebol, mantido como item de portfolio sem exposicao de codigo.</p>
+          <div class="tag-row"><span class="tag">Futebol</span><span class="tag">Experiencia</span><span class="tag">Privado</span></div>
+        </article>
+
+        <article class="card">
+          <span class="chip">Servico</span>
+          <h2>Reboquei</h2>
+          <p>Projeto publico para servico de reboque, voltado a apresentacao de solucao e contato rapido.</p>
+          <div class="tag-row"><span class="tag">Servico</span><span class="tag">Web</span><span class="tag">Publico</span></div>
+          <div class="actions"><a class="btn btn-primary" href="https://github.com/japaprp/Reboquei" target="_blank" rel="noopener noreferrer">Ver repositorio</a></div>
+        </article>
+
+        <article class="card">
+          <span class="chip">Comercial</span>
+          <h2>Elegance</h2>
+          <p>Projeto publico de apresentacao comercial, indicado para vitrine, produto ou servico com presenca digital.</p>
+          <div class="tag-row"><span class="tag">Landing</span><span class="tag">Comercial</span><span class="tag">Publico</span></div>
+          <div class="actions"><a class="btn btn-primary" href="https://github.com/japaprp/elegance" target="_blank" rel="noopener noreferrer">Ver repositorio</a></div>
+        </article>
+      </section>
+
+      <p class="note">Projetos privados aparecem sem link direto de codigo quando necessario. A pagina serve como complemento da vitrine principal e pode ser ligada aos cards do portfolio.</p>
+    </div>
+  </main>
+</body>
+</html>
