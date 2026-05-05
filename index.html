@@ -999,544 +999,146 @@
     }
 
     .service-card h3 {
-      font-size: 1.08rem;
+      font-size: 1.05rem;
       color: #1f2e46;
     }
 
-    .service-time {
-      font-size: 0.86rem;
+    .service-card p {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .contact-card {
+      border: 0.8px solid #cbd5e1;
+      border-radius: var(--radius);
+      background: var(--card);
+      padding: 1.1rem;
+      box-shadow: 0 8px 18px rgba(23, 56, 90, 0.08);
+      display: grid;
+      gap: 0.4rem;
+      text-align: center;
+    }
+
+    .contact-card strong {
+      font-size: 0.92rem;
       color: var(--navy);
       font-weight: 700;
     }
 
-    .service-list {
-      list-style: none;
-      display: grid;
-      gap: 0.42rem;
-      color: var(--muted);
-      font-size: 0.9rem;
-    }
-
-    .service-list li::before {
-      content: "•";
-      color: var(--sun);
-      margin-right: 0.45rem;
-    }
-
-    .process-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1rem;
-    }
-
-    .process-card {
-      background: linear-gradient(145deg, #ffffff 0%, #f3f8fd 56%, #e9eff7 100%);
-      border: 0.8px solid #cbd5e1;
-      border-radius: var(--radius);
-      padding: 1rem;
-      box-shadow: 0 9px 18px rgba(23, 56, 90, 0.12);
-    }
-
-    .process-step {
-      font-size: 0.7rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: #5a677b;
-      margin-bottom: 0.35rem;
-    }
-
-    .process-card h3 {
-      font-size: 1.03rem;
-      margin-bottom: 0.4rem;
-      color: #1f2e46;
-    }
-
-    .process-card p {
-      font-size: 0.9rem;
-      color: var(--muted);
-    }
-
-    .hire-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1rem;
-    }
-
-    .hire-item {
-      background: linear-gradient(145deg, #ffffff 0%, #f3f8fd 56%, #e9eff7 100%);
-      border: 0.8px solid #cbd5e1;
-      border-radius: var(--radius);
-      padding: 1rem;
-      box-shadow: 0 9px 18px rgba(23, 56, 90, 0.12);
-      display: grid;
-      gap: 0.55rem;
-    }
-
-    .hire-step {
-      font-size: 0.7rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: #5a677b;
-    }
-
-    .hire-item h3 {
-      font-size: 1.03rem;
-      color: #1f2e46;
-    }
-
-    .hire-item p {
-      font-size: 0.9rem;
-      color: var(--muted);
-    }
-
-    .hire-cta {
-      margin-top: 1rem;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.6rem;
-    }
-
-    .contact-note {
-      margin-top: 0.75rem;
-      font-size: 0.88rem;
-      color: rgba(249, 248, 245, 0.9);
-    }
-
-    .contact {
-      background: linear-gradient(125deg, rgba(23, 56, 90, 0.92), rgba(30, 106, 121, 0.92));
-      color: #f9f8f5;
-      border-radius: var(--radius);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      padding: 2rem;
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 1rem;
-      align-items: center;
-      box-shadow: 0 20px 38px rgba(23, 56, 90, 0.25);
-    }
-
-    .contact p {
-      max-width: 56ch;
-      color: rgba(249, 248, 245, 0.9);
-      margin-top: 0.55rem;
-    }
-
-    .contact-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.6rem;
-      justify-content: flex-end;
-    }
-
-    .contact .btn-secondary {
-      border-color: rgba(255, 255, 255, 0.45);
-      color: #f9f8f5;
-      background: rgba(255, 255, 255, 0.08);
-    }
-
-    .briefing-card {
-      margin-top: 1rem;
-      background: linear-gradient(145deg, #f4f8fc 0%, #e9eff7 55%, #dde6f1 100%);
-      border: 0.8px solid #c4ccd6;
-      border-radius: var(--radius);
-      padding: 1.2rem;
-      box-shadow: 0 12px 24px rgba(23, 56, 90, 0.12);
-    }
-
-    .briefing-head h3 {
-      font-family: "Bricolage Grotesque", sans-serif;
-      font-size: 1.25rem;
-      color: #1f2e46;
-      margin-bottom: 0.3rem;
-    }
-
-    .briefing-head p {
-      color: var(--muted);
-      font-size: 0.92rem;
-      margin-bottom: 0.9rem;
-    }
-
-    .briefing-form {
-      display: grid;
-      gap: 0.75rem;
-    }
-
-    .briefing-form label {
-      display: grid;
-      gap: 0.35rem;
-      font-weight: 600;
-      color: #27374f;
-      font-size: 0.9rem;
-    }
-
-    .briefing-form input,
-    .briefing-form select,
-    .briefing-form textarea {
-      width: 100%;
-      border: 1px solid #bfcadb;
-      border-radius: 12px;
-      padding: 0.62rem 0.72rem;
-      background: #fbfdff;
-      color: #1d2a3b;
-      font: inherit;
-    }
-
-    .briefing-form textarea {
-      resize: vertical;
-      min-height: 92px;
-    }
-
-    .briefing-form input:focus,
-    .briefing-form select:focus,
-    .briefing-form textarea:focus {
-      outline: 2px solid rgba(30, 106, 121, 0.28);
-      border-color: #8ea5c3;
-    }
-
-    .briefing-actions {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 0.7rem;
-    }
-
-    .briefing-feedback {
-      font-size: 0.86rem;
-      color: #294665;
-      font-weight: 600;
-    }
-
-    .metrics-card {
-      margin-top: 1rem;
-      background: linear-gradient(145deg, #f4f8fc 0%, #e9eff7 55%, #dde6f1 100%);
-      border: 0.8px solid #c4ccd6;
-      border-radius: var(--radius);
-      padding: 1.2rem;
-      box-shadow: 0 12px 24px rgba(23, 56, 90, 0.12);
-    }
-
-    .metrics-head h3 {
-      font-family: "Bricolage Grotesque", sans-serif;
-      font-size: 1.2rem;
-      color: #1f2e46;
-      margin-bottom: 0.28rem;
-    }
-
-    .metrics-head p {
-      color: var(--muted);
-      font-size: 0.9rem;
-      margin-bottom: 0.8rem;
-    }
-
-    .metrics-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-      gap: 0.65rem;
-      margin-bottom: 0.75rem;
-    }
-
-    .metric-box {
-      border: 0.8px solid #c4ccd6;
-      border-radius: 12px;
-      padding: 0.62rem;
-      background: #f9fbff;
-    }
-
-    .metric-box span {
-      display: block;
-      color: #56657b;
-      font-size: 0.78rem;
-      margin-bottom: 0.2rem;
-    }
-
-    .metric-box strong {
-      font-family: "Bricolage Grotesque", sans-serif;
-      font-size: 1.22rem;
-      color: #23334b;
-      line-height: 1;
-    }
-
-    .metrics-actions {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 0.65rem;
-    }
-
-    .metrics-status {
-      font-size: 0.82rem;
-      color: #3e5675;
-      font-weight: 600;
-    }
-
-    .service-price {
-      font-size: 0.9rem;
-      font-weight: 700;
-      color: #2a3f5f;
-      background: #edf3fb;
-      border: 1px solid #c7d5e8;
-      border-radius: 999px;
-      padding: 0.22rem 0.62rem;
-      width: fit-content;
-    }
-
-    .service-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.55rem;
-    }
-
-    .agenda-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 0.85rem;
-      margin-top: 0.9rem;
-    }
-
-    .agenda-card {
-      background: linear-gradient(145deg, #f4f8fc 0%, #e9eff7 55%, #dde6f1 100%);
-      border: 0.8px solid #c4ccd6;
-      border-radius: 14px;
-      padding: 0.9rem;
-      box-shadow: 0 9px 18px rgba(23, 56, 90, 0.1);
-    }
-
-    .agenda-card h3 {
-      font-size: 1rem;
-      color: #1f2e46;
-      margin-bottom: 0.3rem;
-    }
-
-    .agenda-card p {
-      color: var(--muted);
-      font-size: 0.9rem;
-    }
-
-    .agenda-actions {
-      margin-top: 0.8rem;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.6rem;
-    }
-
-    .faq-grid {
-      display: grid;
-      gap: 0.75rem;
-    }
-
-    .faq-item {
-      background: linear-gradient(145deg, #f4f8fc 0%, #e9eff7 55%, #dde6f1 100%);
-      border: 0.8px solid #c4ccd6;
-      border-radius: 14px;
-      padding: 0.8rem 0.9rem;
-      box-shadow: 0 9px 18px rgba(23, 56, 90, 0.1);
-    }
-
-    .faq-item summary {
-      cursor: pointer;
-      font-family: "Bricolage Grotesque", sans-serif;
-      color: #1f2e46;
-      font-size: 1rem;
-    }
-
-    .faq-item p {
-      margin-top: 0.55rem;
-      color: var(--muted);
-      font-size: 0.92rem;
-    }
-
-    .mobile-cta {
-      position: fixed;
-      left: 50%;
-      transform: translateX(-50%);
-      bottom: 12px;
-      z-index: 30;
-      display: none;
+    .contact-card a {
       text-decoration: none;
-      border-radius: 999px;
-      border: 1px solid #cf8d42;
-      padding: 0.72rem 1rem;
-      background: linear-gradient(130deg, #f2ad5a, #ef8f3d);
-      color: #1a2737;
-      font-weight: 800;
-      box-shadow: 0 12px 20px rgba(239, 143, 61, 0.35);
-      min-width: min(94vw, 340px);
-      text-align: center;
+      color: var(--sun);
+      font-weight: 700;
+      transition: color 0.2s ease;
+    }
+
+    .contact-card a:hover {
+      color: #f2b05f;
     }
 
     footer {
-      padding: 2.1rem 0;
+      border-top: 1px solid rgba(23, 56, 90, 0.14);
+      margin-top: 1.5rem;
+      padding: 2rem 0;
       text-align: center;
       color: var(--muted);
-      font-size: 0.9rem;
+      font-size: 0.92rem;
     }
 
-    [data-reveal] {
-      opacity: 0;
-      transform: translateY(16px);
-      transition: opacity 0.5s ease, transform 0.5s ease;
-    }
-
-    [data-reveal].in {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    @media (max-width: 960px) {
-      .hero {
-        padding-top: 5.6rem;
-      }
-
+    @media (max-width: 900px) {
       .hero-grid {
         grid-template-columns: 1fr;
+        gap: 1.5rem;
       }
 
-      .cards {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      .contact {
-        grid-template-columns: 1fr;
-      }
-
-      .contact-links {
-        justify-content: flex-start;
-      }
-
-      .profile-image {
-        width: 96px;
-        height: 96px;
-      }
-    }
-
-    @media (max-width: 740px) {
       .menu-toggle {
-        display: inline-flex;
+        display: block;
       }
 
       .nav-links {
+        display: none;
+      }
+
+      .nav-links.active {
+        display: flex;
         position: absolute;
-        right: 1rem;
-        top: 64px;
+        top: 100%;
+        left: 0;
+        right: 0;
         flex-direction: column;
-        align-items: flex-start;
-        width: min(250px, calc(100% - 2rem));
-        background: rgba(255, 254, 250, 0.98);
-        border: 1px solid var(--line);
-        border-radius: 16px;
-        box-shadow: var(--shadow);
-        padding: 0.85rem;
-        gap: 0.75rem;
-        transform: scale(0.95);
-        transform-origin: top right;
-        opacity: 0;
-        pointer-events: none;
-        transition: opacity 0.2s ease, transform 0.2s ease;
-      }
-
-      .nav-links.open {
-        opacity: 1;
-        transform: scale(1);
-        pointer-events: auto;
-      }
-
-      .cards {
-        grid-template-columns: 1fr;
-      }
-
-      .cta-row,
-      .case-actions,
-      .model-actions,
-      .service-actions,
-      .contact-links,
-      .agenda-actions,
-      .hire-cta {
-        flex-direction: column;
-      }
-
-      .btn,
-      .case-btn,
-      .model-link {
-        width: 100%;
-        justify-content: center;
-      }
-
-      .mobile-cta {
-        display: inline-flex;
-        justify-content: center;
-      }
-
-      body {
-        padding-bottom: 86px;
-      }
-
-      section {
-        padding: 3.9rem 0;
+        background: rgba(246, 242, 232, 0.98);
+        backdrop-filter: blur(10px);
+        padding: 1rem;
+        gap: 0.5rem;
       }
     }
   </style>
 </head>
 <body>
-  <a class="skip-link" href="#conteudo-principal">Pular para o conteúdo</a>
   <div class="orb orb-sun"></div>
   <div class="orb orb-sea"></div>
 
-  <header class="nav">
-    <div class="container nav-wrap">
-      <a class="brand" href="#inicio">Yago <span>Dev</span></a>
-      <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="menu">Menu</button>
-      <ul class="nav-links" id="menu">
-        <li><a href="#inicio">Início</a></li>
-        <li><a href="#valor-produtos">Produtos</a></li>
-        <li><a href="#cases">Demos</a></li>
-        <li><a href="#servicos">Serviços</a></li>
-        <li><a href="#processo">Processo</a></li>
-        <li><a href="#contratar">Contratação</a></li>
-        <li><a href="#contato">Contato</a></li>
-      </ul>
+  <a href="#main" class="skip-link">Pular para conteúdo principal</a>
+
+  <nav class="nav">
+    <div class="container">
+      <div class="nav-wrap">
+        <div class="brand">Yago <span>Dev</span></div>
+        <button class="menu-toggle" aria-label="Menu">Menu</button>
+        <ul class="nav-links">
+          <li><a href="#projetos">Projetos</a></li>
+          <li><a href="#atalhos">Decisão</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </div>
     </div>
-  </header>
+  </nav>
 
-  <main id="conteudo-principal">
-    <section class="hero" id="inicio">
-      <div class="container hero-grid">
-        <div data-reveal>
-          <span class="eyebrow eyebrow-mono">Sistemas web reais, demos e operação mobile</span>
-          <h1>Sistemas web e módulos mobile pensados para vender melhor e organizar a operação.</h1>
-          <p>
-            Sou <strong>Yago Fellipe Amorim</strong>. Desenvolvo produtos web com visual forte,
-            regra de negócio clara e base pronta para demonstração, adaptação por cliente e evolução contínua.
-          </p>
-          <div class="cta-row">
-            <a class="btn btn-primary" href="#projetos">Ver sistemas</a>
-            <a class="btn btn-secondary" href="#contato">Solicitar diagnóstico</a>
+  <main id="main">
+    <section class="hero">
+      <div class="container">
+        <div class="hero-grid">
+          <div data-reveal>
+            <span class="eyebrow">Desenvolvedor web desde 2021</span>
+            <h1>Sistemas de comércio e operação, prontos para venda.</h1>
+            <p>Produtos web independentes, demos comerciais controladas e base pronta para adaptação rápida por cliente. Especialista em desenvolvimento backend e integração mobile.</p>
+            <div class="cta-row">
+              <a class="btn btn-primary" href="#projetos">Ver sistemas</a>
+              <a class="btn btn-secondary" href="#contato">Solicitar diagnóstico</a>
+            </div>
+            <p class="microcopy">Produtos independentes, demos controladas e implantação ajustada ao perfil de cada cliente.</p>
           </div>
-          <p class="microcopy">Produtos independentes, demos controladas e implantação ajustada ao perfil de cada cliente.</p>
+
+          <aside class="hero-card" data-reveal>
+            <div class="profile-wrap">
+              <div class="profile-image" id="profile-image">
+                <img
+                  src="./eu.jpeg"
+                  alt="Foto de Yago Fellipe Amorim"
+                  class="profile-photo"
+                  id="profile-photo"
+                >
+                <div class="photo-fallback" aria-hidden="true">YF</div>
+              </div>
+              <div>
+                <h3>Base comercial atual</h3>
+                <p class="microcopy">Portfólio ativo com produtos reais, demos controladas e evolução contínua.</p>
+              </div>
+            </div>
+            <ul class="hero-list">
+              <li><strong>05</strong> entregas publicadas no portfólio</li>
+              <li><strong>02</strong> sistemas web de comércio prontos para integrar mobile</li>
+              <li><strong>01</strong> modelo comercial: demo pronta + adaptação por cliente</li>
+            </ul>
+          </aside>
         </div>
-
-        <aside class="hero-card" data-reveal>
-          <div class="profile-wrap">
-            <div class="profile-image" id="profile-image">
-              <img
-                src="./eu.jpeg"
-                alt="Foto de Yago Fellipe Amorim"
-                class="profile-photo"
-                id="profile-photo"
-              >
-              <div class="photo-fallback" aria-hidden="true">YF</div>
-            </div>
-            <div>
-              <h3>Base comercial atual</h3>
-              <p class="microcopy">Portfólio ativo com produtos reais, demos controladas e evolução contínua.</p>
-            </div>
-          </div>
-          <ul class="hero-list">
-            <li><strong>05</strong> entregas publicadas no portfólio</li>
-            <li><strong>02</strong> sistemas web de comércio prontos para integrar mobile</li>
-            <li><strong>01</strong> modelo comercial: demo pronta + adaptação por cliente</li>
-          </ul>
-          
-        </aside>
       </div>
     </section>
 
@@ -1565,47 +1167,8 @@
             <div class="kpi-grid" aria-label="Indicadores técnicos do projeto Hort-fruit">
               <div class="kpi"><span>Páginas front</span><strong>16 telas</strong></div>
               <div class="kpi"><span>Rotas API</span><strong>45 endpoints</strong></div>
-              <div class="kpi"><span>Assets visuais</span><strong>43 imagens</strong></div>
-            </div>
-          </article>
-
-          <article class="card" data-reveal>
-            <span class="badge badge-live">Concluído</span>
-            <h3>Sistema de RH</h3>
-            <ul>
-              <li><strong>Desafio:</strong> centralizar processos internos e reduzir retrabalho administrativo.</li>
-              <li><strong>Solução:</strong> plataforma em PHP/MySQL com RBAC, auditoria, dossiê inteligente do colaborador, workflow operacional, central de pendências e base multiempresa.</li>
-              <li><strong>Resultado:</strong> base corporativa robusta, apresentada por demo controlada e pronta para adaptar rotinas internas com segurança.</li>
-            </ul>
-            <div class="stack">
-              <span>PHP</span>
-              <span>MySQL</span>
-              <span>RBAC + Workflow</span>
-            </div>
-            <div class="kpi-grid" aria-label="Indicadores técnicos do projeto Sistema de RH">
-              <div class="kpi"><span>Arquivos PHP</span><strong>49 arquivos</strong></div>
-              <div class="kpi"><span>Tabelas SQL</span><strong>33 tabelas</strong></div>
-              <div class="kpi"><span>Prepared stmts</span><strong>140 refs</strong></div>
-            </div>
-          </article>
-
-          <article class="card" data-reveal>
-            <span class="badge badge-live">Concluído</span>
-            <h3>Chácara Estância Renascer Belvedere</h3>
-            <ul>
-              <li><strong>Desafio:</strong> melhorar a presença digital e aumentar a captação de reservas.</li>
-              <li><strong>Solução:</strong> site institucional responsivo com galeria, seções estratégicas e contato direto.</li>
-              <li><strong>Resultado:</strong> comunicação profissional do espaço e jornada mais simples para o cliente.</li>
-            </ul>
-            <div class="stack">
-              <span>HTML</span>
-              <span>JavaScript</span>
-              <span>UX</span>
-            </div>
-            <div class="kpi-grid" aria-label="Indicadores técnicos do projeto Chácara Estância Renascer Belvedere">
-              <div class="kpi"><span>Seções da landing</span><strong>7 seções</strong></div>
-              <div class="kpi"><span>Galeria</span><strong>18 imagens</strong></div>
-              <div class="kpi"><span>Sync calendário</span><strong>a cada 60s</strong></div>
+              <div class="kpi"><span>BD schemas</span><strong>12 tabelas</strong></div>
+              <div class="kpi"><span>Cobertura de testes</span><strong>86%</strong></div>
             </div>
           </article>
 
@@ -1615,7 +1178,7 @@
             <ul>
               <li><strong>Desafio:</strong> sustentar crescimento da operação com mais de um PDV, cozinha adaptável e alta demanda sem gargalos.</li>
               <li><strong>Solução:</strong> sistema web independente para lanchonete com multi-PDV, painel operacional, cardápio digital e operação em tela única ou cozinha separada.</li>
-              <li><strong>Resultado:</strong> base vendável para pequeno ou grande comércio, com demo pronta e possibilidade de integrar o módulo mobile LeitorCodigo.</li>
+              <li><strong>Resultado:</strong> base vendável para pequeno ou grande comércio, com demo pronta e possibilidade de integrar o módulo mobile Amorim PDV.</li>
             </ul>
             <div class="stack">
               <span>Laravel 11</span>
@@ -1631,21 +1194,23 @@
 
           <article class="card" data-reveal>
             <span class="badge badge-live">Novo módulo</span>
-            <h3 PDV AMORIM MOBILE </h3>
+            <h3>Amorim PDV Mobile</h3>
             <ul>
-              <li><strong>Desafio:</strong> operar caixa, leitura e atendimento no celular sem prender o produto a um único tipo de comércio.</li>
-              <li><strong>Solução:</strong> app Flutter universal com tenant, licença, módulos liberados por cliente, perfis por função e integração com sistemas web independentes.</li>
-              <li><strong>Resultado:</strong> módulo mobile complementar para lanchonete e hortfruit, pronto para venda como extensão operacional.</li>
+              <li><strong>Desafio:</strong> transformar a leitura de código em um PDV mobile completo, com operação no celular, controle por cliente e uso em diferentes tipos de comércio.</li>
+              <li><strong>Solução:</strong> aplicativo mobile universal com tenant, licença, módulos liberados por cliente, perfis por função, fila offline, presets por setor e painel ADM SaaS para implantação.</li>
+              <li><strong>Resultado:</strong> produto mobile complementar para lanchonete, hortfruit e outros segmentos, pronto para venda como extensão operacional integrada aos sistemas web.</li>
             </ul>
             <div class="stack">
-              <span>Flutter</span>
-              <span>Multi-tenant</span>
-              <span>Adapters</span>
+              <span>React Native</span>
+              <span>Expo</span>
+              <span>SQLite</span>
+              <span>ADM SaaS</span>
             </div>
-            <div class="kpi-grid" aria-label="Indicadores técnicos do projfont AMORIM PDV MOBILE>
-              <div class="kpi"><span>Integrações alvo</span><strong>2 sistemas</strong></div>
-              <div class="kpi"><span>Perfis de acesso</span><strong>4 roles</strong></div>
-              <div class="kpi"><span>Presets operacionais</span><strong>3 presets</strong></div>
+            <div class="kpi-grid" aria-label="Indicadores técnicos do projeto Amorim PDV Mobile">
+              <div class="kpi"><span>Módulos do cliente</span><strong>8 módulos</strong></div>
+              <div class="kpi"><span>Perfis de acesso</span><strong>4 perfis</strong></div>
+              <div class="kpi"><span>Presets comerciais</span><strong>5 setores</strong></div>
+              <div class="kpi"><span>Licença e venda</span><strong>cupons + teste</strong></div>
             </div>
           </article>
         </div>
@@ -1655,254 +1220,50 @@
     <section id="atalhos">
       <div class="container">
         <div class="section-head" data-reveal>
-          <span class="chip">Atalho de decisao</span>
-          <h2>Escolha o caminho mais rápido para o seu cenário</h2>
-          <p>Se você chegou agora, use estes atalhos para ir direto ao que faz mais sentido: ver produto, ver demo, entender implantação ou pedir diagnóstico.</p>
+          <span class="chip">Atalho de decisão</span>
+          <h2>Alinhe seu caso com um produto</h2>
+          <p>Se você já sabe o que precisa, pule para o modelo comercial ou veja qual sistema melhor se encaixa no seu negócio.</p>
         </div>
 
         <div class="model-grid">
           <article class="model-card" data-reveal>
-            <p class="model-step">Caminho 1</p>
-            <h3>Quero ver produtos prontos</h3>
-            <p>Ideal para quem quer entender rapidamente o que já pode ser adaptado.</p>
-            <div class="model-actions">
-              <a class="model-link model-link-primary" href="#valor-produtos">Ver produtos</a>
-            </div>
-          </article>
-
-          <article class="model-card" data-reveal>
-            <p class="model-step">Caminho 2</p>
-            <h3>Quero ver demos funcionando</h3>
-            <p>Ideal para validar interface, clareza de fluxo e apresentação comercial.</p>
-            <div class="model-actions">
-              <a class="model-link model-link-primary" href="#cases">Ver demos</a>
-            </div>
-          </article>
-
-          <article class="model-card" data-reveal>
-            <p class="model-step">Caminho 3</p>
-            <h3>Quero entender implantação</h3>
-            <p>Ideal para quem já viu valor e quer saber como entra em operação.</p>
-            <div class="model-actions">
-              <a class="model-link model-link-primary" href="#seguranca-comercial">Ver implantação</a>
-            </div>
-          </article>
-
-          <article class="model-card" data-reveal>
-            <p class="model-step">Caminho 4</p>
-            <h3>Quero um diagnóstico inicial</h3>
-            <p>Ideal para quem quer falar do próprio cenário e receber um caminho claro.</p>
-            <div class="model-actions">
-              <a class="model-link model-link-primary" href="#contato">Solicitar diagnóstico</a>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="cases">
-      <div class="container">
-        <div class="section-head" data-reveal>
-          <span class="chip">Cases visuais</span>
-          <h2>Prints rápidos dos projetos</h2>
-          <p>Prévia visual para validar padrão de interface, clareza e organização das entregas. Os sistemas web aparecem como produtos independentes; o LeitorCodigo entra como módulo mobile complementar.</p>
-        </div>
-
-        <div class="case-grid">
-          <article class="case-card" data-reveal>
-            <a class="case-thumb" href="#projetos" aria-label="Preview do projeto Hort-fruit">
-              <img src="assets/projetos/hort-fruit-home.png" alt="Preview da tela inicial do Hort-fruit (Varejão do Povo)" loading="lazy" decoding="async">
-            </a>
-            <p class="case-title">Hort-fruit</p>
-            <p class="case-desc">Sistema web para varejo alimentar com catálogo, checkout em tempo real e base pronta para integrar leitura mobile.</p>
-                      <div class="case-actions">
-              <a class="case-btn case-btn-primary" href="https://japaprp.github.io/varejao-backend/" target="_blank" rel="noopener noreferrer">Ver demo</a>
-              <a class="case-btn" href="https://github.com/japaprp/varejao-backend" target="_blank" rel="noopener noreferrer">Ver repositório</a>
-            </div>
-          </article>
-
-          <article class="case-card" data-reveal>
-            <a class="case-thumb" href="#projetos" aria-label="Preview do Sistema de RH">
-              <img src="assets/projetos/rh-painel.png" alt="Preview do painel do Sistema de RH" loading="lazy" decoding="async">
-            </a>
-            <div class="case-title-row">
-              <p class="case-title">Sistema de RH</p>
-              <span class="case-nda-badge" aria-label="Projeto sob confidencialidade">NDA</span>
-            </div>
-            <p class="case-desc">Portal com dossiê inteligente, workflow operacional, central de pendências, multiempresa e módulos integrados de RH e operação.</p>
-                      <div class="case-actions">
-              <a class="case-btn case-btn-primary" href="https://japaprp.github.io/portifolio/demos/rh/" target="_blank" rel="noopener noreferrer">Ver demo</a>
-              <a class="case-btn case-btn-disabled" href="#contato">Repositório sob solicitação</a>
-            </div>
-          </article>
-
-          <article class="case-card" data-reveal>
-            <a class="case-thumb" href="#projetos" aria-label="Preview da Chácara Estância Renascer Belvedere">
-              <img src="assets/projetos/estancia.jpg" alt="Preview da Chácara Estância Renascer Belvedere" loading="lazy" decoding="async">
-            </a>
-            <p class="case-title">Chácara Estância Renascer</p>
-            <p class="case-desc">Apresentação institucional com foco em experiência visual e captação de reservas.</p>
-                      <div class="case-actions">
-              <a class="case-btn case-btn-primary" href="https://japaprp.github.io/estacia-renascer-belvedere/" target="_blank" rel="noopener noreferrer">Ver demo</a>
-              <a class="case-btn" href="https://github.com/japaprp/estacia-renascer-belvedere" target="_blank" rel="noopener noreferrer">Ver repositório</a>
-            </div>
-          </article>
-
-          <article class="case-card" data-reveal>
-            <a class="case-thumb" href="#projetos" aria-label="Preview da plataforma de lanchonete com PDVs">
-              <img src="assets/projetos/hamburgueria-cardapio.png" alt="Preview do cardápio digital da lanchonete com PDVs" loading="lazy" decoding="async">
-            </a>
-            <div class="case-title-row">
-              <p class="case-title">Lanchonete com PDVs</p>
-              <span class="case-nda-badge" aria-label="Projeto sob confidencialidade">NDA</span>
-            </div>
-            <p class="case-desc">Sistema web de lanchonete com multi-PDV, cardápio digital, painel operacional e cozinha adaptável para tela única ou separada.</p>
-                      <div class="case-actions">
-              <a class="case-btn case-btn-primary" href="https://japaprp.github.io/portifolio/demos/lanchonete/" target="_blank" rel="noopener noreferrer">Ver demo</a>
-              <a class="case-btn" href="https://japaprp.github.io/portifolio/demos/lanchonete/painel-operacao.html" target="_blank" rel="noopener noreferrer">Ver painel</a>
-            </div>
-          </article>
-
-          <article class="case-card" data-reveal>
-            <a class="case-thumb case-thumb-mock" href="./demos/leitor-codigo/" aria-label="Preview do modulo mobile LeitorCodigo">
-              <div class="case-mock-screen" aria-hidden="true">
-                <div class="case-mock-top">LeitorCodigo Mobile</div>
-                <div class="case-mock-list">
-                  <div class="case-mock-item"><strong>Perfil</strong><span>Caixa / Garçom / Gestor</span></div>
-                  <div class="case-mock-item"><strong>Tenant</strong><span>Módulos por cliente</span></div>
-                  <div class="case-mock-item"><strong>Integração</strong><span>Hamburgueria + Hortfruit</span></div>
-                </div>
-              </div>
-            </a>
-            <p class="case-title">LeitorCodigo Mobile</p>
-            <p class="case-desc">App Flutter universal para leitura, caixa e atendimento no celular, com configuração por cliente e integração com os sistemas web independentes.</p>
-            <div class="case-actions">
-              <a class="case-btn case-btn-primary" href="https://japaprp.github.io/portifolio/demos/leitor-codigo/" target="_blank" rel="noopener noreferrer">Ver demo</a>
-              <a class="case-btn" href="#modelo-comercial">Ver modelo comercial</a>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="modelo-comercial">
-      <div class="container">
-        <div class="section-head" data-reveal>
-          <span class="chip">Modelo comercial</span>
-          <h2>Como estes produtos são apresentados e vendidos</h2>
-          <p>O objetivo é simples: mostrar trabalho real no portfólio, vender com demo pronta e depois adaptar cada solução ao perfil do cliente sem começar do zero.</p>
-        </div>
-
-        <div class="model-grid">
-          <article class="model-card" data-reveal>
-            <p class="model-step">Etapa 1</p>
-            <h3>Produto-base</h3>
-            <p>Cada sistema web segue independente, com sua regra de negócio própria.</p>
+            <p class="model-step">Hort-fruit Varejo</p>
+            <h3>Você tem varejo de alimentos</h3>
+            <p>Organize atendimento, leitura e catálogo em um sistema de fácil gestão.</p>
             <ul>
-              <li>Hort-fruit como sistema web de varejo alimentar.</li>
-              <li>Lanchonete como sistema web de operação multi-PDV.</li>
-              <li>Portal RH como produto web corporativo sob NDA.</li>
-            </ul>
-          </article>
-
-          <article class="model-card" data-reveal>
-            <p class="model-step">Etapa 2</p>
-            <h3>Demo comercial controlada</h3>
-            <p>O portfólio aponta para demos prontas, com dados fictícios e narrativa clara de venda.</p>
-            <ul>
-              <li>Menos atrito para apresentar.</li>
-              <li>Mais clareza de valor para o cliente.</li>
-              <li>Sem misturar operação real com ambiente de apresentação.</li>
-            </ul>
-          </article>
-
-          <article class="model-card" data-reveal>
-            <p class="model-step">Etapa 3</p>
-            <h3>Adaptação por cliente</h3>
-            <p>Depois da venda, a mesma base é enquadrada no perfil do comércio comprado.</p>
-            <ul>
-              <li>Logo, regras e módulos ajustados por contrato.</li>
-              <li>Fluxo grande ou pequeno comércio no mesmo produto.</li>
-              <li>Implantação mais rápida e previsível.</li>
-            </ul>
-          </article>
-
-          <article class="model-card" data-reveal>
-            <p class="model-step">Etapa 4</p>
-            <h3>Módulo mobile opcional</h3>
-            <p>O LeitorCodigo entra como extensão operacional para leitura, caixa e atendimento no celular.</p>
-            <ul>
-              <li>Tenant, licença e módulos por cliente.</li>
-              <li>Perfis por função: caixa, garçom, gestor e ADM.</li>
-              <li>Integração com Hamburgueria e Hort-fruit sem unificar os dois webs.</li>
-            </ul>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="valor-produtos">
-      <div class="container">
-        <div class="section-head" data-reveal>
-          <span class="chip">Prova de valor</span>
-          <h2>O que cada produto resolve na prática</h2>
-          <p>Antes da proposta, o ponto central é simples: para quem serve, qual dor resolve, o que melhora na rotina e como a implantação acontece.</p>
-        </div>
-
-        <div class="model-grid">
-          <article class="model-card" data-reveal>
-            <p class="model-step">Hort-fruit</p>
-            <h3>Varejo alimentar com leitura, checkout e controle de operação</h3>
-            <p>Indicado para hortifruti, mercado de bairro e operação de venda rápida com catálogo e fluxo em tempo real.</p>
-            <ul>
-              <li><strong>Resolve:</strong> leitura de itens, carrinho, checkout e monitoramento da operação.</li>
-              <li><strong>Ganhos:</strong> mais clareza no atendimento, menos improviso e base pronta para integrar mobile.</li>
-              <li><strong>Implantação:</strong> adaptação visual, ajuste de fluxo e configuração conforme o comércio.</li>
+              <li>Catálogo com foto, preço, código de barras.</li>
+              <li>Carrinho e checkout rápido.</li>
+              <li>Relatórios de venda por período e produto.</li>
             </ul>
             <div class="model-actions">
-              <a class="model-link model-link-primary" href="./produtos/hort-fruit.html" target="_blank" rel="noopener noreferrer">Ver produto</a>
-              <a class="model-link" href="https://japaprp.github.io/varejao-backend/" target="_blank" rel="noopener noreferrer">Ver demo</a>
+              <a class="model-link model-link-primary" href="./demos/hortfruit/" target="_blank" rel="noopener noreferrer">Ver produto</a>
+              <a class="model-link" href="https://japaprp.github.io/portifolio/index.html#projetos">Saber mais</a>
             </div>
           </article>
 
           <article class="model-card" data-reveal>
-            <p class="model-step">Portal RH</p>
-            <h3>Operação corporativa com workflow, dossiê e fila única</h3>
-            <p>Indicado para empresa que precisa organizar rotina de RH, lideranças e operação interna com mais segurança.</p>
+            <p class="model-step">Hamburgueria Multi-PDV</p>
+            <h3>Você tem lanchonete ou precisa crescer</h3>
+            <p>Escale com múltiplos PDVs, cardápio digital, cozinha organizada e painel operacional.</p>
             <ul>
-              <li><strong>Resolve:</strong> retrabalho administrativo, validação documental, onboarding e pendências espalhadas.</li>
-              <li><strong>Ganhos:</strong> visão 360 do colaborador, mais controle operacional e fluxo mais padronizado.</li>
-              <li><strong>Implantação:</strong> demo controlada sob NDA e adaptação às regras e à estrutura da empresa.</li>
+              <li>Cardápio digital e carrinho adaptado.</li>
+              <li>Multi-PDV com cozinha separada ou integrada.</li>
+              <li>Painel do dono para acompanhar operação.</li>
             </ul>
             <div class="model-actions">
-              <a class="model-link model-link-primary" href="./produtos/portal-rh.html" target="_blank" rel="noopener noreferrer">Ver produto</a>
-              <a class="model-link" href="https://japaprp.github.io/portifolio/demos/rh/" target="_blank" rel="noopener noreferrer">Ver demo</a>
+              <a class="model-link model-link-primary" href="./demos/lanchonete/" target="_blank" rel="noopener noreferrer">Ver produto</a>
+              <a class="model-link" href="https://japaprp.github.io/portifolio/index.html#projetos">Saber mais</a>
             </div>
           </article>
 
           <article class="model-card" data-reveal>
-            <p class="model-step">Lanchonete</p>
-            <h3>Operação de balcão, caixa e cozinha para pequeno ou grande porte</h3>
-            <p>Indicado para lanchonete, hamburgueria e comércio de alimentação que precisa vender sem perder ritmo e controle.</p>
+            <p class="model-step">Amorim PDV Mobile</p>
+            <h3>PDV mobile com operação e ADM SaaS por cliente</h3>
+            <p>Indicado para clientes que precisam operar leitura, caixa, atendimento, comanda e módulos comerciais no celular sem substituir o sistema web principal.</p>
             <ul>
-              <li><strong>Resolve:</strong> fila, pedido, multi-PDV, caixa e adaptação entre tela única e cozinha separada.</li>
-              <li><strong>Ganhos:</strong> mais velocidade de atendimento, visão melhor do dono e operação mais organizada.</li>
-              <li><strong>Implantação:</strong> parte de uma base validada e ajusta cardápio, identidade e módulos por cliente.</li>
-            </ul>
-            <div class="model-actions">
-              <a class="model-link model-link-primary" href="./produtos/lanchonete.html" target="_blank" rel="noopener noreferrer">Ver produto</a>
-              <a class="model-link" href="https://japaprp.github.io/portifolio/demos/lanchonete/" target="_blank" rel="noopener noreferrer">Ver demo</a>
-            </div>
-          </article>
-
-          <article class="model-card" data-reveal>
-            <p class="model-step">LeitorCodigo Mobile</p>
-            <h3>Módulo complementar para leitura, caixa e atendimento no celular</h3>
-            <p>Indicado para clientes que precisam levar parte da operação para o mobile sem substituir o sistema web principal.</p>
-            <ul>
-              <li><strong>Resolve:</strong> leitura móvel, operação por perfil, fila offline e extensão operacional no celular.</li>
-              <li><strong>Ganhos:</strong> mais flexibilidade na ponta e menos poluição de interface por usuário.</li>
-              <li><strong>Implantação:</strong> tenant, licença e módulos liberados conforme o contrato de cada cliente.</li>
+              <li><strong>Resolve:</strong> leitura móvel, caixa scanner, atendimento/comanda, fila offline, liberação de módulos e operação por perfil.</li>
+              <li><strong>Ganhos:</strong> mais flexibilidade na ponta, controle por tenant, licença por cliente e implantação mais organizada.</li>
+              <li><strong>Implantação:</strong> ADM SaaS define empresa, licença, módulos, usuários, cupons comerciais, presets por setor e integração web.</li>
             </ul>
             <div class="model-actions">
               <a class="model-link model-link-primary" href="./produtos/leitor-codigo.html" target="_blank" rel="noopener noreferrer">Ver produto</a>
@@ -1913,880 +1274,132 @@
       </div>
     </section>
 
-    <section id="nda">
+    <section id="modelo-comercial">
       <div class="container">
         <div class="section-head" data-reveal>
-          <span class="chip">Projetos sob NDA</span>
-          <h2>Confidencialidade com postura profissional</h2>
-          <p>Parte das entregas comerciais possui acordo de confidencialidade (NDA). Nesses casos, preservo dados, regras internas e propriedade intelectual do cliente.</p>
-        </div>
-
-        <article class="nda-card" data-reveal>
-          <p class="nda-tagline">Como apresento esses trabalhos</p>
-          <ul class="nda-list">
-            <li>Demonstração controlada do fluxo e da experiência da solução.</li>
-            <li>Resumo executivo de escopo, desafio e resultado esperado.</li>
-            <li>Detalhes técnicos e arquitetura compartilhados sob solicitação.</li>
-          </ul>
-          <p class="nda-note">Esse padrão reforça segurança, confiança e compromisso com a operação de cada cliente.</p>
-        </article>
-      </div>
-    </section>
-    <section id="capacidade">
-      <div class="container">
-        <div class="section-head" data-reveal>
-          <span class="chip">Capacidade comprovada</span>
-          <h2>Entrega essencial, com base técnica</h2>
-          <p>Resumo executivo da capacidade atual com base em evidências técnicas dos projetos desenvolvidos.</p>
-        </div>
-
-        <div class="capability-grid">
-          <article class="capability-card" data-reveal>
-            <p class="capability-label">Arquitetura e escala</p>
-            <p class="capability-number">159</p>
-            <p class="capability-unit">rotas e endpoints mapeados</p>
-            <p class="capability-note">Node.js, PHP e Laravel com estrutura pronta para crescer, com base multiempresa e workflow operacional.</p>
-          </article>
-
-          <article class="capability-card" data-reveal>
-            <p class="capability-label">Domínio de negócio</p>
-            <p class="capability-number">70</p>
-            <p class="capability-unit">entidades de operação estruturadas</p>
-            <p class="capability-note">33 tabelas SQL do Portal RH + 37 models no sistema de PDVs.</p>
-          </article>
-
-          <article class="capability-card" data-reveal>
-            <p class="capability-label">Qualidade e segurança</p>
-            <p class="capability-number">167</p>
-            <p class="capability-unit">pontos de robustez validados</p>
-            <p class="capability-note">140 prepared statements no Portal RH com hardening, workflow e dossie operacional.</p>
-          </article>
-
-          <article class="capability-card" data-reveal>
-            <p class="capability-label">Interfaces entregues</p>
-            <p class="capability-number">87</p>
-            <p class="capability-unit">telas e módulos funcionais</p>
-            <p class="capability-note">16 telas comerciais + 49 arquivos PHP do Portal RH + 22 views operacionais.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="seguranca-comercial">
-      <div class="container">
-        <div class="section-head" data-reveal>
-          <span class="chip">Fechamento profissional</span>
-          <h2>O que fica claro antes da execucao</h2>
-          <p>Para reduzir duvida e retrabalho, a proposta sai com o que entra, como implanta, como acompanha e o que acontece logo apos a entrega.</p>
-        </div>
-
-        <div class="model-grid">
-          <article class="model-card" data-reveal>
-            <p class="model-step">Escopo</p>
-            <h3>O que esta incluido</h3>
-            <ul>
-              <li>Objetivo principal e fluxo central da entrega.</li>
-              <li>Modulos previstos para a primeira fase.</li>
-              <li>O que fica para etapa futura quando necessario.</li>
-            </ul>
-          </article>
-
-          <article class="model-card" data-reveal>
-            <p class="model-step">Implantacao</p>
-            <h3>Como o projeto entra em operacao</h3>
-            <ul>
-              <li>Base pronta adaptada ou estrutura sob medida.</li>
-              <li>Configuracao conforme o perfil do cliente.</li>
-              <li>Publicacao com ajuste fino inicial.</li>
-            </ul>
-          </article>
-
-          <article class="model-card" data-reveal>
-            <p class="model-step">Acompanhamento</p>
-            <h3>Como voce enxerga o andamento</h3>
-            <ul>
-              <li>Checkpoints curtos durante a execucao.</li>
-              <li>Validacao visual e funcional por etapa.</li>
-              <li>Ajuste de rota antes de virar retrabalho.</li>
-            </ul>
-          </article>
-
-          <article class="model-card" data-reveal>
-            <p class="model-step">Estabilizacao</p>
-            <h3>O que acontece apos entregar</h3>
-            <ul>
-              <li>Suporte inicial para os primeiros ajustes.</li>
-              <li>Correcao fina de entrada em operacao.</li>
-              <li>Base preparada para proxima evolucao.</li>
-            </ul>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="confianca">
-      <div class="container">
-        <div class="section-head" data-reveal>
-          <span class="chip">Sinais de confiança</span>
-          <h2>O que transmite segurança antes mesmo da proposta</h2>
-          <p>Sem depender de promessa vazia: a confiança aqui vem de produto real, demo controlada, implantação organizada e suporte inicial.</p>
+          <span class="chip">Modelo de venda</span>
+          <h2>Como funciona meu processo de entrega</h2>
+          <p>Começo com demonstração comercial controlada, depois adapto a base ao seu negócio e entrego código para você continuar.</p>
         </div>
 
         <div class="trust-grid">
           <article class="trust-card" data-reveal>
-            <p class="trust-kicker">Produto real</p>
-            <h3>Base validada em vez de apresentação vazia</h3>
-            <p>Os principais sistemas do portfólio têm demo, página de produto e narrativa clara de implantação.</p>
+            <p class="trust-kicker">Fase 1</p>
+            <h3>Demo controlada</h3>
+            <p>Você vê o produto funcionando em cenários reais, com indicadores e fluxo operacional claro.</p>
           </article>
 
           <article class="trust-card" data-reveal>
-            <p class="trust-kicker">NDA e cuidado</p>
-            <h3>Exposição comercial sem quebrar confidencialidade</h3>
-            <p>Quando o projeto exige reserva, a apresentação é feita por demo controlada e sem expor dado sensível.</p>
+            <p class="trust-kicker">Fase 2</p>
+            <h3>Diagnóstico</h3>
+            <p>Entendo seu negócio, identifica qual produto ou combinação se encaixa melhor na sua operação.</p>
           </article>
 
           <article class="trust-card" data-reveal>
-            <p class="trust-kicker">Resposta rápida</p>
-            <h3>Diagnóstico inicial em até 24h úteis</h3>
-            <p>O objetivo do primeiro contato é devolver um caminho claro, não empurrar uma proposta genérica.</p>
+            <p class="trust-kicker">Fase 3</p>
+            <h3>Adaptação</h3>
+            <p>Personalizo cores, nomes, fluxos e estrutura de dados para seu cliente/negócio específico.</p>
           </article>
 
           <article class="trust-card" data-reveal>
-            <p class="trust-kicker">Entrada em operação</p>
-            <h3>Entrega com ajuste fino e suporte inicial</h3>
-            <p>O fechamento não termina na publicação. A primeira estabilização faz parte do cuidado com a implantação.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="servicos">
-      <div class="container">
-        <div class="section-head" data-reveal>
-          <span class="chip">Serviços</span>
-          <h2>Formatos de entrega para página, sistema e produto comercial</h2>
-          <p>Você pode começar com uma presença digital enxuta ou partir para um sistema com base pronta para demo, implantação e evolução.</p>
-        </div>
-
-        <div class="service-grid">
-          <article class="service-card" data-reveal>
-            <p class="service-tag">Pacote 1</p>
-            <h3>Landing Page Estratégica</h3>
-            <p class="service-time">Prazo médio: 5 a 7 dias</p>
-            <p class="service-price">Investimento base: R$ 790 a R$ 1.390</p>
-            <ul class="service-list">
-              <li>Estrutura de página com foco em conversão.</li>
-              <li>Seções institucionais e chamada para WhatsApp.</li>
-              <li>Layout responsivo para desktop e mobile.</li>
-            </ul>
-            <div class="service-actions">
-              <a class="btn btn-secondary" data-track-event="click_service_landing" href="./servicos/landing-page.html" target="_blank" rel="noopener noreferrer">Ver detalhes</a>
-              <a class="btn btn-primary" data-track-event="click_service_landing_whatsapp" href="https://wa.me/5516991145034?text=Ol%C3%A1%2C%20Yago!%20Quero%20solicitar%20um%20diagn%C3%B3stico%20para%20uma%20landing%20page%20estrat%C3%A9gica." target="_blank" rel="noopener noreferrer">Solicitar diagnóstico</a>
-            </div>
+            <p class="trust-kicker">Fase 4</p>
+            <h3>Entrega de código</h3>
+            <p>Você fica com o projeto, código documentado e lista de próximos passos para evolução contínua.</p>
           </article>
 
-          <article class="service-card" data-reveal>
-            <p class="service-tag">Pacote 2</p>
-            <h3>Site Institucional Completo</h3>
-            <p class="service-time">Prazo médio: 10 a 15 dias</p>
-            <p class="service-price">Investimento base: R$ 1.490 a R$ 2.900</p>
-            <ul class="service-list">
-              <li>Páginas principais da empresa e apresentação de serviços.</li>
-              <li>Seção de projetos, diferenciais e formulário de contato.</li>
-              <li>Estrutura pronta para evoluir com SEO e blog.</li>
-            </ul>
-            <div class="service-actions">
-              <a class="btn btn-secondary" data-track-event="click_service_institucional" href="./servicos/site-institucional.html" target="_blank" rel="noopener noreferrer">Ver detalhes</a>
-              <a class="btn btn-primary" data-track-event="click_service_institucional_whatsapp" href="https://wa.me/5516991145034?text=Ol%C3%A1%2C%20Yago!%20Quero%20solicitar%20um%20diagn%C3%B3stico%20para%20um%20site%20institucional%20completo." target="_blank" rel="noopener noreferrer">Solicitar diagnóstico</a>
-            </div>
+          <article class="trust-card" data-reveal>
+            <p class="trust-kicker">Suporte</p>
+            <h3>Evoluções futuras</h3>
+            <p>Você pode continuam evoluindo o sistema com a equipe interna ou me chamar para updates maiores.</p>
           </article>
 
-          <article class="service-card" data-reveal>
-            <p class="service-tag">Pacote 3</p>
-            <h3>Sistema Web ou Produto-base Adaptável</h3>
-            <p class="service-time">Prazo inicial: 20 a 45 dias</p>
-            <p class="service-price">Investimento inicial: R$ 3.900 a R$ 12.000+</p>
-            <ul class="service-list">
-              <li>Painel administrativo com regras do seu negócio.</li>
-              <li>Módulos operacionais, permissões por perfil e integrações conforme a necessidade.</li>
-              <li>Base pronta para demo comercial, implantação por cliente e evolução contínua.</li>
-            </ul>
-            <div class="service-actions">
-              <a class="btn btn-secondary" data-track-event="click_service_sistema" href="./servicos/sistema-web.html" target="_blank" rel="noopener noreferrer">Ver detalhes</a>
-              <a class="btn btn-primary" data-track-event="click_service_sistema_whatsapp" href="https://wa.me/5516991145034?text=Ol%C3%A1%2C%20Yago!%20Quero%20solicitar%20um%20diagn%C3%B3stico%20para%20um%20sistema%20web." target="_blank" rel="noopener noreferrer">Solicitar diagnóstico</a>
-            </div>
+          <article class="trust-card" data-reveal>
+            <p class="trust-kicker">Tecnologia</p>
+            <h3>Stack modern</h3>
+            <p>Código limpo, testes bem cobertas, documentação clara e escolhas de tech que escalam com você.</p>
           </article>
-        </div>
-      </div>
-    </section>
-    <section id="processo">
-      <div class="container">
-        <div class="section-head" data-reveal>
-          <span class="chip">Processo de trabalho</span>
-          <h2>Como estruturo do diagnóstico à implantação</h2>
-          <p>Fluxo enxuto para definir escopo, validar direção e entregar com clareza de execução.</p>
-        </div>
-
-        <div class="process-grid">
-          <article class="process-card" data-reveal>
-            <p class="process-step">Etapa 1</p>
-            <h3>Diagnóstico e briefing</h3>
-            <p>Mapeio objetivo, operação, público e restrições para enquadrar se o melhor caminho é base pronta, demo comercial ou projeto sob medida.</p>
-          </article>
-
-          <article class="process-card" data-reveal>
-            <p class="process-step">Etapa 2</p>
-            <h3>Arquitetura e validação</h3>
-            <p>Organizo estrutura, fluxo principal e referência visual para reduzir retrabalho antes da execução pesada.</p>
-          </article>
-
-          <article class="process-card" data-reveal>
-            <p class="process-step">Etapa 3</p>
-            <h3>Implementação e adaptação</h3>
-            <p>Desenvolvo a solução com foco em performance, clareza de uso e aderência ao cenário real do cliente.</p>
-          </article>
-
-          <article class="process-card" data-reveal>
-            <p class="process-step">Etapa 4</p>
-            <h3>Publicação e estabilização</h3>
-            <p>Entrego, valido os pontos finais e acompanho os primeiros ajustes para a operação entrar com segurança.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-    <section id="contratar">
-      <div class="container">
-        <div class="section-head" data-reveal>
-          <span class="chip">Como contratar</span>
-          <h2>Diagnóstico rápido, proposta clara e execução previsível</h2>
-          <p>Fluxo comercial em 3 passos para enquadrar produto, demo e adaptação sem enrolação.</p>
-        </div>
-
-        <div class="hire-grid">
-          <article class="hire-item" data-reveal>
-            <p class="hire-step">Passo 1</p>
-            <h3>Envie o cenário</h3>
-            <p>Me fale segmento, objetivo, prazo ideal e referências. Se já houver interesse em um produto do portfólio, enquadro a melhor base para o seu caso.</p>
-          </article>
-
-          <article class="hire-item" data-reveal>
-            <p class="hire-step">Passo 2</p>
-            <h3>Receba o enquadramento</h3>
-            <p>Você recebe proposta com escopo, prazo, investimento e definição do caminho: demo, adaptação sobre base existente ou desenvolvimento sob medida.</p>
-          </article>
-
-          <article class="hire-item" data-reveal>
-            <p class="hire-step">Passo 3</p>
-            <h3>Começo da implantação</h3>
-            <p>Após aprovação, inicio a execução com checkpoints curtos, visibilidade de progresso e foco no que gera valor primeiro.</p>
-          </article>
-        </div>
-
-        <div class="hire-cta" data-reveal>
-          <a class="btn btn-primary" href="https://wa.me/5516991145034?text=Ol%C3%A1%2C%20Yago!%20Quero%20solicitar%20um%20diagn%C3%B3stico%20para%20meu%20projeto." target="_blank" rel="noopener noreferrer">Solicitar diagnóstico no WhatsApp</a>
-          <a class="btn btn-secondary" href="mailto:yagoamorim.oficial@outlook.com?subject=Quero%20contratar%20um%20projeto">Iniciar por e-mail</a>
-        </div>
-      </div>
-    </section>
-    <section id="sonhos">
-      <div class="container">
-        <div class="section-head" data-reveal>
-          <span class="chip">Evolução do cliente</span>
-          <h2>Próximos passos possíveis depois da primeira entrega</h2>
-          <p>Depois que a base entra em operação, estas são evoluções naturais para ampliar resultado, controle e escala sem recomeçar do zero.</p>
-        </div>
-
-        <div class="cards">
-          <article class="card" data-reveal>
-            <span class="badge badge-next">Evolução 1</span>
-            <h3>Mais operação e automação</h3>
-            <ul>
-              <li><strong>Objetivo:</strong> reduzir tarefas manuais e dar mais visibilidade para a rotina.</li>
-              <li><strong>Entrega:</strong> novos módulos, relatórios, fila operacional e automações do dia a dia.</li>
-              <li><strong>Impacto esperado:</strong> menos gargalo, menos improviso e mais previsibilidade.</li>
-            </ul>
-            <div class="stack">
-              <span>Workflow</span>
-              <span>Relatórios</span>
-              <span>Automação</span>
-            </div>
-          </article>
-
-          <article class="card" data-reveal>
-            <span class="badge badge-next">Evolução 2</span>
-            <h3>Mais unidades, mais perfis, mais controle</h3>
-            <ul>
-              <li><strong>Objetivo:</strong> sustentar crescimento sem quebrar o fluxo que já funciona.</li>
-              <li><strong>Entrega:</strong> expansão de perfis, módulos, PDVs, regras e segmentação operacional.</li>
-              <li><strong>Impacto esperado:</strong> crescimento com mais clareza e menos retrabalho estrutural.</li>
-            </ul>
-            <div class="stack">
-              <span>Escalabilidade</span>
-              <span>Perfis</span>
-              <span>Gestão</span>
-            </div>
-          </article>
-
-          <article class="card" data-reveal>
-            <span class="badge badge-next">Evolução 3</span>
-            <h3>Módulo mobile complementar</h3>
-            <ul>
-              <li><strong>Objetivo:</strong> levar parte da operação para o celular quando isso fizer sentido.</li>
-              <li><strong>Entrega:</strong> leitura, caixa ou atendimento mobile integrado ao sistema web.</li>
-              <li><strong>Impacto esperado:</strong> mais flexibilidade na ponta sem trocar o produto principal.</li>
-            </ul>
-            <div class="stack">
-              <span>Flutter</span>
-              <span>Integração</span>
-              <span>Operação</span>
-            </div>
-          </article>
-        </div>
-
-        <article class="roadmap" data-reveal>
-          <h3>Direção de evolução</h3>
-          <p>
-            A lógica é simples: primeiro colocar uma base funcional e vendável em operação. Depois disso,
-            evoluir por prioridade real do negócio, sem reiniciar o projeto a cada nova necessidade.
-          </p>
-        </article>
-      </div>
-    </section>
-
-    <section id="agendamento">
-      <div class="container">
-        <div class="section-head" data-reveal>
-          <span class="chip">Agendamento rápido</span>
-          <h2>Vamos alinhar seu projeto em 15 minutos</h2>
-          <p>Reunião curta para entender objetivo, escopo inicial e melhor pacote para começar sem atraso.</p>
-        </div>
-
-        <div class="agenda-grid">
-          <article class="agenda-card" data-reveal>
-            <h3>Formato</h3>
-            <p>Chamada rápida por WhatsApp com foco em decisão e próximo passo claro.</p>
-          </article>
-
-          <article class="agenda-card" data-reveal>
-            <h3>Resposta</h3>
-            <p>Retorno em até 24h úteis com proposta resumida, prazo e investimento.</p>
-          </article>
-
-          <article class="agenda-card" data-reveal>
-            <h3>Objetivo</h3>
-            <p>Evitar retrabalho, acertar escopo e começar a execução com segurança.</p>
-          </article>
-        </div>
-
-        <div class="agenda-actions" data-reveal>
-          <a class="btn btn-primary" data-track-event="click_agendamento_15min" href="https://wa.me/5516991145034?text=Ol%C3%A1%2C%20Yago!%20Quero%20agendar%20uma%20chamada%20de%2015%20minutos%20para%20alinhar%20meu%20projeto." target="_blank" rel="noopener noreferrer">Agendar chamada de 15 min</a>
-          <a class="btn btn-secondary" href="#contato">Prefiro enviar briefing</a>
-        </div>
-      </div>
-    </section>
-    <section id="faq">
-      <div class="container">
-        <div class="section-head" data-reveal>
-          <span class="chip">FAQ Comercial</span>
-          <h2>Perguntas frequentes antes de contratar</h2>
-          <p>Respostas diretas para acelerar sua decisão com segurança e alinhamento de expectativa.</p>
-        </div>
-
-        <div class="faq-grid">
-          <details class="faq-item" data-reveal>
-            <summary>Como funciona o pagamento?</summary>
-            <p>Trabalho com sinal de entrada para início e parcelas por etapa de entrega. Tudo fica definido em proposta.</p>
-          </details>
-
-          <details class="faq-item" data-reveal>
-            <summary>O prazo pode mudar?</summary>
-            <p>Sim, se o escopo crescer durante o projeto. Sempre apresento impacto de prazo antes de executar mudanças.</p>
-          </details>
-
-          <details class="faq-item" data-reveal>
-            <summary>Você oferece suporte após publicar?</summary>
-            <p>Sim. Incluo suporte inicial pós-lançamento para ajustes finos e estabilização da entrega.</p>
-          </details>
-
-          <details class="faq-item" data-reveal>
-            <summary>Você parte de uma base pronta ou faz tudo do zero?</summary>
-            <p>Quando um produto-base do portfólio atende o cenário, adapto essa base para ganhar velocidade e previsibilidade. Quando não atende, estruturo do zero com o mesmo rigor.</p>
-          </details>
-
-          <details class="faq-item" data-reveal>
-            <summary>Como sei se meu caso entra em produto-base ou sob medida?</summary>
-            <p>No diagnóstico inicial eu avalio segmento, fluxo, complexidade e o quanto sua operação se aproxima do que já está validado no portfólio. A decisão vem clara na proposta.</p>
-          </details>
-
-          <details class="faq-item" data-reveal>
-            <summary>Você consegue adaptar para lanchonete, varejo ou operação corporativa?</summary>
-            <p>Sim. O portfólio já mostra cenários diferentes. Quando existe base pronta, adapto identidade, módulos e fluxo. Quando não existe, estruturo a solução no formato mais adequado.</p>
-          </details>
-
-          <details class="faq-item" data-reveal>
-            <summary>O módulo mobile entra junto com o sistema web?</summary>
-            <p>Quando fizer sentido, sim. O LeitorCodigo entra como extensão operacional configurável, liberada por cliente, sem substituir o sistema web principal.</p>
-          </details>
-
-          <details class="faq-item" data-reveal>
-            <summary>Preciso ter tudo decidido antes de falar com você?</summary>
-            <p>Não. Se você já souber segmento, objetivo e urgência, isso já basta para eu devolver um caminho inicial com mais clareza.</p>
-          </details>
-
-          <details class="faq-item" data-reveal>
-            <summary>Posso começar com algo menor e evoluir depois?</summary>
-            <p>Pode. Esse é o melhor caminho para reduzir risco: lançar uma versão enxuta e escalar com dados reais.</p>
-          </details>
         </div>
       </div>
     </section>
 
     <section id="contato">
       <div class="container">
-        <article class="contact" data-reveal>
-          <div>
-          <h2>Solicite um diagnóstico inicial em 24h</h2>
-          <p>
-            Receba um plano direto para o seu projeto, produto ou adaptação, com escopo inicial, prazo estimado e faixa de investimento.
-            Sem enrolação, com foco em execução e resultado.
-          </p>
-          <p class="contact-note">Resposta em até 24h úteis por WhatsApp ou e-mail. Contato direto: yagoamorim.oficial@outlook.com</p>
+        <div class="section-head" data-reveal>
+          <span class="chip">Próximos passos</span>
+          <h2>Vamos conversar sobre o seu caso?</h2>
+          <p>Escolha o melhor canal para bater um papo e começar a alinhar a solução ideal para o seu negócio.</p>
         </div>
-          <div class="contact-links">
-            <a class="btn btn-primary" data-track-event="click_whatsapp_proposta" href="https://wa.me/5516991145034?text=Ol%C3%A1%2C%20Yago!%20Vi%20seu%20portf%C3%B3lio%20e%20quero%20solicitar%20um%20diagn%C3%B3stico%20para%20meu%20projeto." target="_blank" rel="noopener noreferrer">Solicitar diagnóstico no WhatsApp</a>
-            <a class="btn btn-secondary" data-track-event="click_email_briefing" href="mailto:yagoamorim.oficial@outlook.com?subject=Briefing%20de%20Projeto">Enviar briefing por e-mail</a>
-            <a class="btn btn-secondary" data-track-event="click_comercial_rapido" href="./comercial/visao-geral.html" target="_blank" rel="noopener noreferrer">Ver visão comercial rápida</a>
-          </div>
-        </article>
 
-        <article class="briefing-card" data-reveal>
-          <div class="briefing-head">
-            <h3>Briefing rápido</h3>
-            <p>Preencha em 1 minuto com o essencial para eu entender segmento, urgência, investimento e se o melhor caminho é base pronta, adaptação ou desenvolvimento sob medida.</p>
-          </div>
+        <div class="contact-grid">
+          <article class="contact-card" data-reveal>
+            <strong>Chat rápido no WhatsApp</strong>
+            <a href="https://wa.me/5516991145034?text=Ol%C3%A1%2C%20Yago!%20Assisti%20demos%20do%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20entender%20como%20implementar%20em%20meu%20com%C3%A9rcio." target="_blank" rel="noopener noreferrer">
+              +55 (16) 99114-5034
+            </a>
+          </article>
 
-          <form id="briefing-form" class="briefing-form">
-            <label for="briefing-name">Seu nome
-              <input id="briefing-name" name="name" type="text" placeholder="Ex.: Maria Oliveira" required>
-            </label>
+          <article class="contact-card" data-reveal>
+            <strong>LinkedIn</strong>
+            <a href="https://www.linkedin.com/in/yago-fellipe/" target="_blank" rel="noopener noreferrer">
+              Yago Fellipe
+            </a>
+          </article>
 
-            <label for="briefing-business">Nome do negocio ou empresa
-              <input id="briefing-business" name="business" type="text" placeholder="Ex.: Lanchonete Central" required>
-            </label>
-
-            <label for="briefing-whatsapp">Seu WhatsApp
-              <input id="briefing-whatsapp" name="whatsapp" type="tel" placeholder="(16) 99999-9999" required>
-            </label>
-
-            <label for="briefing-segment">Segmento do negocio
-              <select id="briefing-segment" name="segment" required>
-                <option value="" selected disabled>Selecione uma opção</option>
-                <option value="Lanchonete">Lanchonete</option>
-                <option value="Hortifruti ou mercado">Hortifruti ou mercado</option>
-                <option value="Bar ou atendimento em comanda">Bar ou atendimento em comanda</option>
-                <option value="RH ou operacao corporativa">RH ou operacao corporativa</option>
-                <option value="Outro segmento">Outro segmento</option>
-              </select>
-            </label>
-
-            <label for="briefing-type">Tipo de projeto
-              <select id="briefing-type" name="type" required>
-                <option value="" selected disabled>Selecione uma opção</option>
-                <option value="Landing Page">Landing Page</option>
-                <option value="Site Institucional">Site Institucional</option>
-                <option value="Sistema Web">Sistema Web</option>
-                <option value="Produto-base adaptavel">Produto-base adaptavel</option>
-                <option value="Modulo mobile complementar">Modulo mobile complementar</option>
-                <option value="Ainda avaliando">Ainda avaliando</option>
-              </select>
-            </label>
-
-            <label for="briefing-model">Melhor caminho que voce imagina hoje
-              <select id="briefing-model" name="model" required>
-                <option value="" selected disabled>Selecione uma opção</option>
-                <option value="Quero adaptar uma base pronta">Quero adaptar uma base pronta</option>
-                <option value="Quero algo sob medida">Quero algo sob medida</option>
-                <option value="Quero entender o que faz mais sentido">Quero entender o que faz mais sentido</option>
-              </select>
-            </label>
-
-            <label for="briefing-timeline">Urgencia ou prazo desejado
-              <select id="briefing-timeline" name="timeline" required>
-                <option value="" selected disabled>Selecione uma opção</option>
-                <option value="Preciso o quanto antes">Preciso o quanto antes</option>
-                <option value="Entre 15 e 30 dias">Entre 15 e 30 dias</option>
-                <option value="Entre 30 e 60 dias">Entre 30 e 60 dias</option>
-                <option value="Ainda sem prazo fechado">Ainda sem prazo fechado</option>
-              </select>
-            </label>
-
-            <label for="briefing-budget">Faixa de investimento inicial
-              <select id="briefing-budget" name="budget" required>
-                <option value="" selected disabled>Selecione uma opção</option>
-                <option value="Ate R$ 1.500">Ate R$ 1.500</option>
-                <option value="Entre R$ 1.500 e R$ 3.000">Entre R$ 1.500 e R$ 3.000</option>
-                <option value="Entre R$ 3.900 e R$ 12.000">Entre R$ 3.900 e R$ 12.000</option>
-                <option value="Acima de R$ 12.000">Acima de R$ 12.000</option>
-                <option value="Prefiro alinhar primeiro">Prefiro alinhar primeiro</option>
-              </select>
-            </label>
-
-            <label for="briefing-mobile">Interesse em modulo mobile
-              <select id="briefing-mobile" name="mobile" required>
-                <option value="" selected disabled>Selecione uma opção</option>
-                <option value="Sim, quero avaliar junto">Sim, quero avaliar junto</option>
-                <option value="Nao, so web por enquanto">Nao, so web por enquanto</option>
-                <option value="Ainda nao sei">Ainda nao sei</option>
-              </select>
-            </label>
-
-            <label for="briefing-notes">Resumo do objetivo
-              <textarea id="briefing-notes" name="notes" placeholder="Descreva o que voce quer organizar, vender ou melhorar na operacao." required></textarea>
-            </label>
-
-            <div class="briefing-actions">
-              <button type="submit" class="btn btn-primary">Enviar diagnostico pelo WhatsApp</button>
-              <p id="briefing-feedback" class="briefing-feedback" aria-live="polite"></p>
-            </div>
-          </form>
-        </article>
-
-        <article class="metrics-card" id="metrics-card" data-reveal hidden>
-          <div class="metrics-head">
-            <h3>Painel de métricas</h3>
-            <p>Visão consolidada de interesse comercial no portfólio (WhatsApp, e-mail, demos e briefings).</p>
-          </div>
-
-          <div class="metrics-grid" aria-label="Indicadores de interesse">
-            <div class="metric-box">
-              <span>Cliques no WhatsApp</span>
-              <strong id="metric-whatsapp">-</strong>
-            </div>
-            <div class="metric-box">
-              <span>Cliques por e-mail</span>
-              <strong id="metric-email">-</strong>
-            </div>
-            <div class="metric-box">
-              <span>Acessos às demos</span>
-              <strong id="metric-demo">-</strong>
-            </div>
-            <div class="metric-box">
-              <span>Briefings enviados</span>
-              <strong id="metric-briefing">-</strong>
-            </div>
-          </div>
-
-          <div class="metrics-actions">
-            <button type="button" id="metrics-refresh" class="btn btn-secondary">Atualizar métricas</button>
-            <p id="metrics-status" class="metrics-status" aria-live="polite">Carregando métricas...</p>
-          </div>
-        </article>
+          <article class="contact-card" data-reveal>
+            <strong>GitHub</strong>
+            <a href="https://github.com/japaprp" target="_blank" rel="noopener noreferrer">
+              @japaprp
+            </a>
+          </article>
+        </div>
       </div>
     </section>
   </main>
 
   <footer>
     <div class="container">
-      <p>&copy; <span id="year"></span> Yago Fellipe Amorim. Portfólio em evolução contínua.</p>
+      <p>Portfólio de Yago Fellipe Amorim © 2026. Desenvolvido e mantido por <a href="https://github.com/japaprp" style="color: var(--sun); text-decoration: none; font-weight: 700;">@japaprp</a>.</p>
     </div>
   </footer>
 
-  <a class="mobile-cta" data-track-event="click_whatsapp_mobile_cta" href="https://wa.me/5516991145034?text=Ol%C3%A1%2C%20Yago!%20Vim%20pelo%20seu%20portf%C3%B3lio%20e%20quero%20solicitar%20um%20diagn%C3%B3stico." target="_blank" rel="noopener noreferrer">
-    Solicitar diagnóstico
-  </a>
-  <script>
-    (function () {
-      const menuToggle = document.getElementById("menu-toggle");
-      const menu = document.getElementById("menu");
-      const year = document.getElementById("year");
-      const profilePhoto = document.getElementById("profile-photo");
-      const profileImage = document.getElementById("profile-image");
-      const briefingForm = document.getElementById("briefing-form");
-      const briefingFeedback = document.getElementById("briefing-feedback");
-      const metricsCard = document.getElementById("metrics-card");
-      const metricsRefreshButton = document.getElementById("metrics-refresh");
-      const metricsStatus = document.getElementById("metrics-status");
-      const metricsStorageKey = "portfolio_click_metrics_v1";
-      const metricsNamespace = "japaprp-portifolio";
-      const attributionStorageKey = "portfolio_lead_attribution_v1";
-      const internalMetricsMode = new URLSearchParams(window.location.search).get("painel") === "1";
+  <script defer>
+    const toggleBtn = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
 
-      function readMetrics() {
-        try {
-          return JSON.parse(localStorage.getItem(metricsStorageKey) || "{}");
-        } catch (error) {
-          return {};
-        }
+    toggleBtn?.addEventListener('click', () => {
+      navLinks?.classList.toggle('active');
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('.nav')) {
+        navLinks?.classList.remove('active');
       }
+    });
 
-      function writeMetrics(metrics) {
-        localStorage.setItem(metricsStorageKey, JSON.stringify(metrics));
-      }
-
-      function trackClick(eventName) {
-        const metrics = readMetrics();
-        metrics[eventName] = (metrics[eventName] || 0) + 1;
-        writeMetrics(metrics);
-
-        const remoteUrl = "https://api.countapi.xyz/hit/" + metricsNamespace + "/" + encodeURIComponent(eventName);
-        fetch(remoteUrl, { method: "GET", keepalive: true }).catch(function () {});
-      }
-
-      function classifyLink(link) {
-        const href = (link.getAttribute("href") || "").toLowerCase();
-        if (link.dataset.trackEvent) {
-          return link.dataset.trackEvent;
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
         }
-        if (href.includes("wa.me")) {
-          return "click_whatsapp";
-        }
-        if (href.startsWith("mailto:")) {
-          return "click_email";
-        }
-        if (href.includes("/demos/") || (href.includes("github.io") && link.target === "_blank")) {
-          return "click_demo";
-        }
-        return "";
-      }
-
-      function readAttribution() {
-        try {
-          return JSON.parse(localStorage.getItem(attributionStorageKey) || "{}");
-        } catch (error) {
-          return {};
-        }
-      }
-
-      function captureAttributionFromUrl() {
-        const params = new URLSearchParams(window.location.search);
-        const keys = ["utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content", "gclid"];
-        const current = readAttribution();
-        let changed = false;
-
-        keys.forEach(function (key) {
-          const value = params.get(key);
-          if (value) {
-            current[key] = value;
-            changed = true;
-          }
-        });
-
-        if (changed) {
-          localStorage.setItem(attributionStorageKey, JSON.stringify(current));
-        }
-
-        return current;
-      }
-
-      function formatAttributionLine() {
-        const source = readAttribution();
-        const parts = [];
-        Object.keys(source).forEach(function (key) {
-          if (source[key]) {
-            parts.push(key + "=" + source[key]);
-          }
-        });
-        return parts.join(" | ");
-      }
-
-      function setMetricValue(elementId, value) {
-        const element = document.getElementById(elementId);
-        if (element) {
-          element.textContent = String(value);
-        }
-      }
-
-      async function getRemoteMetric(eventName) {
-        try {
-          const url = "https://api.countapi.xyz/get/" + metricsNamespace + "/" + encodeURIComponent(eventName);
-          const response = await fetch(url, { method: "GET", cache: "no-store" });
-          if (!response.ok) {
-            return null;
-          }
-          const data = await response.json();
-          return Number(data.value || 0);
-        } catch (error) {
-          return null;
-        }
-      }
-
-      async function renderMetricsPanel() {
-        if (!metricsCard) {
-          return;
-        }
-
-        const localMetrics = readMetrics();
-        if (metricsStatus) {
-          metricsStatus.textContent = "Atualizando métricas...";
-        }
-
-        const metricKeys = [
-          "click_whatsapp",
-          "click_whatsapp_proposta",
-          "click_email",
-          "click_email_briefing",
-          "click_demo",
-          "briefing_form_submit"
-        ];
-
-        const remoteValues = await Promise.all(metricKeys.map(getRemoteMetric));
-
-        function resolveMetric(index, key) {
-          const remoteValue = remoteValues[index];
-          if (remoteValue === null || Number.isNaN(remoteValue)) {
-            return Number(localMetrics[key] || 0);
-          }
-          return Number(remoteValue);
-        }
-
-        const whatsappTotal = resolveMetric(0, "click_whatsapp") + resolveMetric(1, "click_whatsapp_proposta");
-        const emailTotal = resolveMetric(2, "click_email") + resolveMetric(3, "click_email_briefing");
-        const demoTotal = resolveMetric(4, "click_demo");
-        const briefingTotal = resolveMetric(5, "briefing_form_submit");
-
-        setMetricValue("metric-whatsapp", whatsappTotal);
-        setMetricValue("metric-email", emailTotal);
-        setMetricValue("metric-demo", demoTotal);
-        setMetricValue("metric-briefing", briefingTotal);
-
-        if (metricsStatus) {
-          const hasRemoteData = remoteValues.some(function (value) { return value !== null; });
-          const sourceText = hasRemoteData ? "Fonte global" : "Fonte local";
-          metricsStatus.textContent = sourceText + " | atualizado em " + new Date().toLocaleString("pt-BR");
-        }
-      }
-
-      if (year) {
-        year.textContent = String(new Date().getFullYear());
-      }
-
-      if (menuToggle && menu) {
-        menuToggle.addEventListener("click", function () {
-          const isOpen = menu.classList.toggle("open");
-          menuToggle.setAttribute("aria-expanded", String(isOpen));
-        });
-
-        menu.querySelectorAll("a").forEach(function (link) {
-          link.addEventListener("click", function () {
-            menu.classList.remove("open");
-            menuToggle.setAttribute("aria-expanded", "false");
-          });
-        });
-      }
-
-      if (profilePhoto && profileImage) {
-        profilePhoto.addEventListener("error", function () {
-          profileImage.classList.add("missing");
-        });
-      }
-
-      captureAttributionFromUrl();
-
-      document.querySelectorAll("a[href]").forEach(function (link) {
-        const eventName = classifyLink(link);
-        if (!eventName) {
-          return;
-        }
-        link.addEventListener("click", function () {
-          trackClick(eventName);
-        });
       });
+    });
 
-      if (metricsCard) {
-        if (internalMetricsMode) {
-          metricsCard.removeAttribute("hidden");
-        } else {
-          metricsCard.setAttribute("hidden", "hidden");
-        }
-      }
+    document.querySelectorAll('[data-reveal]').forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(20px)';
+      el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+      observer.observe(el);
+    });
 
-      if (metricsRefreshButton && internalMetricsMode) {
-        metricsRefreshButton.addEventListener("click", function () {
-          trackClick("metrics_refresh");
-          renderMetricsPanel();
-        });
-      }
+    const profileImage = document.getElementById('profile-image');
+    const profilePhoto = document.getElementById('profile-photo');
 
-      if (internalMetricsMode) {
-        renderMetricsPanel();
-      }
-
-      if (briefingForm) {
-        briefingForm.addEventListener("submit", function (event) {
-          event.preventDefault();
-
-          const name = String(document.getElementById("briefing-name").value || "").trim();
-          const business = String(document.getElementById("briefing-business").value || "").trim();
-          const whatsapp = String(document.getElementById("briefing-whatsapp").value || "").trim();
-          const segment = String(document.getElementById("briefing-segment").value || "").trim();
-          const type = String(document.getElementById("briefing-type").value || "").trim();
-          const model = String(document.getElementById("briefing-model").value || "").trim();
-          const timeline = String(document.getElementById("briefing-timeline").value || "").trim();
-          const budget = String(document.getElementById("briefing-budget").value || "").trim();
-          const mobile = String(document.getElementById("briefing-mobile").value || "").trim();
-          const notes = String(document.getElementById("briefing-notes").value || "").trim();
-
-          if (!name || !business || !whatsapp || !segment || !type || !model || !timeline || !budget || !mobile || !notes) {
-            if (briefingFeedback) {
-              briefingFeedback.textContent = "Preencha todos os campos antes de enviar.";
-            }
-            return;
-          }
-
-          const normalizedWhatsapp = whatsapp.replace(/\D+/g, "");
-          const attributionLine = formatAttributionLine();
-          const messageLines = [
-            "Olá, Yago! Quero solicitar um diagnóstico inicial.",
-            "Nome: " + name,
-            "Negocio: " + business,
-            "WhatsApp: " + normalizedWhatsapp,
-            "Segmento: " + segment,
-            "Tipo de projeto: " + type,
-            "Caminho imaginado: " + model,
-            "Prazo desejado: " + timeline,
-            "Faixa de investimento: " + budget,
-            "Interesse em mobile: " + mobile,
-            "Resumo: " + notes,
-            "Origem: formulario_briefing_portfolio" + (attributionLine ? " | " + attributionLine : "")
-          ];
-          const message = messageLines.join("\n");
-          const url = "https://wa.me/5516991145034?text=" + encodeURIComponent(message);
-
-          trackClick("briefing_form_submit");
-
-          if (briefingFeedback) {
-            briefingFeedback.textContent = "Briefing pronto. Abrindo WhatsApp...";
-          }
-
-          window.open(url, "_blank", "noopener,noreferrer");
-          briefingForm.reset();
-        });
-      }
-
-      const revealElements = document.querySelectorAll("[data-reveal]");
-      const observer = new IntersectionObserver(
-        function (entries) {
-          entries.forEach(function (entry) {
-            if (entry.isIntersecting) {
-              entry.target.classList.add("in");
-              observer.unobserve(entry.target);
-            }
-          });
-        },
-        { threshold: 0.12 }
-      );
-
-      revealElements.forEach(function (element) {
-        observer.observe(element);
+    if (profilePhoto) {
+      profilePhoto.addEventListener('error', () => {
+        profileImage.classList.add('missing');
       });
-
-      window.portfolioMetrics = {
-        read: readMetrics,
-        reset: function () {
-          localStorage.removeItem(metricsStorageKey);
-        }
-      };
-    })();
+    }
   </script>
 </body>
 </html>
