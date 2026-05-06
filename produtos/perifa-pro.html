@@ -55,6 +55,14 @@
     .actions { display: flex; flex-wrap: wrap; gap: 0.6rem; }
     .btn { text-decoration: none; border-radius: 12px; padding: 0.72rem 1rem; display: inline-flex; align-items: center; font-weight: 700; border: 1px solid rgba(23, 56, 90, 0.28); color: var(--navy); background: rgba(255, 255, 255, 0.6); }
     .btn-primary { border-color: rgba(23, 56, 90, 0.34); background: linear-gradient(130deg, #f2ad5a, #ef8f3d); color: #1a2737; }
+    .visual-showcase { display: grid; grid-template-columns: minmax(220px, 0.9fr) minmax(0, 1.6fr); gap: 1rem; align-items: start; margin-bottom: 1rem; }
+    .hero-shot, .shot-card { background: linear-gradient(145deg, #14243a 0%, #0c1626 100%); border: 0.8px solid rgba(203, 213, 225, 0.36); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; }
+    .hero-shot { padding: 0.75rem; }
+    .shot-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(145px, 1fr)); gap: 0.8rem; }
+    .shot-card { padding: 0.55rem; }
+    .hero-shot img, .shot-card img { width: 100%; aspect-ratio: 9 / 16; object-fit: cover; display: block; border-radius: 15px; border: 0.8px solid rgba(255, 255, 255, 0.18); background: #0b1220; }
+    .shot-caption { color: #f7fafc; font-family: "Bricolage Grotesque", sans-serif; font-size: 0.88rem; font-weight: 700; margin-top: 0.55rem; }
+    .shot-note { color: #b7c2d3; font-size: 0.8rem; margin-top: 0.12rem; }
     .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 1rem; }
     .panel { padding: 1rem; }
     .panel h2 { font-size: 1.05rem; margin-bottom: 0.4rem; }
@@ -62,7 +70,7 @@
     .panel ul { list-style: none; display: grid; gap: 0.38rem; margin-top: 0.65rem; color: #36445d; font-size: 0.9rem; }
     .panel ul li::before { content: "•"; color: var(--sun); margin-right: 0.45rem; }
     .footer-note { margin-top: 1rem; border: 1px solid #d7e0ed; border-radius: 12px; padding: 0.8rem; background: #eef4fb; color: #41536c; font-size: 0.9rem; }
-    @media (max-width: 740px) { .btn { width: 100%; justify-content: center; } }
+    @media (max-width: 740px) { .btn { width: 100%; justify-content: center; } .visual-showcase { grid-template-columns: 1fr; } .shot-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
   </style>
 </head>
 <body>
@@ -88,6 +96,61 @@
         <div class="actions">
           <a class="btn btn-primary" href="https://wa.me/5516991145034?text=Ol%C3%A1%2C%20Yago!%20Quero%20entender%20a%20implanta%C3%A7%C3%A3o%20do%20Perifa%20Pro." target="_blank" rel="noopener noreferrer">Falar sobre implantação</a>
           <a class="btn" href="https://github.com/japaprp/favela-soccer" target="_blank" rel="noopener noreferrer">Ver repositório</a>
+        </div>
+      </section>
+
+      <section class="visual-showcase" aria-label="Galeria visual do Perifa Pro">
+        <article class="hero-shot">
+          <img src="../assets/projetos/perifa-pro/perifa-pro-home.jpg" alt="Tela inicial do Perifa Pro com destaque de partida, atalhos e navegação mobile">
+          <p class="shot-caption">Experiência mobile do campeonato</p>
+          <p class="shot-note">Início com jogo em destaque, agenda, classificação, loja e navegação inferior.</p>
+        </article>
+
+        <div class="shot-grid">
+          <article class="shot-card">
+            <img src="../assets/projetos/perifa-pro/perifa-pro-escalacao.jpg" alt="Escalação da central da partida no Perifa Pro" loading="lazy">
+            <p class="shot-caption">Escalação</p>
+          </article>
+          <article class="shot-card">
+            <img src="../assets/projetos/perifa-pro/perifa-pro-estatisticas.jpg" alt="Estatísticas dos times na central da partida do Perifa Pro" loading="lazy">
+            <p class="shot-caption">Estatísticas</p>
+          </article>
+          <article class="shot-card">
+            <img src="../assets/projetos/perifa-pro/perifa-pro-proximos-jogos.jpg" alt="Próximos jogos e painel rápido na tela inicial do Perifa Pro" loading="lazy">
+            <p class="shot-caption">Próximos jogos</p>
+          </article>
+          <article class="shot-card">
+            <img src="../assets/projetos/perifa-pro/perifa-pro-classificacao.jpg" alt="Classificação e destaques da rodada no Perifa Pro" loading="lazy">
+            <p class="shot-caption">Classificação</p>
+          </article>
+          <article class="shot-card">
+            <img src="../assets/projetos/perifa-pro/perifa-pro-loja.jpg" alt="Loja em destaque do Perifa Pro com produtos dos times" loading="lazy">
+            <p class="shot-caption">Loja</p>
+          </article>
+          <article class="shot-card">
+            <img src="../assets/projetos/perifa-pro/perifa-pro-jogos.jpg" alt="Agenda e central das partidas no Perifa Pro" loading="lazy">
+            <p class="shot-caption">Agenda</p>
+          </article>
+          <article class="shot-card">
+            <img src="../assets/projetos/perifa-pro/perifa-pro-filtros.jpg" alt="Filtros de agenda por status e campeonato no Perifa Pro" loading="lazy">
+            <p class="shot-caption">Filtros</p>
+          </article>
+          <article class="shot-card">
+            <img src="../assets/projetos/perifa-pro/perifa-pro-logs.jpg" alt="Logs do sistema administrativo do Perifa Pro" loading="lazy">
+            <p class="shot-caption">Logs</p>
+          </article>
+          <article class="shot-card">
+            <img src="../assets/projetos/perifa-pro/perifa-pro-chat.jpg" alt="Chat administrativo com moderação ativa no Perifa Pro" loading="lazy">
+            <p class="shot-caption">Chat</p>
+          </article>
+          <article class="shot-card">
+            <img src="../assets/projetos/perifa-pro/perifa-pro-agenda.jpg" alt="Tela de jogos com agenda e filtros do Perifa Pro" loading="lazy">
+            <p class="shot-caption">Lista de jogos</p>
+          </article>
+          <article class="shot-card">
+            <img src="../assets/projetos/perifa-pro/perifa-pro-transmissao.png" alt="Central da partida com transmissão e replay no Perifa Pro" loading="lazy">
+            <p class="shot-caption">Transmissão</p>
+          </article>
         </div>
       </section>
 
