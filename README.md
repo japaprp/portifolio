@@ -8,13 +8,24 @@ Apresentar produtos web e mobile com foco em confiabilidade, fluxos reais de neg
 
 O portfolio nao deve vender telas ou funcionalidades apenas planejadas. Uma funcionalidade so deve ser apresentada como existente quando estiver implementada, testada e validada no fluxo real correspondente.
 
-## Projetos em destaque
+## Projetos em destaque no portfolio
 
-- Horti Fruit / Varejao do Povo
-- Portal RH com dossie inteligente, workflow operacional, central de pendencias e base multiempresa
-- Chacara Estacia Renascer Belvedere
-- Plataforma de Lanchonete com multiplos PDVs
-- LeitorCodigo Mobile como modulo universal para caixa, leitura e atendimento
+A vitrine principal prioriza quatro cases, seguindo a direção visual premium aprovada:
+
+- **Perifa Pro** — plataforma esportiva; vídeo original de abertura, seguido por notebook e capturas reais da interface.
+- **Estância Renascer Belvedere** — site institucional/comercial para um espaço específico de eventos.
+- **Horti Fruit / Varejão do Povo** — experiência digital de varejo; confirmar o nome comercial final antes de consolidar a marca.
+- **Portal RH** — sistema interno para rotinas corporativas.
+
+Outros produtos permanecem no repositório e podem receber páginas ou experiências próprias em etapas futuras. O EventsRP não faz parte da seleção principal enquanto estiver em acabamento.
+
+### Padrão visual de apresentação
+
+- Página principal branca, editorial, minimalista e masculina, com a assinatura **“Yago Dev. — Ideias que ganham forma.”**
+- Cada projeto abre uma experiência própria; nenhum vídeo toca automaticamente na home.
+- Usar somente capturas reais para representar interfaces existentes.
+- Vídeos e capturas ficam em `assets/projetos/<slug-do-projeto>/`.
+- O padrão reutilizável para futuras experiências por nicho está em [docs/EXPERIENCIAS_CINEMATOGRAFICAS.md](docs/EXPERIENCIAS_CINEMATOGRAFICAS.md).
 
 ## Modelo comercial
 
